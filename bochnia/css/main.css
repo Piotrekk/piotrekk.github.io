@@ -1,0 +1,413 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+  html #main, body #main {
+    position: relative;
+    overflow: hidden;
+    width: 100%; }
+    html #main header, body #main header {
+      width: 100%;
+      background-color: #7cc086;
+      position: fixed;
+      z-index: 99999; }
+      html #main header #header-content, body #main header #header-content {
+        max-width: 1024px;
+        height: 50px;
+        margin: 0px auto;
+        position: relative; }
+        html #main header #header-content #menu-button, body #main header #header-content #menu-button {
+          height: 35px;
+          padding: 0px 15px;
+          padding-top: 15px;
+          float: left;
+          font-size: 21px;
+          color: white;
+          cursor: pointer;
+          display: inline-block; }
+          html #main header #header-content #menu-button:hover, body #main header #header-content #menu-button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: rgba(255, 255, 255, 0.9); }
+        html #main header #header-content h1, body #main header #header-content h1 {
+          width: 244px;
+          left: 75px;
+          position: absolute;
+          text-align: center; }
+          html #main header #header-content h1 a, body #main header #header-content h1 a {
+            width: 244px;
+            padding: 12px 0px;
+            display: block;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+            font-family: 'Philosopher', sans-serif;
+            color: white;
+            cursor: pointer; }
+          html #main header #header-content h1:hover, body #main header #header-content h1:hover {
+            background-color: rgba(0, 0, 0, 0.1); }
+            html #main header #header-content h1:hover a, body #main header #header-content h1:hover a {
+              color: rgba(255, 255, 255, 0.9); }
+    html #main #about, body #main #about {
+      margin-top: 50px;
+      background-image: url("http://upload.wikimedia.org/wikipedia/commons/f/fe/Widok_uk%C5%82adu_urbanistycznego_Bochni_z_wie%C5%BCy_ko%C5%9Bcio%C5%82a_farnego.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+      position: relative; }
+      html #main #about #about-gradient, body #main #about #about-gradient {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(124, 192, 134, 0.6); }
+      html #main #about #about-content, body #main #about #about-content {
+        max-width: 1024px;
+        margin: 0px auto;
+        padding: 75px 20px;
+        position: relative;
+        color: white; }
+        html #main #about #about-content h2, body #main #about #about-content h2 {
+          font-size: 80px;
+          font-weight: 200;
+          text-align: center; }
+        html #main #about #about-content #about-button, body #main #about #about-content #about-button {
+          width: 100%;
+          margin: 0px auto;
+          margin-top: 75px;
+          display: block;
+          padding: 10px;
+          font-size: 24px;
+          color: white;
+          background-color: rgba(0, 0, 0, 0);
+          border: 2px solid white;
+          border-radius: 2px;
+          cursor: pointer;
+          outline: none; }
+          html #main #about #about-content #about-button:hover, body #main #about #about-content #about-button:hover {
+            color: #7cc086;
+            background-color: white; }
+    html #main #monuments, body #main #monuments {
+      overflow: hidden;
+      background-color: #f3f1ee; }
+      html #main #monuments #monuments-content, body #main #monuments #monuments-content {
+        max-width: 1024px;
+        margin: 0px auto;
+        padding: 75px 20px;
+        position: relative; }
+        html #main #monuments #monuments-content h2, body #main #monuments #monuments-content h2 {
+          padding-bottom: 15px;
+          font-size: 44px;
+          font-weight: 200;
+          text-align: center;
+          color: #494b53;
+          box-shadow: 0px 2px 0px rgba(73, 75, 83, 0.8); }
+        html #main #monuments #monuments-content #monuments-list, body #main #monuments #monuments-content #monuments-list {
+          margin-top: 75px;
+          text-align: center; }
+          html #main #monuments #monuments-content #monuments-list h3, body #main #monuments #monuments-content #monuments-list h3 {
+            margin: 20px 0px;
+            font-size: 22px;
+            font-weight: 400;
+            color: #333333; }
+          html #main #monuments #monuments-content #monuments-list p, body #main #monuments #monuments-content #monuments-list p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5em;
+            color: #505050; }
+          html #main #monuments #monuments-content #monuments-list .first-monument, body #main #monuments #monuments-content #monuments-list .first-monument {
+            width: 250px;
+            height: 413px;
+            margin: 0px auto;
+            padding: 20px;
+            display: block;
+            position: relative;
+            background-color: white;
+            border-radius: 2px;
+            box-shadow: 0px 2px 0px #cecece; }
+            html #main #monuments #monuments-content #monuments-list .first-monument:hover, body #main #monuments #monuments-content #monuments-list .first-monument:hover {
+              left: 0px;
+              top: -5px;
+              background-color: #fafafa; }
+            html #main #monuments #monuments-content #monuments-list .first-monument .first-monument-image, body #main #monuments #monuments-content #monuments-list .first-monument .first-monument-image {
+              width: 200px;
+              height: 200px;
+              margin: 0px auto;
+              background-image: url("http://www.soligraf.com/nepomucen/murowianka3.JPG");
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              background-size: cover;
+              border-radius: 200px;
+              border: 2px solid #494b53; }
+          html #main #monuments #monuments-content #monuments-list .second-monument, body #main #monuments #monuments-content #monuments-list .second-monument {
+            width: 250px;
+            height: 413px;
+            margin: 75px auto;
+            padding: 20px;
+            display: block;
+            position: relative;
+            background-color: white;
+            border-radius: 2px;
+            box-shadow: 0px 2px 0px #cecece; }
+            html #main #monuments #monuments-content #monuments-list .second-monument:hover, body #main #monuments #monuments-content #monuments-list .second-monument:hover {
+              left: 0px;
+              top: -5px;
+              background-color: #fafafa; }
+            html #main #monuments #monuments-content #monuments-list .second-monument .second-monument-image, body #main #monuments #monuments-content #monuments-list .second-monument .second-monument-image {
+              width: 200px;
+              height: 200px;
+              margin: 0px auto;
+              background-image: url("http://maciejsmigacz.strefa.pl/zdjecia/maciej/zdj-005.jpg");
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              background-size: cover;
+              border-radius: 200px;
+              border: 2px solid #494b53; }
+          html #main #monuments #monuments-content #monuments-list .third-monument, body #main #monuments #monuments-content #monuments-list .third-monument {
+            width: 250px;
+            height: 413px;
+            margin: 0px auto;
+            padding: 20px;
+            display: block;
+            position: relative;
+            background-color: white;
+            border-radius: 2px;
+            box-shadow: 0px 2px 0px #cecece; }
+            html #main #monuments #monuments-content #monuments-list .third-monument:hover, body #main #monuments #monuments-content #monuments-list .third-monument:hover {
+              left: 0px;
+              top: -5px;
+              background-color: #fafafa; }
+            html #main #monuments #monuments-content #monuments-list .third-monument .third-monument-image, body #main #monuments #monuments-content #monuments-list .third-monument .third-monument-image {
+              width: 200px;
+              height: 200px;
+              margin: 0px auto;
+              background-image: url("http://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bochnia-rynek.jpg/600px-Bochnia-rynek.jpg");
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              background-size: cover;
+              border-radius: 200px;
+              border: 2px solid #494b53; }
+    html #main #places, body #main #places {
+      overflow: hidden;
+      background-color: #f2bb67; }
+      html #main #places #places-content, body #main #places #places-content {
+        max-width: 1024px;
+        margin: 0px auto;
+        padding: 75px 20px;
+        position: relative; }
+        html #main #places #places-content h2, body #main #places #places-content h2 {
+          padding-bottom: 15px;
+          font-size: 44px;
+          font-weight: 200;
+          text-align: center;
+          color: white;
+          box-shadow: 0px 2px 0px white; }
+        html #main #places #places-content #places-gradient, body #main #places #places-content #places-gradient {
+          width: 100%;
+          height: 400px;
+          margin-top: 75px;
+          position: absolute;
+          border-radius: 2px;
+          background-color: rgba(242, 187, 103, 0.6); }
+        html #main #places #places-content #places-image, body #main #places #places-content #places-image {
+          height: 400px;
+          margin-top: 75px;
+          background-image: url("http://www.salinacracoviensis.pl/media/Image/gminy/bochnia/7.jpg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          background-size: cover; }
+        html #main #places #places-content #places-list, body #main #places #places-content #places-list {
+          margin-top: 75px;
+          margin-left: 25px; }
+          html #main #places #places-content #places-list li, body #main #places #places-content #places-list li {
+            margin: 20px 0px;
+            font-size: 14px;
+            line-height: 1.5em;
+            color: white; }
+            html #main #places #places-content #places-list li span, body #main #places #places-content #places-list li span {
+              font-size: 22px;
+              font-weight: 400;
+              display: inline-block; }
+              html #main #places #places-content #places-list li span:after, body #main #places #places-content #places-list li span:after {
+                content: '';
+                width: 10px;
+                height: 10px;
+                left: 20px;
+                margin-top: 6px;
+                position: absolute;
+                background-color: white;
+                border-radius: 2px; }
+  html #first-nav, body #first-nav {
+    width: 200px;
+    height: 100%;
+    top: 0px;
+    left: -200px;
+    position: fixed;
+    color: white;
+    float: left;
+    z-index: 200;
+    background-color: #191919; }
+    html #first-nav ul, body #first-nav ul {
+      margin-top: 50px; }
+      html #first-nav ul li, body #first-nav ul li {
+        margin: 2.5px 0px 2.5px 0px; }
+        html #first-nav ul li a, body #first-nav ul li a {
+          padding: 10px 0px 10px 30px;
+          display: block;
+          text-decoration: none;
+          font-size: 18px;
+          color: #b4b4b4;
+          cursor: pointer; }
+          html #first-nav ul li a span, body #first-nav ul li a span {
+            left: 10px;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden; }
+        html #first-nav ul li:hover, body #first-nav ul li:hover {
+          background-color: #414141; }
+          html #first-nav ul li:hover a, body #first-nav ul li:hover a {
+            padding: 10px 0px 10px 45px;
+            color: white; }
+            html #first-nav ul li:hover a span, body #first-nav ul li:hover a span {
+              visibility: visible;
+              opacity: 1;
+              left: -5px; }
+  html #second-nav, body #second-nav {
+    width: 200px;
+    height: 100%;
+    top: 0px;
+    left: -220px;
+    position: fixed;
+    color: white;
+    z-index: 500;
+    background-color: orange; }
+    html #second-nav #second-nav-mask, body #second-nav #second-nav-mask {
+      width: 20px;
+      height: 100%;
+      top: 0px;
+      right: -20px;
+      position: absolute;
+      z-index: 500;
+      background-color: rgba(255, 255, 255, 0.1); }
+  html #bblack, body #bblack {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    z-index: 6000;
+    cursor: default;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden; }
+  html #mask, body #mask {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    cursor: default;
+    background-color: rgba(0, 0, 0, 0);
+    visibility: hidden; }
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 420px) {
+  body #main header #header-content h1 {
+    left: 0px;
+    margin: 0px auto;
+    position: relative; }
+  body #main #about #about-content #about-button {
+    width: 75%; } }
+@media all and (min-width: 770px) {
+  body #main #about #about-content #about-button {
+    width: 50%; }
+  body #main #monuments #monuments-content #monuments-list .first-monument {
+    margin-right: 60px;
+    display: inline-block;
+    float: left; }
+  body #main #monuments #monuments-content #monuments-list .second-monument {
+    margin: 0px;
+    margin-left: 60px;
+    display: inline-block;
+    float: right; }
+  body #main #monuments #monuments-content #monuments-list .third-monument {
+    margin-top: 75px;
+    display: inline-block; } }
+@media all and (min-width: 1024px) {
+  body #main #about #about-content {
+    padding: 75px 0px; }
+    body #main #about #about-content #about-button {
+      width: 25%; }
+  body #main #monuments #monuments-content {
+    padding: 75px 0px; }
+    body #main #monuments #monuments-content #monuments-list .first-monument {
+      margin: 0px;
+      float: left; }
+    body #main #monuments #monuments-content #monuments-list .second-monument {
+      margin: 0px;
+      float: none; }
+    body #main #monuments #monuments-content #monuments-list .third-monument {
+      margin: 0px;
+      float: right; }
+  body #main #places #places-content {
+    padding: 75px 0px; }
+    body #main #places #places-content #places-list li span:after {
+      left: 0px; } }
+/************************************************************ END MEDIA QUERIES ************************************************************/
+.transition {
+  -webkit-transition: All 0.1s ease-in-out;
+  -moz-transition: All 0.1s ease-in-out;
+  -o-transition: All 0.1s ease-in-out;
+  transition: All 0.1s ease-in-out; }

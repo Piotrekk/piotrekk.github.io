@@ -1,0 +1,262 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100%; }
+  html #main, body #main {
+    width: 100%;
+    min-width: 1024px;
+    height: 100%;
+    position: relative;
+    background-color: red; }
+    html #main .grid, body #main .grid {
+      width: 50%;
+      height: 50%;
+      float: left;
+      display: inline-block; }
+      html #main .grid .grid-panel, body #main .grid .grid-panel {
+        width: 50%;
+        height: 50%;
+        position: fixed;
+        background-image: url("http://www.trzciana.pl/tl_files/content/aktualnosci/2013/07/2013-07-20/kosciol02.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: cover; }
+        html #main .grid .grid-panel .grid-mask, body #main .grid .grid-panel .grid-mask {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(238, 65, 65, 0.6); }
+        html #main .grid .grid-panel .grid-content, body #main .grid .grid-panel .grid-content {
+          width: calc(100% - 40px);
+          top: 50%;
+          margin: 0px auto;
+          padding: 20px;
+          position: absolute;
+          text-align: center; }
+          html #main .grid .grid-panel .grid-content h2, body #main .grid .grid-panel .grid-content h2 {
+            margin-bottom: 75px;
+            font-weight: 200;
+            color: white; }
+          html #main .grid .grid-panel .grid-content button, body #main .grid .grid-panel .grid-content button {
+            padding: 10px 15px;
+            position: relative;
+            font-size: 16px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border: 2px solid white;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer; }
+            html #main .grid .grid-panel .grid-content button:hover, body #main .grid .grid-panel .grid-content button:hover {
+              color: #ee4141;
+              background-color: white; }
+            html #main .grid .grid-panel .grid-content button:active, body #main .grid .grid-panel .grid-content button:active {
+              left: 0px;
+              top: 5px; }
+      html #main .grid:hover .grid-panel, body #main .grid:hover .grid-panel {
+        width: 55%;
+        height: 55%;
+        z-index: 9; }
+    html #main #about-grid #about-panel, body #main #about-grid #about-panel {
+      background-image: url("http://www.archiwum.trzciana.pl/wioski/kierlikowka/100_1400.jpg"); }
+    html #main #about-grid .grid-panel, body #main #about-grid .grid-panel {
+      top: 0px;
+      left: 0px;
+      box-shadow: inset -1px -1px 0px #d12e2e; }
+      html #main #about-grid .grid-panel .grid-content, body #main #about-grid .grid-panel .grid-content {
+        margin-top: -128.5px; }
+        html #main #about-grid .grid-panel .grid-content h2, body #main #about-grid .grid-panel .grid-content h2 {
+          font-size: 6em;
+          font-style: italic; }
+    html #main #about-grid:hover .grid-panel, body #main #about-grid:hover .grid-panel {
+      box-shadow: inset -1px -1px 0px #d12e2e, 0px 0px 70px black; }
+    html #main #monuments-grid #monuments-panel, body #main #monuments-grid #monuments-panel {
+      background-image: url("http://www.trzciana.pl/tl_files/content/aktualnosci/2013/07/2013-07-20/kosciol02.jpg"); }
+    html #main #monuments-grid .grid-panel, body #main #monuments-grid .grid-panel {
+      top: 0px;
+      right: 0px;
+      box-shadow: inset 1px -1px 0px #d12e2e; }
+      html #main #monuments-grid .grid-panel .grid-content, body #main #monuments-grid .grid-panel .grid-content {
+        margin-top: -104.5px; }
+        html #main #monuments-grid .grid-panel .grid-content h2, body #main #monuments-grid .grid-panel .grid-content h2 {
+          font-size: 3em; }
+    html #main #monuments-grid:hover .grid-panel, body #main #monuments-grid:hover .grid-panel {
+      box-shadow: inset 1px -1px 0px #d12e2e, 0px 0px 70px black; }
+    html #main #places-grid #places-panel, body #main #places-grid #places-panel {
+      background-image: url("http://kraj24.pl/upload/stok/big/5cf74dabaadb.jpg"); }
+    html #main #places-grid .grid-panel, body #main #places-grid .grid-panel {
+      bottom: 0px;
+      left: 0px;
+      box-shadow: inset -1px 1px 0px #d12e2e; }
+      html #main #places-grid .grid-panel .grid-content, body #main #places-grid .grid-panel .grid-content {
+        margin-top: -104.5px; }
+        html #main #places-grid .grid-panel .grid-content h2, body #main #places-grid .grid-panel .grid-content h2 {
+          font-size: 3em; }
+    html #main #places-grid:hover .grid-panel, body #main #places-grid:hover .grid-panel {
+      box-shadow: inset -1px 1px 0px #d12e2e, 0px 0px 70px black; }
+    html #main #history-grid #history-panel, body #main #history-grid #history-panel {
+      background-image: url("http://limanowacup.pl/page13/grafika/gallery/2013/ccenter.jpg"); }
+    html #main #history-grid .grid-panel, body #main #history-grid .grid-panel {
+      bottom: 0px;
+      right: 0px;
+      box-shadow: inset 1px 1px 0px #d12e2e; }
+      html #main #history-grid .grid-panel .grid-content, body #main #history-grid .grid-panel .grid-content {
+        margin-top: -104.5px; }
+        html #main #history-grid .grid-panel .grid-content h2, body #main #history-grid .grid-panel .grid-content h2 {
+          font-size: 3em; }
+    html #main #history-grid:hover .grid-panel, body #main #history-grid:hover .grid-panel {
+      box-shadow: inset 1px 1px 0px #d12e2e, 0px 0px 70px black; }
+    html #main .content-panel, body #main .content-panel {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 9999; }
+    html #main .close-button, body #main .close-button {
+      width: 80px;
+      height: 80px;
+      margin: 20px;
+      float: right;
+      border: 2px solid white;
+      border-radius: 40px;
+      cursor: pointer;
+      position: relative; }
+      html #main .close-button i, body #main .close-button i {
+        top: 1px;
+        left: -13px;
+        position: relative;
+        font-size: 76px;
+        color: white;
+        overflow: hidden; }
+      html #main .close-button:hover, body #main .close-button:hover {
+        background-color: white; }
+        html #main .close-button:hover i, body #main .close-button:hover i {
+          color: #ee4141; }
+      html #main .close-button:active, body #main .close-button:active {
+        top: 5px;
+        left: 0px; }
+    html #main #about, body #main #about {
+      background-color: #ee4141; }
+      html #main #about h2, body #main #about h2 {
+        margin: 20px;
+        float: left;
+        font-size: 4em;
+        font-style: italic;
+        font-weight: 200;
+        color: white; }
+      html #main #about p, body #main #about p {
+        margin: 20px;
+        margin-top: 150px;
+        position: absolute;
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 1.5em;
+        color: white; }
+    html #main #monuments, body #main #monuments {
+      background-color: #ee4141; }
+      html #main #monuments h2, body #main #monuments h2 {
+        margin: 20px;
+        float: left;
+        font-size: 4em;
+        font-style: italic;
+        font-weight: 200;
+        color: white; }
+      html #main #monuments p, body #main #monuments p {
+        margin: 20px;
+        margin-top: 150px;
+        position: absolute;
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 1.5em;
+        color: white; }
+    html #main #places, body #main #places {
+      background-color: #ee4141; }
+      html #main #places h2, body #main #places h2 {
+        margin: 20px;
+        float: left;
+        font-size: 4em;
+        font-style: italic;
+        font-weight: 200;
+        color: white; }
+      html #main #places p, body #main #places p {
+        margin: 20px;
+        margin-top: 150px;
+        position: absolute;
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 1.5em;
+        color: white; }
+    html #main #history, body #main #history {
+      background-color: #ee4141; }
+      html #main #history h2, body #main #history h2 {
+        margin: 20px;
+        float: left;
+        font-size: 4em;
+        font-style: italic;
+        font-weight: 200;
+        color: white; }
+      html #main #history p, body #main #history p {
+        margin: 20px;
+        margin-top: 150px;
+        position: absolute;
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 1.5em;
+        color: white; }
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+/************************************************************ END MEDIA QUERIES ************************************************************/
+.transition {
+  -webkit-transition: All 0.1s ease-in-out;
+  -moz-transition: All 0.1s ease-in-out;
+  -o-transition: All 0.1s ease-in-out;
+  transition: All 0.1s ease-in-out; }
