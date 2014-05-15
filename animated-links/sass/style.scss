@@ -1,0 +1,17 @@
+$white: rgb(255, 255, 255);
+
+$light-black: rgba(0, 0, 0, 0.5);
+
+$grey: rgb(210, 210, 210);
+$dark-grey: rgb(70, 70, 70);
+
+$blue: rgb(77, 151, 164);
+$blue-hover: rgba(77, 151, 164, 0.8);
+$blue-active: rgba(77, 151, 164, 0.9);
+
+$green: rgb(0, 208, 137);
+$green-hover: rgba(0, 208, 137, 0.8);
+$green-active: rgba(0, 208, 137, 0.9);
+
+@import "reset";
+@import "page";

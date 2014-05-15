@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  body #main {
+    top: 50%;
+    left: 50%;
+    width: 620px;
+    height: 300px;
+    margin: -150px 0 0 -350px;
+    padding: 0px 200px 0px 200px;
+    position: absolute; }
+    body #main #list {
+      width: 300px;
+      height: 325px;
+      overflow: hidden; }
+      body #main #list ul li {
+        width: 254px;
+        height: 20px;
+        margin: 2px;
+        margin-top: 15px;
+        padding: 20px;
+        display: block;
+        overflow: hidden;
+        font-size: 22px;
+        color: #f7f1e2;
+        border-radius: 2px;
+        background-color: #e4644b;
+        box-shadow: 0px 3px 0px #9e4230;
+        cursor: pointer;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
+        body #main #list ul li:hover .link-1 {
+          margin-left: -15px;
+          opacity: 0; }
+        body #main #list ul li:hover .link-2 {
+          margin-left: 125px;
+          opacity: 1; }
+        body #main #list ul li:hover .article .head {
+          display: block;
+          -webkit-animation-duration: 0.5s;
+          -webkit-animation-name: head;
+          -moz-animation-duration: 0.5s;
+          -moz-animation-name: head; }
+        body #main #list ul li:hover .article .text {
+          display: block;
+          -webkit-animation-duration: 0.5s;
+          -webkit-animation-name: text;
+          -moz-animation-duration: 0.5s;
+          -moz-animation-name: text; }
+        body #main #list ul li span {
+          position: absolute;
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          transition-property: opacity, margin-left; }
+        body #main #list ul li .link-1 {
+          margin-left: 100px; }
+        body #main #list ul li .link-2 {
+          margin-left: 68px;
+          opacity: 0; }
+        body #main #list ul li .article {
+          width: 300px;
+          margin-top: -89px;
+          margin-left: 290px;
+          position: absolute;
+          color: #bbbaba; }
+          body #main #list ul li .article .head {
+            padding: 10px;
+            display: none;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            background-color: #474141; }
+          body #main #list ul li .article .text {
+            margin-top: -1px;
+            padding: 10px;
+            display: none;
+            font-size: 16px;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-top: 1px solid #373737;
+            box-shadow: 0px 3px 0px #373737;
+            background-color: #474141; }
+
+@media all and (max-width: 1290px) {
+  body {
+    background-image: none;
+    background-color: #7a5451; } }
+@-webkit-keyframes head {
+  0% {
+    display: none;
+    opacity: 0; }
+
+  1% {
+    display: block;
+    opacity: 0; }
+
+  100% {
+    display: block;
+    opacity: 1;
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes text {
+  0% {
+    display: none;
+    opacity: 0;
+    -webkit-transform: translateY(150px); }
+
+  1% {
+    display: block;
+    opacity: 0; }
+
+  100% {
+    display: block;
+    opacity: 1; } }
+
+@keyframes head {
+  0% {
+    display: none;
+    opacity: 0; }
+
+  1% {
+    display: block;
+    opacity: 0; }
+
+  100% {
+    display: block;
+    opacity: 1;
+    transform: rotate(360deg); } }
+
+@keyframes text {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(150px); }
+
+  1% {
+    display: block;
+    opacity: 0; }
+
+  100% {
+    display: block;
+    opacity: 1; } }
