@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/error_style.css">
+    <link rel="stylesheet" href="css/fontello.css">
+</head>
+<body>
+    <section>
+        <div class="icon-ie"></div>
+        <h2>Oops! It looks like you're using old browser. To see the content please update your Internet Explorer. Don't miss this:</h2>
+            <div id="page-image"></div>
+    </section>
+    
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <script >
+    if ($.browser.msie) {               // mozilla || wekbit || opera 
+        if ($.browser.version < 9) {
+            window.location.href = '';  //redirect link
+        } 
+    }
+    </script>
+</body>
+</html>

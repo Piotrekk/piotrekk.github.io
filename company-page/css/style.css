@@ -1,0 +1,382 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /************************************************************ HEADER ************************************************************/
+  /************************************************************ END HEADER ************************************************************/
+  /************************************************************ MAIN ************************************************************/
+  /************************************************************ END MAIN ************************************************************/
+  /************************************************************ ABOUT ************************************************************/
+  /************************************************************ END ABOUT ************************************************************/
+  /************************************************************ PORTFOLIO ************************************************************/
+  /************************************************************ END PORTFOLIO ************************************************************/
+  /************************************************************ CONTACT ************************************************************/
+  /************************************************************ END CONTACT ************************************************************/
+  /************************************************************ FOOTER ************************************************************/
+  /************************************************************ END FOOTER ************************************************************/ }
+  body header {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    background-color: #4d97a4; }
+    body header #header-content {
+      max-width: 1024px;
+      margin: 0px auto;
+      padding: 0px 20px; }
+      body header #header-content h1 {
+        margin: 0px auto;
+        font-family: 'Dosis', sans-serif; }
+        body header #header-content h1 a {
+          width: 146px;
+          margin: 0px auto;
+          padding: 10px 0px;
+          display: block;
+          font-size: 40px;
+          cursor: pointer;
+          text-decoration: none;
+          color: white; }
+          body header #header-content h1 a:hover {
+            color: #d2d2d2; }
+      body header #header-content ul {
+        margin: 0px auto;
+        text-align: center; }
+        body header #header-content ul li {
+          display: inline-block; }
+          body header #header-content ul li a {
+            padding: 15px;
+            display: block;
+            font-size: 15px;
+            color: #d2d2d2;
+            cursor: pointer;
+            text-decoration: none;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease; }
+            body header #header-content ul li a:hover {
+              color: white; }
+        body header #header-content ul span {
+          display: none;
+          color: #d2d2d2; }
+  body #main {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-image: url("../img/first-sea.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: cover; }
+    body #main #main-content {
+      max-width: 1024px;
+      height: auto;
+      margin: 0px auto;
+      padding: 0px 20px; }
+      body #main #main-content h2 {
+        margin: 0px auto;
+        padding: 50px 0px;
+        font-size: 60px;
+        color: white;
+        text-align: center; }
+      body #main #main-content button {
+        width: 100%;
+        margin: 0px auto;
+        display: block;
+        padding: 10px;
+        font-size: 24px;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 2px;
+        cursor: pointer;
+        outline: none; }
+        body #main #main-content button:hover {
+          color: rgba(0, 0, 0, 0.5);
+          background-color: white;
+          border: 2px solid white; }
+      body #main #main-content ul {
+        bottom: 0px;
+        padding: 50px 0px;
+        position: relative;
+        text-align: center; }
+        body #main #main-content ul li {
+          margin: 5px;
+          padding: 8px;
+          display: inline-block;
+          cursor: pointer;
+          border-radius: 8px;
+          background-color: white;
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+        body #main #main-content ul .current-slide {
+          background-color: #4d97a4; }
+  body #about {
+    width: 100%;
+    height: auto;
+    background-color: white; }
+    body #about #about-content {
+      max-width: 1024px;
+      height: auto;
+      margin: 0px auto;
+      padding: 0px 20px; }
+      body #about #about-content h2 {
+        margin: 0px auto;
+        padding: 50px 0px;
+        font-size: 34px;
+        font-weight: 200;
+        color: #464646;
+        line-height: 1.5;
+        text-align: center; }
+      body #about #about-content p {
+        padding-bottom: 50px;
+        color: #464646;
+        line-height: 1.5;
+        text-align: center; }
+      body #about #about-content ul {
+        margin: 0px auto;
+        padding-bottom: 50px;
+        text-align: center; }
+        body #about #about-content ul li {
+          display: inline-block;
+          font-size: 50px;
+          color: #4d97a4;
+          cursor: pointer;
+          text-align: center;
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+          body #about #about-content ul li:hover {
+            color: rgba(77, 151, 164, 0.8); }
+          body #about #about-content ul li:active {
+            color: rgba(77, 151, 164, 0.9); }
+          body #about #about-content ul li.center-item-about {
+            margin: 0px 30px 0px 30px; }
+  body #portfolio {
+    width: 100%;
+    height: auto;
+    background-color: #00d089; }
+    body #portfolio #portfolio-content {
+      max-width: 1024px;
+      height: auto;
+      margin: 0px auto;
+      padding: 0px 20px;
+      overflow: hidden; }
+      body #portfolio #portfolio-content #profile-content {
+        width: auto;
+        height: auto;
+        margin: 50px auto;
+        text-align: center; }
+        body #portfolio #portfolio-content #profile-content #profile-img {
+          width: 150px;
+          height: 150px;
+          margin: 0px auto;
+          display: block;
+          border-radius: 150px;
+          background-image: url("../img/profile.jpg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          background-size: cover; }
+        body #portfolio #portfolio-content #profile-content #profile-name {
+          width: 150px;
+          height: 150px;
+          margin: 0px auto;
+          margin-top: 50px;
+          display: block;
+          overflow: hidden;
+          text-align: center; }
+          body #portfolio #portfolio-content #profile-content #profile-name h2 {
+            margin: 0px;
+            margin-top: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8); }
+          body #portfolio #portfolio-content #profile-content #profile-name span {
+            top: -175px;
+            font-size: 269px;
+            color: rgba(255, 255, 255, 0.4);
+            position: relative; }
+      body #portfolio #portfolio-content p {
+        margin: 0px auto;
+        margin-bottom: 50px;
+        color: white;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center; }
+  body #contact {
+    width: 100%;
+    height: auto;
+    overflow: hidden; }
+    body #contact #map_canvas {
+      width: 100%;
+      height: 500px;
+      position: absolute; }
+    body #contact #contact-content {
+      max-width: 400px;
+      height: 400px;
+      margin: 50px auto;
+      padding: 0px 20px;
+      position: relative;
+      overflow: hidden; }
+      body #contact #contact-content #form-content {
+        width: 100%;
+        height: 100%;
+        margin: 0px auto;
+        border-radius: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3); }
+        body #contact #contact-content #form-content form {
+          margin: 75px auto; }
+          body #contact #contact-content #form-content form input {
+            width: 200px;
+            padding: 10px;
+            font-size: 14px;
+            color: #464646;
+            border-radius: 2px;
+            border: 1px solid #d2d2d2;
+            outline: none; }
+            body #contact #contact-content #form-content form input:focus {
+              -webkit-box-shadow: inset 0 0 10px #00d089;
+              -moz-box-shadow: inset 0 0 10px #00d089;
+              box-shadow: inset 0 0 10px #00d089; }
+            body #contact #contact-content #form-content form input.center-item-input {
+              margin: 20px 0px 20px 0px; }
+          body #contact #contact-content #form-content form textarea {
+            width: 200px;
+            height: 50px;
+            padding: 10px;
+            font-size: 14px;
+            color: #464646;
+            border-radius: 2px;
+            border: 1px solid #d2d2d2;
+            resize: none;
+            outline: none; }
+            body #contact #contact-content #form-content form textarea:focus {
+              -webkit-box-shadow: inset 0 0 10px #00d089;
+              -moz-box-shadow: inset 0 0 10px #00d089;
+              box-shadow: inset 0 0 10px #00d089; }
+          body #contact #contact-content #form-content form span {
+            width: 98px;
+            margin: 20px auto;
+            display: block;
+            font-size: 70px;
+            color: #00d089;
+            cursor: pointer; }
+            body #contact #contact-content #form-content form span:hover {
+              color: rgba(0, 208, 137, 0.8); }
+            body #contact #contact-content #form-content form span:active {
+              color: rgba(0, 208, 137, 0.9); }
+  body footer {
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    background-color: #00d089; }
+  body .transition {
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    transition: All 0.5s ease; }
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 420px) {
+  body #main #main-content button {
+    width: 75%; }
+  body #portfolio #portfolio-content #profile-content #profile-img {
+    margin: 0px;
+    display: inline-block; }
+  body #portfolio #portfolio-content #profile-content #profile-name {
+    margin: 0px;
+    margin-left: 50px;
+    display: inline-block; } }
+@media all and (min-width: 770px) {
+  body header #header-content {
+    height: 80px; }
+    body header #header-content h1 {
+      margin: 10px 0px;
+      float: left; }
+    body header #header-content ul {
+      margin: 16px 0px;
+      float: right; }
+      body header #header-content ul li a {
+        font-size: 18px; }
+      body header #header-content ul span {
+        display: inline-block; }
+  body #main #main-content h2 {
+    padding: 100px 0px 50px 0px; }
+  body #main #main-content button {
+    width: 50%;
+    margin-bottom: 100px; }
+  body #about #about-content ul li.center-item-about {
+    margin: 0px 60px 0px 60px; } }
+@media all and (min-width: 1024px) {
+  body header #header-content {
+    padding: 0px; }
+  body #main #main-content {
+    padding: 0px; }
+    body #main #main-content h2 {
+      width: 800px; }
+    body #main #main-content button {
+      width: 25%; }
+  body #about #about-content {
+    padding: 0px; }
+    body #about #about-content h2 {
+      width: 800px; }
+    body #about #about-content ul li.center-item-about {
+      margin: 0px 100px 0px 100px; }
+  body #portfolio #portfolio-content {
+    padding: 0px; }
+    body #portfolio #portfolio-content p {
+      width: 800px; } }
+/************************************************************ END MEDIA QUERIES ************************************************************/

@@ -1,0 +1,462 @@
+body {
+    //font-family: 'Dosis', sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    
+/************************************************************ HEADER ************************************************************/
+    header {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        background-color: $blue;
+        #header-content {
+            max-width: 1024px;
+            margin: 0px auto;
+            padding: 0px 20px;
+            h1 {
+                margin: 0px auto;
+                font-family: 'Dosis', sans-serif;
+                a {
+                    width: 146px;
+                    margin: 0px auto;
+                    padding: 10px 0px;
+                    display: block;
+                    font-size: 40px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: $white;
+                    &:hover {
+                        color: $grey;
+                    }
+                }
+            }
+            ul {
+                margin: 0px auto;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    a {
+                        padding: 15px;
+                        display: block;
+                        font-size: 15px;
+                        color: $grey;
+                        cursor: pointer;
+                        text-decoration: none;
+                        -webkit-transition: all 0.5s ease;
+                        -moz-transition: all 0.5s ease;
+                        -o-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+                span {
+                    display: none;
+                    color: $grey;
+                }
+            }
+        }
+    }
+/************************************************************ END HEADER ************************************************************/
+    
+/************************************************************ MAIN ************************************************************/
+    #main {
+        width: 100%;
+        height: auto;
+        position: relative;
+        background-image: url('../img/first-sea.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-size: cover;
+        #main-content {
+            max-width: 1024px;
+            height: auto;
+            margin: 0px auto;
+            padding: 0px 20px;
+            h2 {
+                margin: 0px auto;
+                padding: 50px 0px;
+                font-size: 60px;
+                color: $white;
+                text-align: center;
+            }
+            button {
+                width: 100%;
+                margin: 0px auto;
+                display: block;
+                padding: 10px;
+                font-size: 24px;
+                color: $white;
+                background-color: transparent;
+                border: 2px solid $white;
+                border-radius: 2px;
+                cursor: pointer;
+                outline: none;
+                &:hover {
+                    color: $light-black;
+                    background-color: $white;
+                    border: 2px solid $white;
+                }
+            }
+            ul {
+                bottom: 0px;
+                padding: 50px 0px;
+                position: relative;
+                text-align: center;
+                li {
+                    margin: 5px;
+                    padding: 8px;
+                    display: inline-block;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    background-color: $white;
+                    -webkit-transition: all 0.5s ease;
+                    -moz-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                }
+                .current-slide {
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+/************************************************************ END MAIN ************************************************************/
+    
+/************************************************************ ABOUT ************************************************************/
+    #about {
+        width: 100%;
+        height: auto;
+        background-color: $white;
+        #about-content {
+            max-width: 1024px;
+            height: auto;
+            margin: 0px auto;
+            padding: 0px 20px;
+            h2 {
+                margin: 0px auto;
+                padding: 50px 0px;
+                font-size: 34px;
+                font-weight: 200;
+                color: $dark-grey;
+                line-height: 1.5;
+                text-align: center;
+            }
+            p {
+                padding-bottom: 50px;
+                color: $dark-grey;
+                line-height: 1.5;
+                text-align: center;
+            }
+            ul {
+                margin: 0px auto;
+                padding-bottom: 50px;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    font-size: 50px;
+                    color: $blue;
+                    cursor: pointer;
+                    text-align: center;
+                    -webkit-transition: all 0.5s ease;
+                    -moz-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
+                    transition: all 0.5s ease;
+                    &:hover {
+                        color: $blue-hover;
+                    }
+                    &:active {
+                        color: $blue-active;
+                    }
+                    &.center-item-about {
+                        margin: 0px 30px 0px 30px;
+                    }
+                }
+            }
+        }
+    }
+    /************************************************************ END ABOUT ************************************************************/
+    
+    /************************************************************ PORTFOLIO ************************************************************/
+    #portfolio {
+        width: 100%;
+        height: auto;
+        background-color: $green;
+        #portfolio-content {
+            max-width: 1024px;
+            height: auto;
+            margin: 0px auto;
+            padding: 0px 20px;
+            overflow: hidden;
+            #profile-content {
+                width: auto;
+                height: auto;
+                margin: 50px auto;
+                text-align: center;
+                #profile-img {
+                    width: 150px;
+                    height: 150px;
+                    margin: 0px auto;
+                    display: block;
+                    border-radius: 150px;
+                    background-image: url('../img/profile.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    background-size: cover;
+                }
+                #profile-name {
+                    width: 150px;
+                    height: 150px;
+                    margin: 0px auto;
+                    margin-top: 50px;
+                    display: block;
+                    overflow: hidden;
+                    text-align: center;
+                    h2 {
+                      margin: 0px;
+                      margin-top: 12px;
+                      font-size: 24px;
+                      font-weight: bold;
+                      color: rgba(255, 255, 255, 0.8);  
+                    }
+                    span {
+                        top: -175px;
+                        font-size: 269px;
+                        color: rgba(255, 255, 255, 0.4);
+                        position: relative;
+                    }
+                }
+            }
+            p {
+                margin: 0px auto;
+                margin-bottom: 50px;
+                color: $white;
+                font-size: 18px;
+                line-height: 1.5;
+                text-align: center;
+            }
+        }
+    }
+    /************************************************************ END PORTFOLIO ************************************************************/
+    
+    /************************************************************ CONTACT ************************************************************/
+    #contact {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        #map_canvas {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+        }
+        #contact-content {
+            max-width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            padding: 0px 20px;
+            position: relative;
+            overflow: hidden;
+            #form-content {
+                width: 100%;
+                height: 100%;
+                margin: 0px auto;
+                border-radius: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+                overflow: hidden;
+                box-shadow: 0px 0px 4px rgba(0, 0, 0 , 0.3);
+                form {
+                    margin: 75px auto;
+                    input {
+                        width: 200px;
+                        padding: 10px;
+                        font-size: 14px;
+                        color: $dark-grey;
+                        border-radius: 2px;
+                        border: 1px solid $grey;
+                        outline: none;
+    					&:focus {
+    						-webkit-box-shadow: inset 0 0 10px $green;
+    						-moz-box-shadow: inset 0 0 10px $green;
+    						box-shadow: inset 0 0 10px $green;
+    					}
+                        &.center-item-input {
+                            margin: 20px 0px 20px 0px;
+                        }
+                    }
+                    textarea {
+                        width: 200px;
+                        height: 50px;
+                        padding: 10px;
+                        font-size: 14px;
+                        color: $dark-grey;
+                        border-radius: 2px;
+                        border: 1px solid $grey;
+                        resize: none;
+                        outline: none;
+    					&:focus {
+    						-webkit-box-shadow: inset 0 0 10px $green;
+    						-moz-box-shadow: inset 0 0 10px $green;
+    						box-shadow: inset 0 0 10px $green;
+    					}
+                    }
+                    span {
+                        width: 98px;
+                        margin: 20px auto;
+                        display: block;
+                        font-size: 70px;
+                        color: $green;
+                        cursor: pointer;
+                        &:hover {
+                            color: $green-hover;
+                        }
+                        &:active {
+                            color: $green-active;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /************************************************************ END CONTACT ************************************************************/
+    
+    /************************************************************ FOOTER ************************************************************/
+    footer {
+        padding: 20px;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        background-color: $green;
+    }
+    /************************************************************ END FOOTER ************************************************************/
+    
+    .transition {
+        -webkit-transition: All 0.5s ease;
+        -moz-transition: All 0.5s ease;
+        -o-transition: All 0.5s ease;
+        transition: All 0.5s ease;
+    }
+}
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 420px) {
+    body {
+        #main {
+            #main-content {
+                button {
+                    width: 75%;
+                }
+            }
+        }
+        #portfolio {
+            #portfolio-content {
+                #profile-content {
+                    #profile-img {
+                        margin: 0px;
+                        display: inline-block;
+                    }
+                    #profile-name {
+                        margin: 0px;
+                        margin-left: 50px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 770px) {
+    body {
+        header {
+            #header-content {
+                height: 80px;
+                h1 {
+                    margin: 10px 0px;
+                    float: left;
+                }
+                ul {
+                    margin: 16px 0px;
+                    float: right;
+                    li {
+                        a {
+                            font-size: 18px;
+                        }
+                    }
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        #main {
+            #main-content {
+                h2 {
+                    padding: 100px 0px 50px 0px;
+                }
+                button {
+                    width: 50%;
+                    margin-bottom: 100px;
+                }
+            }
+        }
+        #about {
+            #about-content {
+                ul {
+                    li {
+                        &.center-item-about {
+                            margin: 0px 60px 0px 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (min-width: 1024px) {
+    body {
+        header {
+            #header-content {
+                padding: 0px;
+            }
+        }
+        #main {
+            #main-content {
+                padding: 0px;
+                h2 {
+                    width: 800px;
+                }
+                button {
+                    width: 25%;
+                }
+            }
+        }
+        #about {
+            #about-content {
+                padding: 0px;
+                h2 {
+                    width: 800px;
+                }
+                ul {
+                    li {
+                        &.center-item-about {
+                            margin: 0px 100px 0px 100px;
+                        }
+                    }
+                }
+            }
+        }
+        #portfolio {
+            #portfolio-content {
+                padding: 0px;
+                p {
+                    width: 800px;
+                }
+            }
+        }
+    }
+}
+/************************************************************ END MEDIA QUERIES ************************************************************/
