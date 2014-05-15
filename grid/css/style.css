@@ -1,0 +1,193 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased; }
+  html #main, body #main {
+    height: 100%; }
+    html #main .grid, body #main .grid {
+      width: 50%;
+      min-height: 200px;
+      height: 25%;
+      float: left;
+      z-index: 10;
+      background-color: green; }
+      html #main .grid .grid-content, body #main .grid .grid-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.6); }
+        html #main .grid .grid-content .arrow, body #main .grid .grid-content .arrow {
+          width: 20px;
+          height: 20px;
+          bottom: -20px;
+          left: calc(50% - 5px);
+          position: absolute;
+          z-index: 999;
+          -webkit-transform: rotate(45deg);
+          opacity: 0;
+          -webkit-box-shadow: inset 6px 6px 6px -4px rgba(0, 0, 0, 0.35);
+          visibility: hidden; }
+        html #main .grid .grid-content:hover, body #main .grid .grid-content:hover {
+          background-color: transparent; }
+      html #main .grid .panel, body #main .grid .panel {
+        width: 100%;
+        height: 100px;
+        left: 0px;
+        float: left;
+        position: absolute;
+        z-index: -9999;
+        opacity: 1;
+        -webkit-box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.35); }
+    html #main #one, body #main #one {
+      background-image: url("images/changes.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover; }
+      html #main #one .one-content div, body #main #one .one-content div {
+        background-color: #fffdee; }
+      html #main #one #one-panel, body #main #one #one-panel {
+        height: 300px; }
+      html #main #one .panel, body #main #one .panel {
+        background-color: #fffdee; }
+    html #main #two, body #main #two {
+      background-image: url("images/native.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover; }
+      html #main #two .two-content div, body #main #two .two-content div {
+        background-color: #4894af; }
+      html #main #two #two-panel, body #main #two #two-panel {
+        height: 150px; }
+      html #main #two .panel, body #main #two .panel {
+        background-color: #4894af; }
+    html #main #three, body #main #three {
+      background-image: url("images/escapology.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover; }
+      html #main #three .three-content div, body #main #three .three-content div {
+        background-color: #3f211c; }
+      html #main #three .panel, body #main #three .panel {
+        background-color: #3f211c; }
+    html #main #four, body #main #four {
+      background-image: url("images/badblood.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover; }
+      html #main #four .four-content div, body #main #four .four-content div {
+        background-color: #005555; }
+      html #main #four #four-panel, body #main #four #four-panel {
+        height: 200px; }
+      html #main #four .panel, body #main #four .panel {
+        background-color: #005555; }
+    html #main #five, body #main #five {
+      background-image: url("images/toca.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover; }
+      html #main #five .five-content div, body #main #five .five-content div {
+        background-color: black; }
+      html #main #five #five-panel, body #main #five #five-panel {
+        height: 250px; }
+      html #main #five .panel, body #main #five .panel {
+        background-color: black; }
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 600px) {
+  body #main .grid {
+    width: calc(100% / 3); } }
+@media all and (min-width: 880px) {
+  body #main .grid {
+    width: 25%; } }
+@media all and (min-width: 1150px) {
+  body #main .grid {
+    width: 20%; } }
+@media all and (min-width: 1330px) {
+  body #main .grid {
+    width: calc(100% / 6); } }
+@media all and (min-width: 1600px) {
+  body #main .grid {
+    width: calc(100% / 7); } }
+/************************************************************ END MEDIA QUERIES ************************************************************/
+.transition {
+  -webkit-transition: All 0.1s ease-in-out;
+  -moz-transition: All 0.1s ease-in-out;
+  -o-transition: All 0.1s ease-in-out;
+  transition: All 0.1s ease-in-out; }
+
+.one-panel-opened {
+  margin-top: 300px; }
+
+.two-panel-opened {
+  margin-top: 150px; }
+
+.three-panel-opened {
+  margin-top: 100px; }
+
+.four-panel-opened {
+  margin-top: 200px; }
+
+.five-panel-opened {
+  margin-top: 250px; }
+
+.panel-index {
+  z-index: 99 !important; }
+
+.box-visible {
+  background-color: transparent !important; }
+
+.arrow-visible {
+  opacity: 1 !important;
+  bottom: -11px !important;
+  visibility: visible !important; }

@@ -1,0 +1,220 @@
+html, body {
+  height: 100%;
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  #main {
+    //min-width: 1480px;
+    height: 100%;
+    .grid {
+      width: 50%;
+      min-height: 200px;
+      height: 25%;
+      float: left;
+      z-index: 10;
+      background-color: green;
+      .grid-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.6);
+        .arrow {
+          width: 20px;
+          height: 20px;
+          bottom: -20px;
+          left: calc(50% - 5px);
+          position: absolute;
+          z-index: 999;
+          -webkit-transform: rotate(45deg);
+          opacity: 0;
+          -webkit-box-shadow: inset 6px 6px 6px -4px rgba(0, 0, 0, 0.35);
+          visibility: hidden;
+        }
+        &:hover {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+      .panel {
+        width: 100%;
+        height: 100px;
+        left: 0px;
+        float: left;
+        position: absolute;
+        z-index: -9999;
+        opacity: 1;
+        -webkit-box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.35);
+      }
+    }
+    #one {
+      background-image: url('images/changes.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      .one-content {
+        div {
+          background-color: rgb(255, 253, 238);
+        }
+      }
+      #one-panel {
+        height: 300px;
+      }
+      .panel {
+        background-color: rgb(255, 253, 238);
+      }
+    }
+    #two {
+      background-image: url('images/native.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      .two-content {
+        div {
+          background-color: rgb(72, 148, 175);
+        }
+      }
+      #two-panel {
+        height: 150px;
+      }
+      .panel {
+        background-color: rgb(72, 148, 175);
+      }
+    }
+    #three {
+      background-image: url('images/escapology.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      .three-content {
+        div {
+          background-color: rgb(63, 33, 28);
+        }
+      }
+      .panel {
+        background-color: rgb(63, 33, 28);
+      }
+    }
+    #four {
+      background-image: url('images/badblood.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      .four-content {
+        div {
+          background-color: rgb(0, 85, 85);
+        }
+      }
+      #four-panel {
+        height: 200px;
+      }
+      .panel {
+        background-color: rgb(0, 85, 85);
+      }
+    }
+    #five {
+      background-image: url('images/toca.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      .five-content {
+        div {
+          background-color: rgb(0, 0, 0);
+        }
+      }
+      #five-panel {
+        height: 250px;
+      }
+      .panel {
+        background-color: rgb(0, 0, 0);
+      }
+    }
+  }
+}
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 600px) {
+  body {
+    #main {
+      .grid {
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 880px) {
+  body {
+    #main {
+      .grid {
+        width: 25%;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1150px) {
+  body {
+    #main {
+      .grid {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1330px) {
+  body {
+    #main {
+      .grid {
+        width: calc(100% / 6);
+      }
+    }
+  }
+}
+@media all and (min-width: 1600px) {
+  body {
+    #main {
+      .grid {
+        width: calc(100% / 7);
+      }
+    }
+  }
+}
+/************************************************************ END MEDIA QUERIES ************************************************************/
+.transition {
+  -webkit-transition: All 0.1s ease-in-out;
+  -moz-transition: All 0.1s ease-in-out;
+  -o-transition: All 0.1s ease-in-out;
+  transition: All 0.1s ease-in-out;
+}
+.one-panel-opened {
+  margin-top: 300px;
+}
+.two-panel-opened {
+  margin-top: 150px;
+}
+.three-panel-opened{
+  margin-top: 100px;
+}
+.four-panel-opened {
+  margin-top: 200px;
+}
+.five-panel-opened {
+  margin-top: 250px;
+}
+
+
+.panel-index {
+  z-index: 99 !important;
+}
+.box-visible {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.arrow-visible {
+  opacity: 1 !important;
+  bottom: -11px !important;
+  visibility: visible !important;
+}
