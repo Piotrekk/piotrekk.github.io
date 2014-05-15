@@ -1,0 +1,358 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  font-family: 'Jura', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100%; }
+  html #main, body #main {
+    width: 100%;
+    height: 100%; }
+    html #main div.grid, body #main div.grid {
+      width: 100%;
+      height: auto; }
+    html #main #title, body #main #title {
+      background-color: #c7f464; }
+      html #main #title .title-content p, body #main #title .title-content p {
+        margin: 0px 25px 0px 25px;
+        padding: 75px 0px 75px 0px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
+        color: white; }
+    html #main #school, body #main #school {
+      background-color: #4ecdc4; }
+      html #main #school .school-content p, body #main #school .school-content p {
+        margin: 0px 25px 0px 25px;
+        padding: 75px 0px 75px 0px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
+        color: white; }
+    html #main #projects, body #main #projects {
+      background-color: #ff6b6b;
+      text-align: center; }
+      html #main #projects ul, body #main #projects ul {
+        width: 200px;
+        height: 134px;
+        margin: 0px auto;
+        padding-bottom: 75px; }
+        html #main #projects ul li, body #main #projects ul li {
+          height: 54px; }
+          html #main #projects ul li a, body #main #projects ul li a {
+            font-size: 25px;
+            color: #556270;
+            text-decoration: underline; }
+            html #main #projects ul li a:hover, body #main #projects ul li a:hover {
+              text-decoration: none; }
+      html #main #projects .projects-content p, body #main #projects .projects-content p {
+        margin: 0px 25px 0px 25px;
+        padding: 75px 0px 75px 0px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
+        color: white; }
+    html #main #contact, body #main #contact {
+      background-color: #556270; }
+      html #main #contact #contact-form, body #main #contact #contact-form {
+        width: 232px;
+        margin: 0px auto;
+        padding-bottom: 75px;
+        position: relative; }
+        html #main #contact #contact-form input, html #main #contact #contact-form textarea, body #main #contact #contact-form input, body #main #contact #contact-form textarea {
+          width: 200px;
+          margin: 10px;
+          padding: 5px;
+          display: block;
+          font-family: 'Jura', sans-serif;
+          font-size: 14px;
+          color: white;
+          background-color: #ff6b6b;
+          border: 1px solid #ff6b6b;
+          outline: none; }
+          html #main #contact #contact-form input:focus, html #main #contact #contact-form textarea:focus, body #main #contact #contact-form input:focus, body #main #contact #contact-form textarea:focus {
+            border: 1px solid #4ecdc4; }
+        html #main #contact #contact-form textarea, body #main #contact #contact-form textarea {
+          height: 37px;
+          resize: none;
+          font-family: 'Jura', sans-serif; }
+        html #main #contact #contact-form .submit-button, body #main #contact #contact-form .submit-button {
+          width: 212px;
+          color: white;
+          background-color: #4ecdc4;
+          border: 1px solid #4ecdc4; }
+          html #main #contact #contact-form .submit-button:hover, body #main #contact #contact-form .submit-button:hover {
+            border: 1px solid #ff6b6b; }
+          html #main #contact #contact-form .submit-button:active, body #main #contact #contact-form .submit-button:active {
+            background-color: #ff6b6b; }
+      html #main #contact .contact-content p, body #main #contact .contact-content p {
+        margin: 0px 25px 0px 25px;
+        padding: 75px 0px 75px 0px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 100;
+        color: white; }
+    html #main #circle, body #main #circle {
+      display: none; }
+
+.transition {
+  -webkit-transition: All 0.8s ease-in-out;
+  -moz-transition: All 0.5s ease-in-out;
+  -o-transition: All 0.5s ease-in-out;
+  transition: All 0.5s ease-in-out; }
+
+/************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (min-width: 420px) {
+  body #main div.grid {
+    min-width: 300px; } }
+@media all and (min-width: 1024px) {
+  body #main {
+    position: relative; }
+    body #main div.grid {
+      min-width: 500px;
+      width: 50%;
+      min-height: 200px;
+      height: 50%;
+      float: left; }
+    body #main #title {
+      background-image: url("https://scontent-b-cdg.xx.fbcdn.net/hphotos-ash3/523417_463546267001038_88155853_n.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      z-index: 9999;
+      overflow: hidden; }
+      body #main #title .title-content {
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        position: relative;
+        background-color: #c7f464;
+        opacity: 0; }
+        body #main #title .title-content p {
+          top: 50%;
+          left: 50%;
+          max-width: 475px;
+          height: 100px;
+          margin: -50px 0 0 -237.5px;
+          padding: 0px 20px 0px 20px;
+          position: absolute;
+          text-align: center;
+          font-size: 50px;
+          font-weight: 100;
+          color: white; }
+      body #main #title .slide-title {
+        top: 0px;
+        opacity: 0.99999; }
+    body #main #school {
+      background-image: url("https://scontent-a-cdg.xx.fbcdn.net/hphotos-prn1/60760_112106195640854_284414681_n.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: cover;
+      position: relative; }
+      body #main #school .school-content {
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        position: absolute;
+        background-color: #c7f464;
+        opacity: 0; }
+        body #main #school .school-content p {
+          top: 50%;
+          left: 50%;
+          max-width: 90%;
+          max-height: 150px;
+          margin: -75px 0 0 -45%;
+          padding: 0px 20px 0px 20px;
+          position: absolute;
+          text-align: center;
+          font-size: 50px;
+          font-weight: 100;
+          color: white; }
+      body #main #school .slide-school {
+        left: 0px;
+        opacity: 0.9999; }
+    body #main #projects {
+      position: relative; }
+      body #main #projects ul {
+        top: 50%;
+        left: 50%;
+        margin: -67px 0 0 -100px;
+        position: absolute; }
+        body #main #projects ul li a {
+          font-size: 25px;
+          color: #556270;
+          text-decoration: underline; }
+          body #main #projects ul li a:hover {
+            text-decoration: none; }
+      body #main #projects .projects-content {
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        position: relative;
+        background-color: #4ecdc4;
+        opacity: 0;
+        z-index: 9999; }
+        body #main #projects .projects-content p {
+          top: 50%;
+          left: 50%;
+          max-width: 222px;
+          height: 50px;
+          margin: -25px 0 0 -111px;
+          padding: 0px 20px 0px 20px;
+          position: absolute;
+          text-align: center;
+          font-size: 50px;
+          font-weight: 100;
+          color: white; }
+      body #main #projects .slide-projects {
+        left: 0px;
+        opacity: 0.99999; }
+    body #main #contact {
+      position: relative;
+      overflow: hidden; }
+      body #main #contact #contact-form {
+        position: absolute;
+        width: 232px;
+        height: 180px;
+        top: 50%;
+        left: 50%;
+        margin: -90px 0 0 -116px; }
+        body #main #contact #contact-form input, body #main #contact #contact-form textarea {
+          width: 200px;
+          margin: 10px;
+          padding: 5px;
+          display: block;
+          font-family: 'Jura', sans-serif;
+          font-size: 14px;
+          color: white;
+          background-color: #ff6b6b;
+          border: 1px solid #ff6b6b;
+          outline: none; }
+          body #main #contact #contact-form input:focus, body #main #contact #contact-form textarea:focus {
+            border: 1px solid #4ecdc4; }
+        body #main #contact #contact-form textarea {
+          height: 37px;
+          resize: none;
+          font-family: 'Jura', sans-serif; }
+        body #main #contact #contact-form .submit-button {
+          width: 212px;
+          color: white;
+          background-color: #4ecdc4;
+          border: 1px solid #4ecdc4; }
+          body #main #contact #contact-form .submit-button:hover {
+            border: 1px solid #ff6b6b; }
+          body #main #contact #contact-form .submit-button:active {
+            background-color: #ff6b6b; }
+      body #main #contact .contact-content {
+        width: 100%;
+        height: 100%;
+        bottom: -100%;
+        position: relative;
+        background-color: #4ecdc4;
+        opacity: 0;
+        z-index: 9999; }
+        body #main #contact .contact-content p {
+          top: 50%;
+          left: 50%;
+          width: 167px;
+          height: 50px;
+          margin: -25px 0 0 -83.5px;
+          padding: 0px;
+          position: absolute;
+          text-align: center;
+          font-size: 50px;
+          font-weight: 100;
+          color: white; }
+      body #main #contact .slide-contact {
+        bottom: 0px;
+        opacity: 0.99999; }
+    body #main #circle {
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      left: 50%;
+      margin: -25px 0 0 -25px;
+      display: block;
+      border-radius: 50px;
+      background-color: #f9f2e7;
+      position: absolute;
+      z-index: 999999999;
+      text-align: center;
+      overflow: hidden; }
+      body #main #circle .first-alert {
+        width: 18px;
+        height: 30px;
+        top: 50%;
+        left: 50%;
+        margin: -15px 0 0 -9px;
+        position: absolute;
+        font-size: 30px;
+        font-weight: bold;
+        color: #464646; }
+      body #main #circle .second-alert {
+        width: 86px;
+        height: 18px;
+        top: 50%;
+        left: 50%;
+        margin: -9px 0 0 -43px;
+        font-weight: bold;
+        color: #464646;
+        position: absolute;
+        opacity: 0; }
+      body #main #circle:hover {
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px; }
+        body #main #circle:hover .first-alert {
+          opacity: 0; }
+        body #main #circle:hover .second-alert {
+          display: block;
+          opacity: 1; } }
+/************************************************************ END MEDIA QUERIES ************************************************************/
