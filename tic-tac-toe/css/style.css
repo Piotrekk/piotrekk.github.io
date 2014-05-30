@@ -52,7 +52,6 @@ body {
   position: relative; }
   body #main {
     display: table;
-    margin: 0px auto;
     margin-top: 100px;
     width: 500px;
     left: 50%;
@@ -122,6 +121,7 @@ body {
             visibility: hidden;
             opacity: 0; }
           body #main #main-content #main-game .box .icon-cancel-1 {
+            width: 0px;
             margin-top: -8px;
             margin-left: -48px;
             display: inline-block;
@@ -221,3 +221,35 @@ body {
 .notvisible {
   visibility: hidden !important;
   opacity: 0 !important; }
+
+@media all and (max-width: 600px) {
+  body {
+    overflow-y: hidden; }
+    body #main {
+      width: 350px;
+      margin-top: 25px;
+      margin-left: -175px;
+      margin-bottom: 25px; }
+      body #main #main-content {
+        width: 350px;
+        height: auto; }
+        body #main #main-content .start-game-button {
+          margin-bottom: 20px !important;
+          display: block; }
+        body #main #main-content #wins, body #main #main-content #loses, body #main #main-content #ties {
+          float: none;
+          display: inline-block; }
+        body #main #main-content h2 {
+          margin: 10px;
+          margin-left: 10px; }
+        body #main #main-content #main-game {
+          width: 350px;
+          height: 350px; }
+          body #main #main-content #main-game .box {
+            font-size: 60px; }
+            body #main #main-content #main-game .box .icon-circle-empty {
+              margin-top: 14px;
+              margin-left: -5px; }
+            body #main #main-content #main-game .box .icon-cancel-1 {
+              margin-top: -12px;
+              margin-left: -40px; } }

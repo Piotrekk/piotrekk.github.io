@@ -83,6 +83,7 @@ $(document).ready(function(){
 				if ((Sa != -1 && Sb != -1 && Sc != -1) || (Sd != -1 && Se != -1 && Sf != -1) || (Sg != -1 && Sh != -1 && Si != -1) || (Sa != -1 && Sd != -1 && Sg != -1) || (Sb != -1 && Se != -1 && Sh != -1) || (Sc != -1 && Sf != -1 && Si != -1) || (Sa != -1 && Se != -1 && Si != -1) || (Sc != -1 && Se != -1 && Sg != -1)) {
 		 			// Reset opponent[] array
 		 			opponent = [];
+		 			
 		 			// Change a tie variable to check if It's a tie
 		 			tie = 2;
 

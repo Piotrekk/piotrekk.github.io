@@ -5,7 +5,6 @@ body {
   position: relative;
   #main {
     display: table;
-    margin: 0px auto;
     margin-top: 100px;
     width: 500px;
     left: 50%;
@@ -83,6 +82,7 @@ body {
             opacity: 0;
           }
           .icon-cancel-1 {
+            width: 0px;
             margin-top: -8px;
             margin-left: -48px;
             display: inline-block;
@@ -208,3 +208,45 @@ body {
   visibility: hidden !important;
   opacity: 0 !important;
 }
+@media all and (max-width: 600px) {
+  body {
+    overflow-y: hidden;
+    #main {
+      width: 350px;
+      margin-top: 25px;
+      margin-left: -175px;
+      margin-bottom: 25px;
+      #main-content {
+        width: 350px;
+        height: auto;
+        .start-game-button {
+          margin-bottom: 20px !important;
+          display: block;
+        }
+        #wins, #loses, #ties {
+          float: none;
+          display: inline-block;
+        }
+        h2 {
+          margin: 10px;
+          margin-left: 10px;
+        }
+        #main-game {
+          width: 350px;
+          height: 350px;
+          .box {
+            font-size: 60px;
+            .icon-circle-empty {
+              margin-top: 14px;
+              margin-left: -5px;
+            }
+            .icon-cancel-1 {
+              margin-top: -12px;
+              margin-left: -40px;
+            }
+          }
+        }
+      }
+    }
+  }
+} 
