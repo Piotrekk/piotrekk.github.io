@@ -4,131 +4,150 @@ body {
   background-color: $blue;
   position: relative;
   #main {
+    display: table;
+    margin: 0px auto;
+    margin-top: 100px;
     width: 500px;
-    height: 650px;
-    top: 50%;
     left: 50%;
-    margin: -325px 0px 0px -250px;
-    float: left;
-    position: relative;
-    #new-start {
-      margin: 0px;
-      padding: 18.5px 15px;
-      background-color: $grey;
-      box-shadow: 0px 5px 0px rgb(54, 62, 71);
-      &:active {
-        margin-top: 4px;
-        box-shadow: 0px 5px 0px $blue;
-      }
-    }
-  #wins, #loses, #ties {
-    padding: 10px 15px;
-    float: right;
-    color: $white;
-    font-weight: bold;
-    text-align: center;
-    background-color: $red;
-    border-radius: 4px;
-    .counter {
-      display: inline-block;
-      margin-top: 5px;
-      color: $green;
-      font-size: 32px;;
-    }
-  }
-  #loses {
-    margin: 0px 25px;
-  }
-  #main-game {
-    width: 500px;
-    height: 500px;
-    bottom: 0px;
-    display: none;
-    float: left;
+    margin-left: -250px;
     position: absolute;
-    background-color: $blue;
-    .box {
-      width: calc(100% / 3);
-      height: calc(100% / 3);
+    #main-content {
+      width: 500px;
+      height: 650px;
       display: inline-block;
-      float: left;
-      font-size: 80px;
-      background-color: $red;
-      cursor: pointer;
-      span {
-        -webkit-transition: All 0.2s ease-in-out;
-        -moz-transition: All 0.2s ease-in-out;
-        -o-transition: All 0.2s ease-in-out;
-        transition: All 0.2s ease-in-out; 
+      vertical-align: middle;
+      margin: 0px auto;
+      #new-start {
+        margin: 0px;
+        padding: 18.5px 15px;
+        background-color: $grey;
+        box-shadow: 0px 5px 0px rgb(54, 62, 71);
+        &:active {
+          top: 4px;
+          box-shadow: 0px 5px 0px $blue;
+        }
       }
-      .icon-circle-empty {
-        margin-top: 25px;
-        margin-left: -1px;
+      #wins, #loses, #ties {
+        padding: 10px 15px;
+        float: right;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        background-color: $red;
+        border-radius: 4px;
+        .counter {
+          display: inline-block;
+          margin-top: 5px;
+          color: $green;
+          font-size: 32px;;
+        }
+      }
+      #loses {
+        margin: 0px 25px;
+      }
+      h2 {
+        margin: 25px;
+        margin-left: 0px;
         display: inline-block;
-        position: absolute;
-        font-size: 150%; 
-        color: $green;
-        visibility: hidden;
-        opacity: 0;
+        color: $grey;
+        font-weight: bold;
       }
-      .icon-cancel-1 {
-        margin-top: -8px;
-        margin-left: -48px;
-        display: inline-block;
-        position: absolute;
-        font-size: 235%; 
-        color: $green;
-        visibility: hidden;
-        opacity: 0;
+      #main-game {
+        width: 500px;
+        height: 500px;
+        display: none;
+        float: left;
+        background-color: $blue;
+        .box {
+          width: calc(100% / 3);
+          height: calc(100% / 3);
+          display: inline-block;
+          float: left;
+          font-size: 80px;
+          background-color: $red;
+          cursor: pointer;
+          span {
+            -webkit-transition: All 0.2s ease-in-out;
+            -moz-transition: All 0.2s ease-in-out;
+            -o-transition: All 0.2s ease-in-out;
+            transition: All 0.2s ease-in-out; 
+          }
+          .icon-circle-empty {
+            margin-top: 25px;
+            margin-left: -1px;
+            display: inline-block;
+            position: absolute;
+            font-size: 150%; 
+            color: $green;
+            visibility: hidden;
+            opacity: 0;
+          }
+          .icon-cancel-1 {
+            margin-top: -8px;
+            margin-left: -48px;
+            display: inline-block;
+            position: absolute;
+            font-size: 235%; 
+            color: $green;
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+        #one {
+          border-top-left-radius: 4px;
+          box-shadow: inset 0px -2px 0px $grey, inset -2px 0px 0px $grey;
+        }
+        #two {
+          box-shadow: inset 0px -2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
+        }
+        #three {
+          border-top-right-radius: 4px;
+          box-shadow: inset 0px -2px 0px $grey, inset 2px 0px 0px $grey;
+        }
+        #four {
+          box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset -2px 0px 0px $grey;
+        }
+        #five {
+          box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
+        }
+        #six {
+          box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset 2px 0px 0px $grey;
+        }
+        #seven {
+          border-bottom-left-radius: 4px;
+          box-shadow: inset 0px 2px 0px $grey, inset -2px 0px 0px $grey;
+        }
+        #eight {
+          box-shadow: inset 0px 2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
+        }
+        #nine {
+          border-bottom-right-radius: 4px;
+          box-shadow: inset 0px 2px 0px $grey, inset 2px 0px 0px $grey;
+        }
       }
-    }
-    #one {
-      border-top-left-radius: 4px;
-      box-shadow: inset 0px -2px 0px $grey, inset -2px 0px 0px $grey;
-    }
-    #two {
-      box-shadow: inset 0px -2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
-    }
-    #three {
-      border-top-right-radius: 4px;
-      box-shadow: inset 0px -2px 0px $grey, inset 2px 0px 0px $grey;
-    }
-    #four {
-      box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset -2px 0px 0px $grey;
-    }
-    #five {
-      box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
-    }
-    #six {
-      box-shadow: inset 0px 2px 0px $grey, inset 0px -2px 0px $grey, inset 2px 0px 0px $grey;
-    }
-    #seven {
-      border-bottom-left-radius: 4px;
-      box-shadow: inset 0px 2px 0px $grey, inset -2px 0px 0px $grey;
-    }
-    #eight {
-      box-shadow: inset 0px 2px 0px $grey, inset -2px 0px 0px $grey, inset 2px 0px 0px $grey;
-    }
-    #nine {
-      border-bottom-right-radius: 4px;
-      box-shadow: inset 0px 2px 0px $grey, inset 2px 0px 0px $grey;
     }
   }
-}
   #init-mask {
-    width: calc(100% - 50px);
+    width: 100%;
     height: 100%;
-    padding: 200px 25px;
     background-color: $grey;
     position: fixed;
     visibility: visible;
     opacity: 1;
     text-align: center;
-    h1 {
-      padding: 25px 0px;
-      font-size: 62px;
-      color: $red;
-    } 
+    display: table;
+    #init-mask-content {
+      max-width: 1024px;
+      height: auto;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      h1 {
+        padding: 25px 0px;
+        font-size: 62px;
+        color: $red;
+      } 
+    }
   }
   .start-game-button {
     margin: 75px 0px;
@@ -141,28 +160,36 @@ body {
     box-shadow: 0px 5px 0px rgb(180, 74, 74);
     outline: none;
     cursor: pointer;
+    position: relative;
     &:active {
-      margin-top: 80px;
+      top: 4px;
       box-shadow: 0px 5px 0px rgb(85,98,112);
     }
   }
   #end-mask {
-    width: calc(100% - 50px);
+    width: 100%;
     height: 100%;
-    padding: 200px 25px;
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     visibility: hidden;
     opacity: 0;
     text-align: center;
-    h1 {
-      padding: 25px 0px;
-      font-size: 62px;
-      color: $red;
-    }
-    .start-game-button {
-      &:active {
-        box-shadow: none;
+    display: table;
+    #end-mask-content {
+      max-width: 1024px;
+      height: auto;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      h1 {
+        padding: 25px 0px;
+        font-size: 62px;
+        color: $red;
+      }
+      .start-game-button {
+        &:active {
+          box-shadow: none;
+        }
       }
     }
   }

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-	// Declare a global variable TicTacApp
 	var TicTacApp = {};
 
 	// Set these variales in order to count scores
@@ -44,7 +43,7 @@ $(document).ready(function(){
 		opponent.push($(firstO).attr('value'));
 		$(firstO).children('.icon-circle-empty').addClass('box-visible');
 
-		// Remove set O from boxes[] array
+		// Remove 'O' from boxes[] array
 		if (boxes.indexOf(firstO) != -1) {
 			boxes.splice(boxes.indexOf(firstO), 1);
 		}
@@ -154,7 +153,7 @@ $(document).ready(function(){
 		 			loses += 1;
 
 		 			// Display who wins
-		 			$('.winner').html("Mr Js win!");
+		 			$('.winner').html("Mr. JS wins!");
 
 		 			// Display 'end' section as the end of a game
 					$('#end-mask').addClass('box-visible');

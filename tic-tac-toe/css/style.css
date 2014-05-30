@@ -51,110 +51,126 @@ body {
   background-color: #4ecdc4;
   position: relative; }
   body #main {
+    display: table;
+    margin: 0px auto;
+    margin-top: 100px;
     width: 500px;
-    height: 650px;
-    top: 50%;
     left: 50%;
-    margin: -325px 0px 0px -250px;
-    float: left;
-    position: relative; }
-    body #main #new-start {
-      margin: 0px;
-      padding: 18.5px 15px;
-      background-color: #556270;
-      box-shadow: 0px 5px 0px #363e47; }
-      body #main #new-start:active {
-        margin-top: 4px;
-        box-shadow: 0px 5px 0px #4ecdc4; }
-    body #main #wins, body #main #loses, body #main #ties {
-      padding: 10px 15px;
-      float: right;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-      background-color: #ff6b6b;
-      border-radius: 4px; }
-      body #main #wins .counter, body #main #loses .counter, body #main #ties .counter {
-        display: inline-block;
-        margin-top: 5px;
-        color: #c7f464;
-        font-size: 32px; }
-    body #main #loses {
-      margin: 0px 25px; }
-    body #main #main-game {
+    margin-left: -250px;
+    position: absolute; }
+    body #main #main-content {
       width: 500px;
-      height: 500px;
-      bottom: 0px;
-      display: none;
-      float: left;
-      position: absolute;
-      background-color: #4ecdc4; }
-      body #main #main-game .box {
-        width: calc(100% / 3);
-        height: calc(100% / 3);
-        display: inline-block;
-        float: left;
-        font-size: 80px;
+      height: 650px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0px auto; }
+      body #main #main-content #new-start {
+        margin: 0px;
+        padding: 18.5px 15px;
+        background-color: #556270;
+        box-shadow: 0px 5px 0px #363e47; }
+        body #main #main-content #new-start:active {
+          top: 4px;
+          box-shadow: 0px 5px 0px #4ecdc4; }
+      body #main #main-content #wins, body #main #main-content #loses, body #main #main-content #ties {
+        padding: 10px 15px;
+        float: right;
+        color: white;
+        font-weight: bold;
+        text-align: center;
         background-color: #ff6b6b;
-        cursor: pointer; }
-        body #main #main-game .box span {
-          -webkit-transition: All 0.2s ease-in-out;
-          -moz-transition: All 0.2s ease-in-out;
-          -o-transition: All 0.2s ease-in-out;
-          transition: All 0.2s ease-in-out; }
-        body #main #main-game .box .icon-circle-empty {
-          margin-top: 25px;
-          margin-left: -1px;
+        border-radius: 4px; }
+        body #main #main-content #wins .counter, body #main #main-content #loses .counter, body #main #main-content #ties .counter {
           display: inline-block;
-          position: absolute;
-          font-size: 150%;
+          margin-top: 5px;
           color: #c7f464;
-          visibility: hidden;
-          opacity: 0; }
-        body #main #main-game .box .icon-cancel-1 {
-          margin-top: -8px;
-          margin-left: -48px;
+          font-size: 32px; }
+      body #main #main-content #loses {
+        margin: 0px 25px; }
+      body #main #main-content h2 {
+        margin: 25px;
+        margin-left: 0px;
+        display: inline-block;
+        color: #556270;
+        font-weight: bold; }
+      body #main #main-content #main-game {
+        width: 500px;
+        height: 500px;
+        display: none;
+        float: left;
+        background-color: #4ecdc4; }
+        body #main #main-content #main-game .box {
+          width: calc(100% / 3);
+          height: calc(100% / 3);
           display: inline-block;
-          position: absolute;
-          font-size: 235%;
-          color: #c7f464;
-          visibility: hidden;
-          opacity: 0; }
-      body #main #main-game #one {
-        border-top-left-radius: 4px;
-        box-shadow: inset 0px -2px 0px #556270, inset -2px 0px 0px #556270; }
-      body #main #main-game #two {
-        box-shadow: inset 0px -2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
-      body #main #main-game #three {
-        border-top-right-radius: 4px;
-        box-shadow: inset 0px -2px 0px #556270, inset 2px 0px 0px #556270; }
-      body #main #main-game #four {
-        box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset -2px 0px 0px #556270; }
-      body #main #main-game #five {
-        box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
-      body #main #main-game #six {
-        box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset 2px 0px 0px #556270; }
-      body #main #main-game #seven {
-        border-bottom-left-radius: 4px;
-        box-shadow: inset 0px 2px 0px #556270, inset -2px 0px 0px #556270; }
-      body #main #main-game #eight {
-        box-shadow: inset 0px 2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
-      body #main #main-game #nine {
-        border-bottom-right-radius: 4px;
-        box-shadow: inset 0px 2px 0px #556270, inset 2px 0px 0px #556270; }
+          float: left;
+          font-size: 80px;
+          background-color: #ff6b6b;
+          cursor: pointer; }
+          body #main #main-content #main-game .box span {
+            -webkit-transition: All 0.2s ease-in-out;
+            -moz-transition: All 0.2s ease-in-out;
+            -o-transition: All 0.2s ease-in-out;
+            transition: All 0.2s ease-in-out; }
+          body #main #main-content #main-game .box .icon-circle-empty {
+            margin-top: 25px;
+            margin-left: -1px;
+            display: inline-block;
+            position: absolute;
+            font-size: 150%;
+            color: #c7f464;
+            visibility: hidden;
+            opacity: 0; }
+          body #main #main-content #main-game .box .icon-cancel-1 {
+            margin-top: -8px;
+            margin-left: -48px;
+            display: inline-block;
+            position: absolute;
+            font-size: 235%;
+            color: #c7f464;
+            visibility: hidden;
+            opacity: 0; }
+        body #main #main-content #main-game #one {
+          border-top-left-radius: 4px;
+          box-shadow: inset 0px -2px 0px #556270, inset -2px 0px 0px #556270; }
+        body #main #main-content #main-game #two {
+          box-shadow: inset 0px -2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
+        body #main #main-content #main-game #three {
+          border-top-right-radius: 4px;
+          box-shadow: inset 0px -2px 0px #556270, inset 2px 0px 0px #556270; }
+        body #main #main-content #main-game #four {
+          box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset -2px 0px 0px #556270; }
+        body #main #main-content #main-game #five {
+          box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
+        body #main #main-content #main-game #six {
+          box-shadow: inset 0px 2px 0px #556270, inset 0px -2px 0px #556270, inset 2px 0px 0px #556270; }
+        body #main #main-content #main-game #seven {
+          border-bottom-left-radius: 4px;
+          box-shadow: inset 0px 2px 0px #556270, inset -2px 0px 0px #556270; }
+        body #main #main-content #main-game #eight {
+          box-shadow: inset 0px 2px 0px #556270, inset -2px 0px 0px #556270, inset 2px 0px 0px #556270; }
+        body #main #main-content #main-game #nine {
+          border-bottom-right-radius: 4px;
+          box-shadow: inset 0px 2px 0px #556270, inset 2px 0px 0px #556270; }
   body #init-mask {
-    width: calc(100% - 50px);
+    width: 100%;
     height: 100%;
-    padding: 200px 25px;
     background-color: #556270;
     position: fixed;
     visibility: visible;
     opacity: 1;
-    text-align: center; }
-    body #init-mask h1 {
-      padding: 25px 0px;
-      font-size: 62px;
-      color: #ff6b6b; }
+    text-align: center;
+    display: table; }
+    body #init-mask #init-mask-content {
+      max-width: 1024px;
+      height: auto;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative; }
+      body #init-mask #init-mask-content h1 {
+        padding: 25px 0px;
+        font-size: 62px;
+        color: #ff6b6b; }
   body .start-game-button {
     margin: 75px 0px;
     padding: 25px 50px;
@@ -165,25 +181,32 @@ body {
     border-radius: 4px;
     box-shadow: 0px 5px 0px #b44a4a;
     outline: none;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     body .start-game-button:active {
-      margin-top: 80px;
+      top: 4px;
       box-shadow: 0px 5px 0px #556270; }
   body #end-mask {
-    width: calc(100% - 50px);
+    width: 100%;
     height: 100%;
-    padding: 200px 25px;
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    text-align: center; }
-    body #end-mask h1 {
-      padding: 25px 0px;
-      font-size: 62px;
-      color: #ff6b6b; }
-    body #end-mask .start-game-button:active {
-      box-shadow: none; }
+    text-align: center;
+    display: table; }
+    body #end-mask #end-mask-content {
+      max-width: 1024px;
+      height: auto;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative; }
+      body #end-mask #end-mask-content h1 {
+        padding: 25px 0px;
+        font-size: 62px;
+        color: #ff6b6b; }
+      body #end-mask #end-mask-content .start-game-button:active {
+        box-shadow: none; }
 
 .transition {
   -webkit-transition: All 0.2s ease-in-out;
