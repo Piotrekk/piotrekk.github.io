@@ -1,9 +1,20 @@
 $(document).ready(function(){
 
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+
+  // If window width is > 580px set section#about height too 100%
+  var divSize = $('#about-content').height();
+  if (windowWidth > 580) {
+    $('#about').css('height', windowHeight)
+    $('#about-content').css('padding-top', (windowHeight - divSize + 100) / 2)
+  }
+
+  // Make header sticky after scroll 50px down 
   var header = document.querySelector('header');
   var origOffsetY = header.offsetTop;
 
-  function scroll () {
+  function scroll() {
     if ($(window).scrollTop() >= origOffsetY) {
       $('header').addClass('sticky')
     } else {
@@ -13,15 +24,7 @@ $(document).ready(function(){
   
   document.onscroll = scroll;
 
-
-  var windowWidth = $(window).width();
-  var windowHeight = $(window).height();
-
-   /* $(window).resize(function() {
-        if(windowWidth != $(window).width()){
-            location.reload();
-        }
-    });*/
+  // Scroll and nav click functions
   var openNav = false;
 
   function giveAuto(){
@@ -115,10 +118,4 @@ $(document).ready(function(){
       easing: 'swing'
     });
   });
-
-  var divSize = $('#about-content').height();
-  if (windowWidth > 580) {
-    $('#about').css('height', windowHeight)
-    $('#about-content').css('padding-top', (windowHeight - divSize + 100) / 2)
-  }
 });
