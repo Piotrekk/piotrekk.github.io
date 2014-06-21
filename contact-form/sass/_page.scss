@@ -1,0 +1,121 @@
+html, body {
+	//font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    background-color: $black;
+    #main {
+        margin: 100px auto;
+        width: 100%;
+        section#contact {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            #contact-content {
+                max-width: 1024px;
+                padding: 100px 30px;
+                margin: 0px auto;
+                text-align: center;
+                font-family: 'Raleway', sans-serif;
+                form {
+                    input, #ct-send-button {
+                        width: 50%;
+                        margin: 0px auto;
+                        margin-bottom: 50px;
+                        padding: 10px 15px;
+                        display: block;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $green;
+                        background-color: $black;
+                        border: 2px solid $white;
+                        border-radius: 25px;
+                        outline: none;
+                    }
+                    textarea {
+                        width: 50%;
+                        height: 100px;
+                        margin: 0px auto;
+                        margin-bottom: 50px;
+                        padding: 10px 15px;
+                        display: block;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $green;
+                        background-color: $black;
+                        border: 2px solid $white;
+                        border-radius: 25px;
+                        outline: none;
+                        resize: none;
+                        &:focus {
+                            height: 150px;
+                            background-color: $white;
+                            color: $red;
+                        }
+                    }
+                    ::-webkit-input-placeholder {
+                        color: $white;
+                    }
+                    #ct-send-button {
+                        width: 76px;
+                        margin-bottom: 0px;
+                        cursor: pointer;
+                        color: $white;
+                        &:hover {
+                            color: $red;
+                            background-color: $white;
+                        }
+                    }
+                    .ct-form-error {
+                        left: 50%;
+                        padding: 5px 7.5px;
+                        position: absolute;
+                        font-weight: 500;
+                        color: $white;
+                        background-color: $red;
+                        border: 2px solid $red;
+                        border-radius: 25px;
+                        &:after {
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            top: 22px;
+                            left: 50%;
+                            margin-left: -7px;
+                            background-color: $red;
+                            position: absolute;
+                            -webkit-transform: rotate(45deg)
+                        }
+                    }
+                    #ct-name-input, #ct-email-input, #ct-message-input {
+                        &:focus {
+                            background-color: $white !important;
+                            color: $red;
+                        }
+                    }
+                    #ct-name-error {
+                        width: 144px;
+                        top: 92px;
+                        margin-left: -72px;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    #ct-email-error {
+                        width: 197px;
+                        top: 187px;
+                        margin-left: -98.5px;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    #ct-message-error {
+                        width: 170px;
+                        top: 282px;
+                        margin-left: -85px;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }    
+}

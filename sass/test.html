@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="test.css">
+</head>
+<body>
+	<section id="main">
+		<section id="contact">
+            <div id="contact-info">
+                <div id="contact-info-content">Stay in touch</div>
+            </div>
+            <div id="contact-content">
+                <form method="post" action="process.php">
+                    <div id="ct-name-error" class="ct-form-error transition">Type in your name!</div>
+                    <input id="ct-name-input" class="transition" type="text" name="name" placeholder="Name">
+                    <div id="ct-email-error" class="ct-form-error transition">Type in your email adress!</div>
+                    <input id="ct-email-input" class="transition" type="text" name="email" placeholder="Email Adress">
+                    <div id="ct-message-error" class="ct-form-error transition">Type in your message!</div>
+                    <textarea id="ct-message-input" class="transition" name="comment" placeholder="Message"></textarea>
+                    <input type="button" id="ct-send-button" class="transition" value="send">
+                </form>
+            </div>
+        </section>
+	</section>
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="transit.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
+	

@@ -1,0 +1,153 @@
+.transition {
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  transition: All 0.5s ease; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  background-color: #2e2e2e; }
+  html #main, body #main {
+    margin: 100px auto;
+    width: 100%; }
+    html #main section#contact, body #main section#contact {
+      width: 100%;
+      position: relative;
+      overflow: hidden; }
+      html #main section#contact #contact-content, body #main section#contact #contact-content {
+        max-width: 1024px;
+        padding: 100px 30px;
+        margin: 0px auto;
+        text-align: center;
+        font-family: 'Raleway', sans-serif; }
+        html #main section#contact #contact-content form input, html #main section#contact #contact-content form #ct-send-button, body #main section#contact #contact-content form input, body #main section#contact #contact-content form #ct-send-button {
+          width: 50%;
+          margin: 0px auto;
+          margin-bottom: 50px;
+          padding: 10px 15px;
+          display: block;
+          font-family: 'Raleway', sans-serif;
+          font-size: 18px;
+          font-weight: 500;
+          color: #35a785;
+          background-color: #2e2e2e;
+          border: 2px solid white;
+          border-radius: 25px;
+          outline: none; }
+        html #main section#contact #contact-content form textarea, body #main section#contact #contact-content form textarea {
+          width: 50%;
+          height: 100px;
+          margin: 0px auto;
+          margin-bottom: 50px;
+          padding: 10px 15px;
+          display: block;
+          font-family: 'Raleway', sans-serif;
+          font-size: 18px;
+          font-weight: 500;
+          color: #35a785;
+          background-color: #2e2e2e;
+          border: 2px solid white;
+          border-radius: 25px;
+          outline: none;
+          resize: none; }
+          html #main section#contact #contact-content form textarea:focus, body #main section#contact #contact-content form textarea:focus {
+            height: 150px;
+            background-color: white;
+            color: #f46969; }
+        html #main section#contact #contact-content form ::-webkit-input-placeholder, body #main section#contact #contact-content form ::-webkit-input-placeholder {
+          color: white; }
+        html #main section#contact #contact-content form #ct-send-button, body #main section#contact #contact-content form #ct-send-button {
+          width: 76px;
+          margin-bottom: 0px;
+          cursor: pointer;
+          color: white; }
+          html #main section#contact #contact-content form #ct-send-button:hover, body #main section#contact #contact-content form #ct-send-button:hover {
+            color: #f46969;
+            background-color: white; }
+        html #main section#contact #contact-content form .ct-form-error, body #main section#contact #contact-content form .ct-form-error {
+          left: 50%;
+          padding: 5px 7.5px;
+          position: absolute;
+          font-weight: 500;
+          color: white;
+          background-color: #f46969;
+          border: 2px solid #f46969;
+          border-radius: 25px; }
+          html #main section#contact #contact-content form .ct-form-error:after, body #main section#contact #contact-content form .ct-form-error:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            top: 22px;
+            left: 50%;
+            margin-left: -7px;
+            background-color: #f46969;
+            position: absolute;
+            -webkit-transform: rotate(45deg); }
+        html #main section#contact #contact-content form #ct-name-input:focus, html #main section#contact #contact-content form #ct-email-input:focus, html #main section#contact #contact-content form #ct-message-input:focus, body #main section#contact #contact-content form #ct-name-input:focus, body #main section#contact #contact-content form #ct-email-input:focus, body #main section#contact #contact-content form #ct-message-input:focus {
+          background-color: white !important;
+          color: #f46969; }
+        html #main section#contact #contact-content form #ct-name-error, body #main section#contact #contact-content form #ct-name-error {
+          width: 144px;
+          top: 92px;
+          margin-left: -72px;
+          visibility: hidden;
+          opacity: 0; }
+        html #main section#contact #contact-content form #ct-email-error, body #main section#contact #contact-content form #ct-email-error {
+          width: 197px;
+          top: 187px;
+          margin-left: -98.5px;
+          visibility: hidden;
+          opacity: 0; }
+        html #main section#contact #contact-content form #ct-message-error, body #main section#contact #contact-content form #ct-message-error {
+          width: 170px;
+          top: 282px;
+          margin-left: -85px;
+          visibility: hidden;
+          opacity: 0; }
