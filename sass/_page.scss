@@ -86,7 +86,7 @@ body {
             font-size: 16px;
             font-weight: 500;
             color: $white;
-            background-color: $green2;
+            background-color: $green;
             border-radius: 25px;
             opacity: 0;
             visibility: hidden;
@@ -98,7 +98,7 @@ body {
                 height: 10px;
                 position: absolute;
                 z-index: -5;
-                background-color: $green2;
+                background-color: $green;
                 -webkit-transform: rotate(45deg);
             }
         }
@@ -151,14 +151,14 @@ body {
                 font-size: 18px;
                 font-weight: 300;
                 color: $white;
-                background-color: $green2;
+                background-color: $green;
                 border: 2px solid transparent;
                 border-radius: 25px;
                 outline: none;
                 cursor: pointer;
                 &:hover {
                     background-color: $white;
-                    color: $green2;
+                    color: $green;
                 }
             }
         }
@@ -167,7 +167,7 @@ body {
         width: 100%;
         position: relative;
         overflow: hidden;
-        background-color: $granatowy; 
+        background-color: $blue; 
         #profile-info {
             width: 100%;
             #profile-info-content {
@@ -208,7 +208,7 @@ body {
                 line-height: 2;
                 a {
                     text-decoration: underline;
-                    color: $green2;
+                    color: $green;
                     &:hover {
                         text-decoration: none;
                     }
@@ -231,8 +231,8 @@ body {
                 font-family: 'Raleway', sans-serif;
                 font-size: 24px;
                 font-weight: 600;
-                color: $granatowy;
-                border-bottom: 2px solid $granatowy;
+                color: $blue;
+                border-bottom: 2px solid $blue;
             }
         }
         #projects-content {
@@ -258,14 +258,18 @@ body {
                         &:hover {
                             opacity: 1;
                             .pr-title {
-                                margin-top: 100px;
+                                margin-top: 65px;
                             }
                             .pr-check-button {
-                                bottom: 90px;
+                                bottom: 146px;
+                                opacity: 1;
+                            }
+                            .pr-code-button {
+                                bottom: 55px;
                                 opacity: 1;
                             }
                             .pr-desc {
-                                margin-top: 60px;
+                                margin-top: 52px;
                                 opacity: 1;
                             }
                             .pr-placeholder-title {
@@ -286,7 +290,7 @@ body {
                             color: white;
                             opacity: 0;
                         }
-                        .pr-check-button {
+                        .pr-check-button, .pr-code-button {
                             left: 50%;
                             bottom: 55px;
                             margin-left: -68px;
@@ -307,6 +311,9 @@ body {
                                 color: $white;
                                 background-color: $red;
                             } 
+                        }
+                        .pr-code-button {
+                            bottom: 0px;
                         }
                         .pr-placeholder-title {
                             margin-top: 178px;
@@ -465,7 +472,7 @@ body {
         left: -200px;
         position: fixed;
         z-index: 200;
-        background-color: $green2;
+        background-color: $green;
         font-family: 'Raleway', sans-serif;
         ul {
             margin-top: 50px;

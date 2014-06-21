@@ -269,12 +269,15 @@ body {
               body #main section#projects #projects-content ul li .pr-li-mask:hover {
                 opacity: 1; }
                 body #main section#projects #projects-content ul li .pr-li-mask:hover .pr-title {
-                  margin-top: 100px; }
+                  margin-top: 65px; }
                 body #main section#projects #projects-content ul li .pr-li-mask:hover .pr-check-button {
-                  bottom: 90px;
+                  bottom: 146px;
+                  opacity: 1; }
+                body #main section#projects #projects-content ul li .pr-li-mask:hover .pr-code-button {
+                  bottom: 55px;
                   opacity: 1; }
                 body #main section#projects #projects-content ul li .pr-li-mask:hover .pr-desc {
-                  margin-top: 60px;
+                  margin-top: 52px;
                   opacity: 1; }
                 body #main section#projects #projects-content ul li .pr-li-mask:hover .pr-placeholder-title {
                   margin-top: 90px; }
@@ -290,7 +293,7 @@ body {
                 font-weight: 500;
                 color: white;
                 opacity: 0; }
-              body #main section#projects #projects-content ul li .pr-li-mask .pr-check-button {
+              body #main section#projects #projects-content ul li .pr-li-mask .pr-check-button, body #main section#projects #projects-content ul li .pr-li-mask .pr-code-button {
                 left: 50%;
                 bottom: 55px;
                 margin-left: -68px;
@@ -307,9 +310,11 @@ body {
                 outline: none;
                 text-decoration: none;
                 cursor: pointer; }
-                body #main section#projects #projects-content ul li .pr-li-mask .pr-check-button:hover {
+                body #main section#projects #projects-content ul li .pr-li-mask .pr-check-button:hover, body #main section#projects #projects-content ul li .pr-li-mask .pr-code-button:hover {
                   color: white;
                   background-color: #f46969; }
+              body #main section#projects #projects-content ul li .pr-li-mask .pr-code-button {
+                bottom: 0px; }
               body #main section#projects #projects-content ul li .pr-li-mask .pr-placeholder-title {
                 margin-top: 178px;
                 padding: 10px 15px;
