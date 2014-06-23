@@ -27,7 +27,7 @@ body {
                 margin: 0px;
             }
             &:hover {
-                background-color: $light-black;
+                background-color: $light-black !important;
             }
         }
         #header-content {
@@ -101,10 +101,7 @@ body {
                 position: absolute;
                 z-index: -5;
                 background-color: $green;
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                transform: rotate(45deg);
+                @include transform(rotate(45deg));
             }
         }
         #header-github-popup {
@@ -146,6 +143,18 @@ body {
                 margin: 50px;
                 font-size: 68px;
                 color: $white;
+                //@include animation(font-color 2s linear infinite);
+            }
+            /*span {
+                display: block;
+                font-size: 68px;
+                color: $white;
+            }*/
+            #first {
+                margin: 50px;
+            }
+            #second {
+                margin-top: 0px;
             }
             #about-button {
                 bottom: 0px;
@@ -198,12 +207,37 @@ body {
                 height: 250px;
                 margin: 0px auto;
                 border-radius: 125px;
-                border: 2px solid $white;
-                background-image: url("../img/profile.jpg");
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
-                background-size: cover;
+                cursor: pointer;
+                #image-inner {
+                    width: 250px;
+                    height: 250px;
+                    background-image: url("../img/profile2.jpg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    background-size: cover;
+                    border-radius: 125px;
+                    border: 2px solid $white;
+                    position: absolute;
+                    top: 152px;
+                    @include transform(rotate3d(0, 1, 0, 180deg));
+                }
+                #second-inner {
+                    top: 152px;
+                    position: absolute;
+                    width: 250px;
+                    height: 250px;
+                    background-image: url("../img/profile.jpg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    background-size: cover;
+                    border-radius: 125px;
+                    border: 2px solid $white;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    @include animation(pulse 1s linear infinite);
+                }
             }
             h2 {
                 margin: 100px auto;
@@ -396,20 +430,14 @@ body {
                     background-size: cover;
                 }
                 #nine-pr-li {
-                    background-image: url("../img/companypage.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #ten-pr-li {
                     background-image: url("../img/loginform.jpg");
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
                     background-size: cover;
                 }
-                #eleven-pr-li, #twelve-pr-li {
+                #ten-pr-li, #eleven-pr-li {
+                    display: none;
                     background-color: $red;
                 }
             }
@@ -573,10 +601,7 @@ body {
                 position: absolute;
                 z-index: -5;
                 background-color: $red;
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                transform: rotate(45deg);
+                @include transform(rotate(45deg));
             }
         }
         #nav-github-popup {
@@ -592,12 +617,6 @@ body {
             }
         }
     }
-    .transition {
-        -webkit-transition: All 0.3s ease;
-        -moz-transition: All 0.3s ease;
-        -o-transition: All 0.3s ease;
-        transition: All 0.3s ease;
-    }
     .sticky {
         position: fixed !important;
         margin-top: 0px !important;
@@ -607,6 +626,44 @@ body {
 
 /************************************************************ MEDIA QUERIES ************************************************************/
 
+@media all and (max-width: 1024px) {
+    body {
+        #main {
+            section#profile {
+                #profile-info {
+                    #profile-info-content {
+                    margin: 0px 25px;                
+                    }
+                }
+            }
+            section#projects {
+                #projects-info {
+                    #projects-info-content {
+                        margin: 0px 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 925px) {
+    body {
+        #main {
+            section#projects {
+                #projects-content {
+                    ul {
+                        li {
+                            width: calc(100% / 2);
+                        }
+                        #ten-pr-li {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media all and (max-width: 620px) {
     body {
         #main {
@@ -627,12 +684,10 @@ body {
                             width: 80% !important;
                             float: none;
                         }
+                        #ten-pr-li {
+                            display: none;
+                        }
                     }
-                }
-            }
-            section#contact {
-                #contact-content {
-                    padding: 50px 30px;
                 }
             }
             footer {
@@ -645,60 +700,6 @@ body {
                     ul {
                         margin-top: 30px;
                         float: none;
-                    }
-                }
-            }
-        }
-    }
-}
-@media all and (max-width: 770px) {
-    body {
-        #main {
-            section#contact {
-                #contact-content {
-                    form {
-                        input, textarea {
-                            width: 75%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-}
-@media all and (max-width: 925px) {
-    body {
-        #main {
-            section#projects {
-                #projects-content {
-                    ul {
-                        li {
-                            width: calc(100% / 2);
-                        }
-                        #eleven-pr-li, #twelve-pr-li {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media all and (max-width: 1024px) {
-    body {
-        #main {
-            section#profile {
-                #profile-info {
-                    #profile-info-content {
-                    margin: 0px 25px;                
-                    }
-                }
-            }
-            section#projects {
-                #projects-info {
-                    #projects-info-content {
-                        margin: 0px 25px;
                     }
                 }
             }

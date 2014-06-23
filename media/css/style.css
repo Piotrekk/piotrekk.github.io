@@ -1,3 +1,36 @@
+.transition {
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  transition: All 0.5s ease; }
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 10px #35a785; }
+
+  50% {
+    box-shadow: 0px 0px 80px #35a785; }
+
+  100% {
+    box-shadow: 0px 0px 10px #35a785; } }
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 10px #35a785; }
+
+  50% {
+    box-shadow: 0px 0px 80px #35a785; }
+
+  100% {
+    box-shadow: 0px 0px 10px #35a785; } }
+@-webkit-keyframes font-color {
+  0% {
+    color: white; }
+
+  50% {
+    color: #35a785; }
+
+  100% {
+    color: white; } }
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -72,7 +105,7 @@ body {
           width: 0px;
           margin: 0px; }
         body #main header #menu-icon:hover {
-          background-color: rgba(0, 0, 0, 0.2); }
+          background-color: rgba(0, 0, 0, 0.2) !important; }
       body #main header #header-content {
         max-width: 1024px;
         height: 50px;
@@ -137,7 +170,7 @@ body {
           background-color: #35a785;
           -webkit-transform: rotate(45deg);
           -moz-transform: rotate(45deg);
-          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
       body #main header #header-github-popup {
         right: 10px; }
@@ -167,11 +200,20 @@ body {
         padding: 100px 30px;
         padding-bottom: 50px;
         position: relative;
-        text-align: center; }
+        text-align: center;
+        /*span {
+            display: block;
+            font-size: 68px;
+            color: $white;
+        }*/ }
         body #main section#about #about-content h2 {
           margin: 50px;
           font-size: 68px;
           color: white; }
+        body #main section#about #about-content #first {
+          margin: 50px; }
+        body #main section#about #about-content #second {
+          margin-top: 0px; }
         body #main section#about #about-content #about-button {
           bottom: 0px;
           margin: 0px;
@@ -217,12 +259,41 @@ body {
           height: 250px;
           margin: 0px auto;
           border-radius: 125px;
-          border: 2px solid white;
-          background-image: url("../img/profile.jpg");
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          background-size: cover; }
+          cursor: pointer; }
+          body #main section#profile #profile-content #profile-image #image-inner {
+            width: 250px;
+            height: 250px;
+            background-image: url("../img/profile2.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-size: cover;
+            border-radius: 125px;
+            border: 2px solid white;
+            position: absolute;
+            top: 152px;
+            -webkit-transform: rotate3d(0, 1, 0, 180deg);
+            -moz-transform: rotate3d(0, 1, 0, 180deg);
+            -ms-transform: rotate3d(0, 1, 0, 180deg);
+            transform: rotate3d(0, 1, 0, 180deg); }
+          body #main section#profile #profile-content #profile-image #second-inner {
+            top: 152px;
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-image: url("../img/profile.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-size: cover;
+            border-radius: 125px;
+            border: 2px solid white;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-animation: pulse 1s linear infinite;
+            -moz-animation: pulse 1s linear infinite;
+            -o-animation: pulse 1s linear infinite;
+            animation: pulse 1s linear infinite; }
         body #main section#profile #profile-content h2 {
           margin: 100px auto;
           margin-bottom: 0px;
@@ -382,18 +453,13 @@ body {
             background-position: center;
             background-size: cover; }
           body #main section#projects #projects-content ul #nine-pr-li {
-            background-image: url("../img/companypage.jpg");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            background-size: cover; }
-          body #main section#projects #projects-content ul #ten-pr-li {
             background-image: url("../img/loginform.jpg");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
             background-size: cover; }
-          body #main section#projects #projects-content ul #eleven-pr-li, body #main section#projects #projects-content ul #twelve-pr-li {
+          body #main section#projects #projects-content ul #ten-pr-li, body #main section#projects #projects-content ul #eleven-pr-li {
+            display: none;
             background-color: #f46969; }
     body #main footer {
       width: 100%;
@@ -527,7 +593,7 @@ body {
         background-color: #f46969;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg); }
     body nav #nav-github-popup {
       left: 4.5px; }
@@ -537,17 +603,22 @@ body {
       right: 8px; }
       body nav #nav-mail-popup:before {
         left: 41px; }
-  body .transition {
-    -webkit-transition: All 0.3s ease;
-    -moz-transition: All 0.3s ease;
-    -o-transition: All 0.3s ease;
-    transition: All 0.3s ease; }
   body .sticky {
     position: fixed !important;
     margin-top: 0px !important;
     background-color: #f46969; }
 
 /************************************************************ MEDIA QUERIES ************************************************************/
+@media all and (max-width: 1024px) {
+  body #main section#profile #profile-info #profile-info-content {
+    margin: 0px 25px; }
+  body #main section#projects #projects-info #projects-info-content {
+    margin: 0px 25px; } }
+@media all and (max-width: 925px) {
+  body #main section#projects #projects-content ul li {
+    width: calc(100% / 2); }
+  body #main section#projects #projects-content ul #ten-pr-li {
+    display: block; } }
 @media all and (max-width: 620px) {
   body #main section#profile #profile-content {
     padding: 50px 30px; }
@@ -559,8 +630,8 @@ body {
     body #main section#projects #projects-content ul li {
       width: 80% !important;
       float: none; }
-  body #main section#contact #contact-content {
-    padding: 50px 30px; }
+    body #main section#projects #projects-content ul #ten-pr-li {
+      display: none; }
   body #main footer #footer-content {
     padding: 50px 30px;
     text-align: center; }
@@ -569,19 +640,6 @@ body {
     body #main footer #footer-content ul {
       margin-top: 30px;
       float: none; } }
-@media all and (max-width: 770px) {
-  body #main section#contact #contact-content form input, body #main section#contact #contact-content form textarea {
-    width: 75%; } }
-@media all and (max-width: 925px) {
-  body #main section#projects #projects-content ul li {
-    width: calc(100% / 2); }
-  body #main section#projects #projects-content ul #eleven-pr-li, body #main section#projects #projects-content ul #twelve-pr-li {
-    display: none; } }
-@media all and (max-width: 1024px) {
-  body #main section#profile #profile-info #profile-info-content {
-    margin: 0px 25px; }
-  body #main section#projects #projects-info #projects-info-content {
-    margin: 0px 25px; } }
 @media all and (max-width: 500px) {
   body #main header .header-icon {
     display: none; }

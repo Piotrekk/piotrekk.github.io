@@ -68,7 +68,6 @@ $(document).ready(function(){
   });
 
   $('#nav-profile-button, #footer-profile-button, #about-button').click(function(){
-    console.log('ok')
     $('nav').transition({marginLeft: '0px'}, 100, 'out');
     $('#main').transition({marginLeft: '0px'}, 100, 'out');
     $('#menu-icon').transition({backgroundColor: 'transparent'})
@@ -118,4 +117,72 @@ $(document).ready(function(){
       easing: 'swing'
     });
   });
+
+  // Profile image animation
+  var imageRotate = false;
+
+  $('#profile-image').click(function(){
+    if (!imageRotate) {
+      $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
+           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)', 
+                             '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+                             'transform': 'rotate3d(0, 1, 0, 0deg)',   
+           /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+                             '-moz-animation': 'pulse 1s linear infinite',
+                             '-o-animation': 'pulse 1s linear infinite',
+                             'animation': 'pulse 1s linear infinite'
+                           });
+      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, -180deg)',
+           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, -180deg)', 
+                             '-ms-transform': 'rotate3d(0, 1, 0, -180deg)',
+                             'transform': 'rotate3d(0, 1, 0, -180deg)',   
+           /* Animation */   '-webkit-animation': 'none',
+                             '-moz-animation': 'none',
+                             '-o-animation': 'none',
+                             'animation': 'none'
+                           });
+
+      imageRotate = true;
+    } else {
+      $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 180deg)',
+           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 180deg)', 
+                             '-ms-transform': 'rotate3d(0, 1, 0, 180deg)',
+                             'transform': 'rotate3d(0, 1, 0, 180deg)',   
+           /* Animation */   '-webkit-animation': 'none',
+                             '-moz-animation': 'none',
+                             '-o-animation': 'none',
+                             'animation': 'none'
+                           });
+      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
+           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)', 
+                             '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+                             'transform': 'rotate3d(0, 1, 0, 0deg)',   
+           /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+                             '-moz-animation': 'pulse 1s linear infinite',
+                             '-o-animation': 'pulse 1s linear infinite',
+                             'animation': 'pulse 1s linear infinite'
+                           });
+
+      imageRotate = false;
+    }
+  });
+  
+  // Reverse-text animation COMING SOON
+  
+  /*$('#span-cont').click(function(){
+    firstText = $('#first').text();
+    secondText = $('#second').text();
+
+    var characters = firstText + ' ' + secondText;
+    console.log(characters.split(''))
+
+    function changeOrder(array){
+      var currentLetter;
+      for (i = 0; i < array.length; i++){
+        currentLetter = array[Math.floor(Math.random() * array.length)];
+        console.log(currentLetter)
+      }
+    }
+    changeOrder(characters);
+  })*/
 });
