@@ -145,34 +145,56 @@ body {
                 color: $white;
                 //@include animation(font-color 2s linear infinite);
             }
-            /*span {
-                display: block;
-                font-size: 68px;
-                color: $white;
-            }*/
-            #first {
-                margin: 50px;
-            }
-            #second {
-                margin-top: 0px;
-            }
-            #about-button {
-                bottom: 0px;
-                margin: 0px;
-                margin-top: 100px;
-                padding: 10px 15px;
-                font-family: 'Raleway', sans-serif;
-                font-size: 18px;
-                font-weight: 300;
-                color: $white;
-                background-color: $green;
-                border: 2px solid transparent;
-                border-radius: 25px;
-                outline: none;
-                cursor: pointer;
-                &:hover {
-                    background-color: $white;
-                    color: $green;
+            #about-button-cont {
+                width: 167px;
+                height: 145px;
+                left: 50%;
+                margin-left: -83.5px;
+                position: relative;
+                #about-button-ph {
+                    width: 167px;
+                    height: 45px;
+                    bottom: 0px;
+                    position: absolute;
+                    border-radius: 25px;
+                    z-index: 5;
+                    cursor: pointer;
+                    &:hover ~ #about-button {
+                        @include transform(rotate3d(1, 0, 0, -180deg));
+                    }
+                }
+                #about-button {
+                    width: 167px;
+                    left: 0px;
+                    margin: 0px;
+                    margin-top: 100px;
+                    padding: 10px 15px;
+                    position: absolute;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $white;
+                    background-color: $green;
+                    border: 2px solid transparent;
+                    border-radius: 25px;
+                    z-index: 2;
+                    -webkit-transform-origin: top;
+                    -ms-transform-origin: top;
+                    transform-origin: top;
+                }
+                #about-button-back {
+                    width: 167px;
+                    height: 45px;
+                    left: 0px;
+                    bottom: 0px;
+                    position: absolute;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $white;
+                    background-color: transparent;
+                    border: 2px solid $green;
+                    border-radius: 25px;
                 }
             }
         }
@@ -605,15 +627,15 @@ body {
             }
         }
         #nav-github-popup {
-            left: 4.5px;
+            left: 3px;
             &:before {
-                left: 38px;
+                left: 40px;
             }
         }
         #nav-mail-popup {
-            right: 8px;
+            right: 3px;
             &:before {
-                left: 41px;
+                left: 37px;
             }
         }
     }

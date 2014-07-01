@@ -36,17 +36,6 @@ $green: rgb(53, 167, 133);
     box-shadow: 0px 0px 10px $green; 
 	} 
 }
-@-webkit-keyframes font-color {
-	0% {
-    	color: $white;
-	}
-  	50% {
-    	color: $green;
-    }
-  	100% {
-    	color: $white;
-	} 
-}
 
 // Animation mixin
 @mixin animation($var) {
