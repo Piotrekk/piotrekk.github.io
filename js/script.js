@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+  // Animate $red background until page loads
+  $(window).load(function() {
+    $('#progress-bar').animate({
+      //opacity: 0,
+      right: '-100%',
+      zIndex: -9999
+    }, {
+      duration: 1000,
+      easing: 'easeOutCirc'
+    });
+  });
+
   var windowWidth = $(window).width();
   var windowHeight = $(window).height();
 
@@ -28,7 +40,7 @@ $(document).ready(function(){
   var openNav = false;
 
   function giveAuto(){
-    $('body').css('overflow', 'auto')
+    $('body').css({'overflow': 'auto', 'overflow-x': 'hidden'})
   }
 
   $('#menu-icon').click(function(){
