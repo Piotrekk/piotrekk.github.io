@@ -3,7 +3,13 @@ $(document).ready(function(){
   // Animate $red background until page loads
   $(window).load(function() {
     $('#progress-bar').animate({
-      //opacity: 0,
+      right: '-100%'
+    }, {
+      duration: 1000,
+      easing: 'easeOutCirc'
+    });
+    $('#progress-bg').animate({
+      opacity: 0,
       right: '-100%',
       zIndex: -9999
     }, {
