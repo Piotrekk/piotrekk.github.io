@@ -25,532 +25,532 @@ body {
         position: relative;
         overflow: hidden;
         width: 100%;
-    header {
-        width: 100%;
-        margin-top: 50px;
-        position: absolute;
-        z-index: 99;
-        @include animation(opacityAnim 1s 1 forwards);     
-        #menu-icon {
+        header {
+            width: 100%;
+            margin-top: 50px;
             position: absolute;
-            top: 0px;
-            width: 32px;
-            height: 30px;
-            padding: 10px 15px;
-            float: left;
-            font-size: 30px;
-            color: $white;
-            cursor: pointer;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
-            &:before {
-                width: 0px;
-                margin: 0px;
-            }
-            &:hover {
-                background-color: $light-black !important;
-            }
-        }
-        #header-content {
-            max-width: 1024px;
-            height: 50px;
-            margin: 0px auto;
-            font-family: 'Raleway', sans-serif;
-            h1 {
-                width: 150px;
-                margin: 0px auto;
-                position: relative;
-                border-radius: 25px;
-                a {
-                    display: block;
-                    padding: 10px 15px;
-                    font-size: 30px;
-                    font-weight: bold;
-                    color: $white;
-                    text-decoration: none;
-                    border-radius: 25px;
+            z-index: 99;
+            @include animation(opacityAnim 1.5s 1 forwards);     
+            #menu-icon {
+                position: absolute;
+                top: 0px;
+                width: 32px;
+                height: 30px;
+                padding: 10px 15px;
+                float: left;
+                font-size: 30px;
+                color: $white;
+                cursor: pointer;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                &:before {
+                    width: 0px;
+                    margin: 0px;
                 }
+                &:hover {
+                    background-color: $light-black !important;
+                }
+            }
+            #header-content {
+                max-width: 1024px;
+                height: 50px;
+                margin: 0px auto;
+                font-family: 'Raleway', sans-serif;
+                h1 {
+                    width: 150px;
+                    margin: 0px auto;
+                    position: relative;
+                    border-radius: 25px;
+                    a {
+                        display: block;
+                        padding: 10px 15px;
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: $white;
+                        text-decoration: none;
+                        border-radius: 25px;
+                    }
+                    &:hover {
+                        background-color: $light-black;
+                    }
+                }
+            }
+            .header-icon {
+                top: 0px;
+                right: 0px;
+                height: 32px;
+                padding: 9px 15px;
+                position: absolute;
+                font-size: 31px;
+                text-decoration: none;
+                color: $white;
+                border-radius: 25px;
                 &:hover {
                     background-color: $light-black;
                 }
             }
-        }
-        .header-icon {
-            top: 0px;
-            right: 0px;
-            height: 32px;
-            padding: 9px 15px;
-            position: absolute;
-            font-size: 31px;
-            text-decoration: none;
-            color: $white;
-            border-radius: 25px;
-            &:hover {
-                background-color: $light-black;
+            #header-github-icon {
+                right: 82px;
             }
-        }
-        #header-github-icon {
-            right: 82px;
-        }
-        #header-mail-icon {
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-        #header-github-icon:hover + #header-github-popup,  #header-mail-icon:hover + #header-mail-popup{
-            top: 60px;
-            opacity: 1;
-            visibility: visible;
-        }
-        .header-popup {
-            top: 80px;
-            padding: 10px 15px;
-            position: absolute;
-            font-family: 'Raleway', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            color: $white;
-            background-color: $green;
-            border-radius: 25px;
-            opacity: 0;
-            visibility: hidden;
-            &:before {
-                content: '';
-                top: -5px;
-                left: 35px;
-                width: 10px;
-                height: 10px;
+            #header-mail-icon {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            #header-github-icon:hover + #header-github-popup,  #header-mail-icon:hover + #header-mail-popup{
+                top: 60px;
+                opacity: 1;
+                visibility: visible;
+            }
+            .header-popup {
+                top: 80px;
+                padding: 10px 15px;
                 position: absolute;
-                z-index: -5;
+                font-family: 'Raleway', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: $white;
                 background-color: $green;
-                @include transform(rotate(45deg));
-            }
-        }
-        #header-github-popup {
-            right: 10px;
-            &:before {
-                left: 93px;
-            }
-        }
-        #header-mail-popup {
-            right: 10px;
-            &:before {
-                left: 69px;
-            }
-        }
-    }
-    section#about {
-        background-image: url("../img/about-background.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        background-size: cover;
-        overflow: hidden;
-        z-index: -9;
-        font-family: 'Raleway', sans-serif;
-        #about-mask {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(244, 105, 105, 0.85);
-        }
-        #about-content {
-            max-width: 1024px;
-            margin: 0px auto;
-            padding: 100px 30px;
-            padding-bottom: 50px;
-            position: relative;
-            text-align: center;
-            h2 {
-                margin: 50px;
-                font-size: 68px;
-                color: $white;
-                position: relative;
-                @include animation(dropDown 1s 1 forwards);
-            }
-            #about-button-cont {
-                width: 167px;
-                height: 145px;
-                left: 50%;
-                margin-left: -83.5px;
-                position: relative;
-                @include animation(dropDown 1s 1 forwards);
-                #about-button-ph {
-                    width: 167px;
-                    height: 45px;
-                    bottom: 0px;
+                border-radius: 25px;
+                opacity: 0;
+                visibility: hidden;
+                &:before {
+                    content: '';
+                    top: -5px;
+                    left: 35px;
+                    width: 10px;
+                    height: 10px;
                     position: absolute;
-                    border-radius: 25px;
-                    z-index: 5;
-                    cursor: pointer;
-                    &:hover ~ #about-button {
-                        @include transform(rotate3d(1, 0, 0, -180deg));
-                    }
-                }
-                #about-button {
-                    width: 167px;
-                    left: 0px;
-                    margin: 0px;
-                    margin-top: 100px;
-                    padding: 10px 15px;
-                    position: absolute;
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 18px;
-                    font-weight: 300;
-                    color: $white;
+                    z-index: -5;
                     background-color: $green;
-                    border: 2px solid transparent;
-                    border-radius: 25px;
-                    z-index: 2;
-                    -webkit-transform-origin: top;
-                    -ms-transform-origin: top;
-                    transform-origin: top;
+                    @include transform(rotate(45deg));
                 }
-                #about-button-back {
-                    width: 167px;
-                    height: 45px;
-                    left: 0px;
-                    bottom: 0px;
-                    position: absolute;
-                    font-family: 'Raleway', sans-serif;
-                    font-size: 18px;
-                    font-weight: 300;
-                    color: $white;
-                    background-color: transparent;
-                    border: 2px solid $green;
-                    border-radius: 25px;
+            }
+            #header-github-popup {
+                right: 10px;
+                &:before {
+                    left: 93px;
+                }
+            }
+            #header-mail-popup {
+                right: 10px;
+                &:before {
+                    left: 69px;
                 }
             }
         }
-    }
-    section#profile {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        background-color: $blue; 
-        #profile-info {
-            width: 100%;
-            #profile-info-content {
+        section#about {
+            background-image: url("../img/about-background.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            z-index: -9;
+            font-family: 'Raleway', sans-serif;
+            #about-mask {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(244, 105, 105, 0.85);
+            }
+            #about-content {
                 max-width: 1024px;
                 margin: 0px auto;
-                padding: 13px 0px;
+                padding: 100px 30px;
+                padding-bottom: 50px;
+                position: relative;
                 text-align: center;
-                font-family: 'Raleway', sans-serif;
-                font-size: 24px;
-                font-weight: 600;
-                color: $white;
-                border-bottom: 2px solid $white;
-            }
-        }
-        #profile-content {
-            max-width: 1024px;
-            padding: 100px 30px;
-            margin: 0px auto;
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
-            #profile-image {
-                width: 250px;
-                height: 250px;
-                margin: 0px auto;
-                border-radius: 125px;
-                cursor: pointer;
-                #image-inner {
-                    width: 250px;
-                    height: 250px;
-                    background-image: url("../img/profile2.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                    border-radius: 125px;
-                    border: 2px solid $white;
-                    position: absolute;
-                    top: 152px;
-                    @include transform(rotate3d(0, 1, 0, 180deg));
+                h2 {
+                    margin: 50px;
+                    font-size: 68px;
+                    color: $white;
+                    position: relative;
+                    @include animation(dropDown 1.5s 1 forwards);
                 }
-                #second-inner {
-                    top: 152px;
-                    position: absolute;
-                    width: 250px;
-                    height: 250px;
-                    background-image: url("../img/profile.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                    border-radius: 125px;
-                    border: 2px solid $white;
-                    -webkit-backface-visibility: hidden;
-                    backface-visibility: hidden;
-                    @include animation(pulse 1s linear infinite);
-                }
-            }
-            h2 {
-                margin: 100px auto;
-                margin-bottom: 0px;
-                font-size: 30px;
-                color: $white;
-                line-height: 2;
-                a {
-                    text-decoration: underline;
-                    color: $green;
-                    &:hover {
-                        text-decoration: none;
+                #about-button-cont {
+                    width: 167px;
+                    height: 145px;
+                    left: 50%;
+                    margin-left: -83.5px;
+                    position: relative;
+                    @include animation(dropDown 1.5s 1 forwards);
+                    #about-button-ph {
+                        width: 167px;
+                        height: 45px;
+                        bottom: 0px;
+                        position: absolute;
+                        border-radius: 25px;
+                        z-index: 5;
+                        cursor: pointer;
+                        &:hover ~ #about-button {
+                            @include transform(rotate3d(1, 0, 0, -180deg));
+                        }
+                    }
+                    #about-button {
+                        width: 167px;
+                        left: 0px;
+                        margin: 0px;
+                        margin-top: 100px;
+                        padding: 10px 15px;
+                        position: absolute;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        font-weight: 300;
+                        color: $white;
+                        background-color: $green;
+                        border: 2px solid transparent;
+                        border-radius: 25px;
+                        z-index: 2;
+                        -webkit-transform-origin: top;
+                        -ms-transform-origin: top;
+                        transform-origin: top;
+                    }
+                    #about-button-back {
+                        width: 167px;
+                        height: 45px;
+                        left: 0px;
+                        bottom: 0px;
+                        position: absolute;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 18px;
+                        font-weight: 300;
+                        color: $white;
+                        background-color: transparent;
+                        border: 2px solid $green;
+                        border-radius: 25px;
                     }
                 }
             }
         }
-    }
-    section#projects {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        background-color: rgb(225, 225, 225);
-        #projects-info {
+        section#profile {
             width: 100%;
-            #projects-info-content {
+            position: relative;
+            overflow: hidden;
+            background-color: $blue; 
+            #profile-info {
+                width: 100%;
+                #profile-info-content {
+                    max-width: 1024px;
+                    margin: 0px auto;
+                    padding: 13px 0px;
+                    text-align: center;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $white;
+                    border-bottom: 2px solid $white;
+                }
+            }
+            #profile-content {
                 max-width: 1024px;
+                padding: 100px 30px;
                 margin: 0px auto;
-                padding: 13px 0px;
                 text-align: center;
                 font-family: 'Raleway', sans-serif;
-                font-size: 24px;
-                font-weight: 600;
-                color: $blue;
-                border-bottom: 2px solid $blue;
+                #profile-image {
+                    width: 250px;
+                    height: 250px;
+                    margin: 0px auto;
+                    border-radius: 125px;
+                    cursor: pointer;
+                    #image-inner {
+                        width: 250px;
+                        height: 250px;
+                        background-image: url("../img/profile2.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                        border-radius: 125px;
+                        border: 2px solid $white;
+                        position: absolute;
+                        top: 152px;
+                        @include transform(rotate3d(0, 1, 0, 180deg));
+                    }
+                    #second-inner {
+                        top: 152px;
+                        position: absolute;
+                        width: 250px;
+                        height: 250px;
+                        background-image: url("../img/profile.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                        border-radius: 125px;
+                        border: 2px solid $white;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                        @include animation(pulse 1s linear infinite);
+                    }
+                }
+                h2 {
+                    margin: 100px auto;
+                    margin-bottom: 0px;
+                    font-size: 30px;
+                    color: $white;
+                    line-height: 2;
+                    a {
+                        text-decoration: underline;
+                        color: $green;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
             }
         }
-        #projects-content {
-            max-width: 1024px;
-            padding: 100px 30px;
-            margin: 0px auto;
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
-            ul {
+        section#projects {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(225, 225, 225);
+            #projects-info {
                 width: 100%;
-                display: inline-block;
-                li {
-                    width: calc(100% / 3);
-                    height: 400px;
+                #projects-info-content {
+                    max-width: 1024px;
+                    margin: 0px auto;
+                    padding: 13px 0px;
+                    text-align: center;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $blue;
+                    border-bottom: 2px solid $blue;
+                }
+            }
+            #projects-content {
+                max-width: 1024px;
+                padding: 100px 30px;
+                margin: 0px auto;
+                text-align: center;
+                font-family: 'Raleway', sans-serif;
+                ul {
+                    width: 100%;
                     display: inline-block;
-                    float: left;
-                    .pr-li-mask {
-                        width: 100%;
-                        height: 100%;
-                        position: relative;
-                        background-color: $dark-black;
-                        opacity: 0.7;
-                        &:hover {
-                            opacity: 1;
+                    li {
+                        width: calc(100% / 3);
+                        height: 400px;
+                        display: inline-block;
+                        float: left;
+                        .pr-li-mask {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            background-color: $dark-black;
+                            opacity: 0.7;
+                            &:hover {
+                                opacity: 1;
+                                .pr-title {
+                                    margin-top: 65px;
+                                }
+                                .pr-check-button {
+                                    bottom: 146px;
+                                    opacity: 1;
+                                }
+                                .pr-code-button {
+                                    bottom: 55px;
+                                    opacity: 1;
+                                }
+                                .pr-desc {
+                                    margin-top: 52px;
+                                    opacity: 1;
+                                }
+                                .pr-placeholder-title {
+                                    margin-top: 53px;
+                                }
+                                .pr-placeholder-desc {
+                                    margin-top: 92px;
+                                }
+                                .pr-placeholder-button {
+                                    bottom: 52px;
+                                }
+                            }
                             .pr-title {
-                                margin-top: 65px;
-                            }
-                            .pr-check-button {
-                                bottom: 146px;
-                                opacity: 1;
-                            }
-                            .pr-code-button {
-                                bottom: 55px;
-                                opacity: 1;
+                                margin-top: 188px;
+                                display: inline-block;
+                                font-size: 24px;
+                                font-weight: bold;
+                                color: $white;
                             }
                             .pr-desc {
-                                margin-top: 52px;
-                                opacity: 1;
+                                margin-top: 65px;
+                                padding: 0px 25px;
+                                font-weight: 500;
+                                color: white;
+                                opacity: 0;
+                            }
+                            .pr-check-button, .pr-code-button {
+                                left: 50%;
+                                bottom: 55px;
+                                margin-left: -68px;
+                                padding: 10px 15px;
+                                display: inline-block;
+                                position: absolute;
+                                font-size: 18px;
+                                font-weight: 500;
+                                color: $red;
+                                background-color: $white;
+                                opacity: 0;
+                                border: 2px solid transparent;
+                                border-radius: 25px;
+                                outline: none;
+                                text-decoration: none;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $white;
+                                    background-color: $red;
+                                } 
+                            }
+                            .pr-code-button {
+                                bottom: 0px;
                             }
                             .pr-placeholder-title {
-                                margin-top: 53px;
-                            }
-                            .pr-placeholder-desc {
-                                margin-top: 92px;
+                                margin-top: 178px;
+                                padding: 10px 15px;
+                                border: 2px dashed $white;
+                                border-radius: 25px;
                             }
                             .pr-placeholder-button {
-                                bottom: 52px;
+                                bottom: 0px;
+                                margin-left: -39px;
+                                cursor: default;
                             }
                         }
-                        .pr-title {
-                            margin-top: 188px;
-                            display: inline-block;
-                            font-size: 24px;
-                            font-weight: bold;
-                            color: $white;
-                        }
-                        .pr-desc {
-                            margin-top: 65px;
-                            padding: 0px 25px;
-                            font-weight: 500;
-                            color: white;
-                            opacity: 0;
-                        }
-                        .pr-check-button, .pr-code-button {
-                            left: 50%;
-                            bottom: 55px;
-                            margin-left: -68px;
-                            padding: 10px 15px;
-                            display: inline-block;
-                            position: absolute;
-                            font-size: 18px;
-                            font-weight: 500;
-                            color: $red;
-                            background-color: $white;
-                            opacity: 0;
-                            border: 2px solid transparent;
-                            border-radius: 25px;
-                            outline: none;
-                            text-decoration: none;
-                            cursor: pointer;
-                            &:hover {
-                                color: $white;
-                                background-color: $red;
-                            } 
-                        }
-                        .pr-code-button {
-                            bottom: 0px;
-                        }
-                        .pr-placeholder-title {
-                            margin-top: 178px;
-                            padding: 10px 15px;
-                            border: 2px dashed $white;
-                            border-radius: 25px;
-                        }
-                        .pr-placeholder-button {
-                            bottom: 0px;
-                            margin-left: -39px;
-                            cursor: default;
-                        }
                     }
-                }
-                #one-pr-li {
-                    background-image: url("../img/tictac.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #two-pr-li {
-                    background-image: url("../img/itunesgrid.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #three-pr-li {
-                    background-image: url("../img/contactform.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #four-pr-li {
-                    background-image: url("../img/calculator.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #five-pr-li {
-                    background-image: url("../img/personalsite.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #six-pr-li {
-                    background-image: url("../img/animatedlinks.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #seven-pr-li {
-                    background-image: url("../img/schoolportfolio.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #eight-pr-li {
-                    background-image: url("../img/menu.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #nine-pr-li {
-                    background-image: url("../img/loginform.jpg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center;
-                    background-size: cover;
-                }
-                #ten-pr-li, #eleven-pr-li {
-                    display: none;
-                    background-color: $red;
+                    #one-pr-li {
+                        background-image: url("../img/tictac.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #two-pr-li {
+                        background-image: url("../img/itunesgrid.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #three-pr-li {
+                        background-image: url("../img/contactform.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #four-pr-li {
+                        background-image: url("../img/calculator.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #five-pr-li {
+                        background-image: url("../img/personalsite.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #six-pr-li {
+                        background-image: url("../img/animatedlinks.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #seven-pr-li {
+                        background-image: url("../img/schoolportfolio.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #eight-pr-li {
+                        background-image: url("../img/menu.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #nine-pr-li {
+                        background-image: url("../img/loginform.jpg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    #ten-pr-li, #eleven-pr-li {
+                        display: none;
+                        background-color: $red;
+                    }
                 }
             }
         }
-    }
-    footer {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        background-color: $red;
-        #footer-content {
-            max-width: 1024px;
-            padding: 100px 30px;
-            margin: 0px auto;
-            font-family: 'Raleway', sans-serif;
-            h1 {
-                width: 150px;
-                display: inline-block;
-                position: relative;
-                border-radius: 25px;
-                a {
-                    display: block;
-                    padding: 10px 15px;
-                    font-size: 30px;
-                    font-weight: bold;
-                    color: $white;
-                    text-decoration: none;
-                    border: 2px solid $white;
+        footer {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: $red;
+            #footer-content {
+                max-width: 1024px;
+                padding: 100px 30px;
+                margin: 0px auto;
+                font-family: 'Raleway', sans-serif;
+                h1 {
+                    width: 150px;
+                    display: inline-block;
+                    position: relative;
                     border-radius: 25px;
-                    cursor: pointer;
-                }
-                &:hover {
-                    background-color: $white;
-                    a {
-                        color: $red;
-                    }                
-                }
-            }
-            ul {
-                margin-top: 9px;
-                display: inline-block;
-                float: right;
-                li {
-                    margin-left: 10px;
-                    float: left;
                     a {
                         display: block;
                         padding: 10px 15px;
-                        font-size: 18px;
-                        font-weight: 600;
+                        font-size: 30px;
+                        font-weight: bold;
                         color: $white;
                         text-decoration: none;
+                        border: 2px solid $white;
                         border-radius: 25px;
                         cursor: pointer;
-                        &:hover {
-                            background-color: $light-black;
-                        }
                     }
-                } 
+                    &:hover {
+                        background-color: $white;
+                        a {
+                            color: $red;
+                        }                
+                    }
+                }
+                ul {
+                    margin-top: 9px;
+                    display: inline-block;
+                    float: right;
+                    li {
+                        margin-left: 10px;
+                        float: left;
+                        a {
+                            display: block;
+                            padding: 10px 15px;
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $white;
+                            text-decoration: none;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: $light-black;
+                            }
+                        }
+                    } 
+                }
+                h3 {
+                    margin-top: 30px;
+                    color: $white;
+                    text-align: left;
+                }                
             }
-            h3 {
-                margin-top: 30px;
-                color: $white;
-                text-align: left;
-            }                
-        }
-    }   
-}
+        }   
+    }
     nav {
         width: 200px;
         height: 100%;

@@ -126,10 +126,10 @@ body {
       margin-top: 50px;
       position: absolute;
       z-index: 99;
-      -webkit-animation: opacityAnim 1s 1 forwards;
-      -moz-animation: opacityAnim 1s 1 forwards;
-      -o-animation: opacityAnim 1s 1 forwards;
-      animation: opacityAnim 1s 1 forwards; }
+      -webkit-animation: opacityAnim 1.5s 1 forwards;
+      -moz-animation: opacityAnim 1.5s 1 forwards;
+      -o-animation: opacityAnim 1.5s 1 forwards;
+      animation: opacityAnim 1.5s 1 forwards; }
       body #main header #menu-icon {
         position: absolute;
         top: 0px;
@@ -247,20 +247,20 @@ body {
           font-size: 68px;
           color: white;
           position: relative;
-          -webkit-animation: dropDown 1s 1 forwards;
-          -moz-animation: dropDown 1s 1 forwards;
-          -o-animation: dropDown 1s 1 forwards;
-          animation: dropDown 1s 1 forwards; }
+          -webkit-animation: dropDown 1.5s 1 forwards;
+          -moz-animation: dropDown 1.5s 1 forwards;
+          -o-animation: dropDown 1.5s 1 forwards;
+          animation: dropDown 1.5s 1 forwards; }
         body #main section#about #about-content #about-button-cont {
           width: 167px;
           height: 145px;
           left: 50%;
           margin-left: -83.5px;
           position: relative;
-          -webkit-animation: dropDown 1s 1 forwards;
-          -moz-animation: dropDown 1s 1 forwards;
-          -o-animation: dropDown 1s 1 forwards;
-          animation: dropDown 1s 1 forwards; }
+          -webkit-animation: dropDown 1.5s 1 forwards;
+          -moz-animation: dropDown 1.5s 1 forwards;
+          -o-animation: dropDown 1.5s 1 forwards;
+          animation: dropDown 1.5s 1 forwards; }
           body #main section#about #about-content #about-button-cont #about-button-ph {
             width: 167px;
             height: 45px;
