@@ -4,10 +4,22 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div id="mask">
+			<div id="back" class="transition">
+				<h1>This calculator works with Reverse Polish Notation (Postfix). It's a method of writing arithmetic expressions, 
+					where every operator follows all of its operands.</h1>
+			</div>
+			<div id="front" class="transition">
+				<h1>Calculator</h1>
+			</div>
+		</div>
+		<div class="hinge"></div>
+		<div id="second-hinge" class="hinge"></div>
 		<div id="calculator">
 			<input type="text" id="display" value disabled="disabled">
+			<input type="text" id="display-two" value disabled="disabled">
             <div id="operations">
-				<input type="button" class="number clear red" value="AC">
+				<input type="button" class="clear red" value="AC">
                 <input type="button" class="sign" value="/">
                 <input type="button" class="sign left" value="*">
 				<input type="button" class="sign" value="-">
@@ -27,7 +39,7 @@
                 <input type="button" class="number zero" value="0">
             </div>
 		</div>
-		<script src="vendor/jquery-1.9.0.js"></script>
-		<script src="js/script.js"></script>
+		<script src="vendor/jquery-2.1.1.js"></script>
+		<script src="js/scriptt.js"></script>
 	</body>
 </html>

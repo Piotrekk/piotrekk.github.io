@@ -1,64 +1,208 @@
+.transition {
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  transition: All 0.5s ease; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-	font-family: "Helvetica Neue", Arial, sans-serif;
-	background-color: rgba(177, 253, 106, 0.66);
-}
-#calculator {
-	width: 350px;
-	height: 530px;
-	padding: 15px;
-	background-color: rgba(231, 231, 231, 1.0);
-	margin: 75px auto;
-	border-radius: 3px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	-webkit-box-shadow: 0 25px 50px 2px rgba(0,0,0,0.5), inset 0 0 3px 4px rgba(0 , 0, 0, 0.10), inset rgba(0, 0, 0, 0.25) 0px -5px 3px 0px;
-}
-input#display {
-	width: 330px;
-	height: 50px;
-	padding: 10px;
-	margin: 0px auto;
-	margin-left: -1px;
-	margin-bottom: 15px;
-	display: block;
-	border: 1px solid rgba(0, 0, 0, 0.5);
-	border-radius: 3px;
-	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.65)));
-	-webkit-box-shadow:inset rgba(0, 0, 0, 1.0) 0px 1px 4px, inset rgba(225, 225, 225, 0.6) 0px -2px 4px -2px, rgba(255, 255, 255, 1.0) 0px 4px 4px 1px;
-	font-size: 40px;
-	text-align: right;
-	color: rgba(230, 230, 230, 1.0);
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1.0);
-}
-#operations input, #numbers input {
-	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(230, 230, 230, 1.0)), to(rgba(245, 245, 245, 1.0)));
-	border-radius: 3px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	color: rgba(0, 0, 0, 0.5);
-	width: 104px;
-	height: 60px;
-	cursor: pointer;
-	font-size: 30px;
-	margin: 0px 15px 15px 0px;
-	border-radius: 3px;
-	text-align: center;
-	outline: none;
-	-webkit-transition: All 0.10s ease;
-	-webkit-box-shadow:inset rgba(0,0,0,1.0) 0px 0px 0px, inset rgba(0, 0, 0, 0.1) 0px -2px 3px 0px, rgba(255, 255, 255, 0.5) 0px 3px 4px 0px;
-}
-#operations input:active, #numbers input:active {
-	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(210, 210, 210, 1.0)), to(rgba(225, 225, 225, 1.0)));
-	box-shadow: inset rgba(0,0,0,0.3) 0px 2px 5px 0px;
-}
-#operations input.left, #numbers input.left {
-	margin-right: 0px;
-}
-#numbers input.zero {
-	width: 350px;
-}
-#operations .red {
-	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(253, 106, 106, 0.45)), to(rgba(253, 106, 106, 0.35)));
-}
-#operations .red:active {
-	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(253, 106, 106, 0.65)), to(rgba(253, 106, 106, 0.55)));
-	box-shadow: inset rgba(0,0,0,0.3) 0px 2px 5px 0px;
-}
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgba(177, 253, 106, 0.66); }
+  body #mask {
+    width: 380px;
+    height: 606px;
+    left: 50%;
+    top: 50%;
+    margin: -303.5px -190px;
+    position: absolute;
+    z-index: 9;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-perspective: 1600px;
+    perspective: 1600px; }
+    body #mask #front {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      background-color: #e7e7e7;
+      border-radius: 3px;
+      -webkit-transform-origin: right;
+      -ms-transform-origin: right;
+      transform-origin: right;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      box-shadow: inset 0 0 3px 4px rgba(0, 0, 0, 0.1), inset rgba(0, 0, 0, 0.25) 0px -5px 3px 0px;
+      cursor: pointer; }
+      body #mask #front h1 {
+        top: 150px;
+        position: relative;
+        font-size: 52px; }
+    body #mask #back {
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      margin-left: 190px;
+      position: absolute;
+      text-align: center;
+      -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+      transform-origin: left;
+      -webkit-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+      -ms-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+      background-color: #e7e7e7;
+      border-radius: 3px;
+      box-shadow: inset 0 0 3px 4px rgba(0, 0, 0, 0.1), inset rgba(0, 0, 0, 0.25) 0px -5px 3px 0px;
+      cursor: pointer; }
+      body #mask #back h1 {
+        padding: 10px;
+        top: 150px;
+        position: relative;
+        font-size: 32px;
+        line-height: 1.2; }
+  body .hinge {
+    width: 15px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    margin: -204px 185px;
+    position: absolute;
+    z-index: 99;
+    background-image: -o-linear-gradient(left, #e7e7e7 0%, #c8c8c8 100%);
+    background-image: -moz-linear-gradient(left, #e7e7e7 0%, #c8c8c8 100%);
+    background-image: -webkit-linear-gradient(left, #e7e7e7 0%, #c8c8c8 100%);
+    background-image: -ms-linear-gradient(left, #e7e7e7 0%, #c8c8c8 100%);
+    background-image: linear-gradient(left, #e7e7e7 0%, #c8c8c8 100%);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    -webkit-transition: All 0.25s ease;
+    -moz-transition: All 0.25s ease;
+    -o-transition: All 0.25s ease;
+    transition: All 0.25s ease; }
+  body #second-hinge {
+    margin: 160px 185px; }
+  body #calculator {
+    width: 350px;
+    height: 576px;
+    padding: 15px;
+    left: 50%;
+    top: 50%;
+    margin: -303.5px -190px;
+    position: absolute;
+    background-color: #e7e7e7;
+    border-radius: 3px;
+    box-shadow: inset 0 0 3px 4px rgba(0, 0, 0, 0.1), inset rgba(0, 0, 0, 0.25) 0px -5px 3px 0px; }
+    body #calculator input#display, body #calculator input#display-two {
+      width: 330px;
+      height: 50px;
+      padding: 10px;
+      margin: 0px auto;
+      margin-left: -1px;
+      margin-bottom: 15px;
+      display: block;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%);
+      background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%);
+      background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%);
+      background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%);
+      background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%);
+      box-shadow: inset black 0px 1px 4px, inset rgba(225, 225, 225, 0.6) 0px -2px 4px -2px, white 0px 4px 4px 1px;
+      font-size: 40px;
+      text-align: right;
+      color: #e6e6e6;
+      text-shadow: 1px 1px 1px black; }
+    body #calculator input#display-two {
+      height: 16px;
+      font-size: 21px; }
+    body #calculator #operations input, body #calculator #numbers input {
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.5);
+      width: 104px;
+      height: 60px;
+      cursor: pointer;
+      font-size: 30px;
+      margin: 0px 14px 15px 0px;
+      border-radius: 3px;
+      text-align: center;
+      outline: none;
+      -webkit-transition: All 0.10s ease;
+      background-image: -o-linear-gradient(bottom, #e6e6e6 0%, whitesmoke 100%);
+      background-image: -moz-linear-gradient(bottom, #e6e6e6 0%, whitesmoke 100%);
+      background-image: -webkit-linear-gradient(bottom, #e6e6e6 0%, whitesmoke 100%);
+      background-image: -ms-linear-gradient(bottom, #e6e6e6 0%, whitesmoke 100%);
+      background-image: linear-gradient(bottom, #e6e6e6 0%, whitesmoke 100%);
+      box-shadow: inset black 0px 0px 0px, inset rgba(0, 0, 0, 0.1) 0px -2px 3px 0px, rgba(255, 255, 255, 0.5) 0px 3px 4px 0px; }
+      body #calculator #operations input:active, body #calculator #numbers input:active {
+        background-image: -o-linear-gradient(bottom, #d2d2d2 0%, #e1e1e1 100%);
+        background-image: -moz-linear-gradient(bottom, #d2d2d2 0%, #e1e1e1 100%);
+        background-image: -webkit-linear-gradient(bottom, #d2d2d2 0%, #e1e1e1 100%);
+        background-image: -ms-linear-gradient(bottom, #d2d2d2 0%, #e1e1e1 100%);
+        background-image: linear-gradient(bottom, #d2d2d2 0%, #e1e1e1 100%);
+        box-shadow: inset rgba(0, 0, 0, 0.3) 0px 2px 5px 0px; }
+    body #calculator #operations input.left, body #calculator #numbers input.left {
+      margin-right: 0px; }
+    body #calculator #operations input.red {
+      background-image: -o-linear-gradient(bottom, rgba(253, 106, 106, 0.55) 0%, rgba(253, 106, 106, 0.45) 100%);
+      background-image: -moz-linear-gradient(bottom, rgba(253, 106, 106, 0.55) 0%, rgba(253, 106, 106, 0.45) 100%);
+      background-image: -webkit-linear-gradient(bottom, rgba(253, 106, 106, 0.55) 0%, rgba(253, 106, 106, 0.45) 100%);
+      background-image: -ms-linear-gradient(bottom, rgba(253, 106, 106, 0.55) 0%, rgba(253, 106, 106, 0.45) 100%);
+      background-image: linear-gradient(bottom, rgba(253, 106, 106, 0.55) 0%, rgba(253, 106, 106, 0.45) 100%); }
+      body #calculator #operations input.red:active {
+        background-image: -o-linear-gradient(bottom, rgba(253, 106, 106, 0.65) 0%, rgba(253, 106, 106, 0.55) 100%);
+        background-image: -moz-linear-gradient(bottom, rgba(253, 106, 106, 0.65) 0%, rgba(253, 106, 106, 0.55) 100%);
+        background-image: -webkit-linear-gradient(bottom, rgba(253, 106, 106, 0.65) 0%, rgba(253, 106, 106, 0.55) 100%);
+        background-image: -ms-linear-gradient(bottom, rgba(253, 106, 106, 0.65) 0%, rgba(253, 106, 106, 0.55) 100%);
+        background-image: linear-gradient(bottom, rgba(253, 106, 106, 0.65) 0%, rgba(253, 106, 106, 0.55) 100%);
+        box-shadow: inset rgba(0, 0, 0, 0.3) 0px 2px 5px 0px; }
+    body #calculator #numbers input.zero {
+      width: 350px; }

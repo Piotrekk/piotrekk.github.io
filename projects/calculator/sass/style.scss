@@ -1,0 +1,23 @@
+$white: rgb(255, 255, 255);
+$black: rgb(46, 46, 46);
+$red: rgb(244, 105, 105);
+$yellow: rgb(255, 255, 123);
+$green: rgb(53, 167, 133);
+
+.transition {
+	-webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+}
+
+@mixin bImage($w, $x, $y) {
+	background-image: -o-linear-gradient($w, $x 0%, $y 100%);
+	background-image: -moz-linear-gradient($w, $x 0%, $y 100%);
+	background-image: -webkit-linear-gradient($w, $x 0%, $y 100%);
+	background-image: -ms-linear-gradient($w, $x 0%, $y 100%);
+	background-image: linear-gradient($w, $x 0%, $y 100%);
+}
+
+@import "reset";
+@import "page";
