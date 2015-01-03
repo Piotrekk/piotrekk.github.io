@@ -33,7 +33,7 @@ body {
             margin-top: 50px;
             position: absolute;
             z-index: 99;
-            @include animation(opacityAnim 1.5s 1 forwards);     
+            @include animation(opacityAnim 1.5s 1 forwards);
             #menu-icon {
                 position: absolute;
                 top: 0px;
@@ -229,7 +229,7 @@ body {
             width: 100%;
             position: relative;
             overflow: hidden;
-            background-color: $blue; 
+            background-color: $blue;
             #profile-info {
                 width: 100%;
                 #profile-info-content {
@@ -403,7 +403,7 @@ body {
                                 &:hover {
                                     color: $white;
                                     background-color: $red;
-                                } 
+                                }
                             }
                             .pr-code-button {
                                 bottom: 0px;
@@ -420,6 +420,13 @@ body {
                                 cursor: default;
                             }
                         }
+                    }
+                    #zero-pr-li {
+                        background-image: url("../img/christmas-tree.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        background-size: cover;
                     }
                     #one-pr-li {
                         background-image: url("../img/tictac.jpg");
@@ -521,7 +528,7 @@ body {
                         background-color: $white;
                         a {
                             color: $red;
-                        }                
+                        }
                     }
                 }
                 ul {
@@ -544,15 +551,15 @@ body {
                                 background-color: $light-black;
                             }
                         }
-                    } 
+                    }
                 }
                 h3 {
                     margin-top: 30px;
                     color: $white;
                     text-align: left;
-                }                
+                }
             }
-        }   
+        }
     }
     nav {
         width: 200px;
@@ -569,7 +576,7 @@ body {
                 margin: 10px;
                 border-radius: 25px;
                 cursor: pointer;
-                a { 
+                a {
                     padding: 14px 15px;
                     display: block;
                     position: relative;
@@ -604,7 +611,7 @@ body {
                         margin-left: 2px;
                     }
                 }
-            } 
+            }
         }
         .nav-icon {
             margin: 10px;
@@ -680,7 +687,7 @@ body {
             section#profile {
                 #profile-info {
                     #profile-info-content {
-                    margin: 0px 25px;                
+                    margin: 0px 25px;
                     }
                 }
             }

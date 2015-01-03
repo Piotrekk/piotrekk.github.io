@@ -7,26 +7,21 @@
 @keyframes pulse {
   0% {
     box-shadow: 0px 0px 10px #35a785; }
-
   50% {
     box-shadow: 0px 0px 80px #35a785; }
-
   100% {
     box-shadow: 0px 0px 10px #35a785; } }
 @-webkit-keyframes pulse {
   0% {
     box-shadow: 0px 0px 10px #35a785; }
-
   50% {
     box-shadow: 0px 0px 80px #35a785; }
-
   100% {
     box-shadow: 0px 0px 10px #35a785; } }
 @-webkit-keyframes dropDown {
   0% {
     opacity: 0;
     top: -75px; }
-
   100% {
     opacity: 1;
     top: 0px; } }
@@ -34,20 +29,17 @@
   0% {
     opacity: 0;
     top: -75px; }
-
   100% {
     opacity: 1;
     top: 0px; } }
 @-webkit-keyframes opacityAnim {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @keyframes opacityAnim {
   0% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -481,6 +473,12 @@ body {
                 bottom: 0px;
                 margin-left: -39px;
                 cursor: default; }
+          body #main section#projects #projects-content ul #zero-pr-li {
+            background-image: url("../img/christmas-tree.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-size: cover; }
           body #main section#projects #projects-content ul #one-pr-li {
             background-image: url("../img/tictac.jpg");
             background-repeat: no-repeat;
@@ -728,3 +726,5 @@ body {
     width: 100% !important;
     float: none; } }
 /************************************************************ END MEDIA QUERIES ************************************************************/
+
+/*# sourceMappingURL=style.css.map */
