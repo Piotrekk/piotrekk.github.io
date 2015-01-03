@@ -1,0 +1,47 @@
+.radial-gradient(@bg, @color1, @color2, @per) {
+  background: @bg;
+  background: -moz-radial-gradient(cover, @color1 0%, @color2 @per);
+  background: -webkit-gradient(0px, center center, @per, color-stop(0%, @color1), color-stop(@per, @color2));
+  background: -webkit-radial-gradient(cover, @color1 0%, @color2 @per);
+  background: -o-radial-gradient(cover, @color1 0%, @color2 @per);
+  background: -ms-radial-gradient(cover, @color1 0%, @color2 @per);
+  background: radial-gradient(ellipse at center, @color1 0%, @color2 @per);
+}
+
+.transform(@var) {
+  -webkit-transform: @var;
+  -moz-transform: @var;
+  -ms-transform: @var;
+  transform: @var;
+}
+
+.animation(@var) {
+  -webkit-animation: @var;
+  -moz-animation: @var;
+  -o-animation: @var;
+  animation: @var;
+}
+
+@keyframes pulse {
+  0% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 10%);
+  }
+  50% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 70%);
+    }
+  100% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 10%);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 10%);
+  }
+  50% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 70%);
+    }
+  100% {
+      .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.3), rgba(255,255,255,0), 10%);
+  }
+}

@@ -1,0 +1,118 @@
+html {
+  height: 100%;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  .radial-gradient(rgb(3, 149, 71), rgb(3, 149, 71), rgb(1, 31, 7), 100%);
+
+  .tree {
+
+    margin-top: 100px;
+    position: relative;
+
+    svg {
+
+      .ring {
+        fill: transparent;
+        stroke: rgb(255, 255, 255);
+        stroke-width: 1;
+      }
+
+    }
+
+    .lights {
+
+      top: 0;
+      left: calc(~'50% - 225px');
+      width: 450px;
+      height: 630px;
+      position: absolute;
+
+      .lg {
+
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        border-radius: 150px;
+
+        .fl {
+          top: 25px;
+          left: -70px;
+          width: 200px;
+          height: 10px;
+          background: red;
+          position: absolute;
+          border-radius: 150px;
+          .radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0.2), rgba(255,255,255,0), 50%);
+
+          &.fl-1 {
+            .transform(rotate(0deg));
+          }
+
+          &.fl-2 {
+            .transform(rotate(45deg));
+          }
+
+          &.fl-3 {
+            .transform(rotate(90deg));
+          }
+
+          &.fl-4 {
+            .transform(rotate(135deg));
+          }
+
+        }
+
+        &.lg-1 {
+          top: 350px;
+          right: 200px;
+          .animation(pulse 1s linear infinite);
+        }
+
+        &.lg-2 {
+          top: 200px;
+          right: 150px;
+          .animation(pulse 1.05s linear infinite);
+        }
+
+        &.lg-3 {
+          top: 475px;
+          right: 275px;
+          .animation(pulse 1.1s linear infinite);
+        }
+
+        &.lg-4 {
+          top: 100px;
+          right: 200px;
+          .animation(pulse 1.3s linear infinite);
+        }
+
+        &.lg-5 {
+          top: 250px;
+          right: 250px;
+          .animation(pulse 1.3s linear infinite);
+        }
+
+        &.lg-6 {
+          top: 500px;
+          right: 100px;
+          .animation(pulse 1.3s linear infinite);
+        }
+
+        &.lg-7 {
+          top: 9px;
+          right: 195px;
+          .animation(pulse 1.2s linear infinite);
+        }
+
+      }
+
+    }
+
+  }
+
+}
