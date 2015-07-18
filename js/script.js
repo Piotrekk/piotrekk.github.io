@@ -49,8 +49,8 @@ $(document).ready(function(){
     $('body').css({'overflow': 'auto', 'overflow-x': 'hidden'});
   }
 
-  $('#menu-icon').click(function(){
-    if (openNav == false){
+  $('#menu-icon').click(function() {
+    if (openNav == false) {
       $('body').transition({overflow: 'hidden'});
       $('nav').transition({marginLeft: '200px'}, 100, 'out');
       $('#main').transition({marginLeft: '200px'}, 100, 'out');
@@ -68,7 +68,7 @@ $(document).ready(function(){
     }
   });
 
-  $('#nav-home-button, #footer-home-button').click(function(){
+  $('#nav-home-button, #footer-home-button').click(function() {
     $('nav').transition({marginLeft: '0px'}, 100, 'out');
     $('#main').transition({marginLeft: '0px'}, 100, 'out');
     $('#menu-icon').transition({backgroundColor: 'transparent'});
@@ -102,7 +102,7 @@ $(document).ready(function(){
     });
   });
 
-  $('#nav-projects-button, #footer-projects-button').click(function(){
+  $('#nav-projects-button, #footer-projects-button').click(function() {
     $('nav').transition({marginLeft: '0px'}, 100, 'out');
     $('#main').transition({marginLeft: '0px'}, 100, 'out');
     $('#menu-icon').transition({backgroundColor: 'transparent'});
@@ -119,7 +119,7 @@ $(document).ready(function(){
     });
   });
 
-  $('#nav-contact-button, #footer-contact-button').click(function(){
+  $('#nav-contact-button, #footer-contact-button').click(function() {
     $('nav').transition({marginLeft: '0px'}, 100, 'out');
     $('#main').transition({marginLeft: '0px'}, 100, 'out');
     $('#menu-icon').transition({backgroundColor: 'transparent'});
@@ -139,49 +139,53 @@ $(document).ready(function(){
   // Profile image animation
   var imageRotate = false;
 
-  $('#profile-image').click(function(){
+  $('#profile-image').click(function() {
+
     if (!imageRotate) {
       $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
-      /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
-      '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
-      'transform': 'rotate3d(0, 1, 0, 0deg)',
-      /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
-      '-moz-animation': 'pulse 1s linear infinite',
-      '-o-animation': 'pulse 1s linear infinite',
-      'animation': 'pulse 1s linear infinite'
-    });
-    $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, -180deg)',
-    /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, -180deg)',
-    '-ms-transform': 'rotate3d(0, 1, 0, -180deg)',
-    'transform': 'rotate3d(0, 1, 0, -180deg)',
-    /* Animation */   '-webkit-animation': 'none',
-    '-moz-animation': 'none',
-    '-o-animation': 'none',
-    'animation': 'none'
+        /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
+        '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+        'transform': 'rotate3d(0, 1, 0, 0deg)',
+        /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+        '-moz-animation': 'pulse 1s linear infinite',
+        '-o-animation': 'pulse 1s linear infinite',
+        'animation': 'pulse 1s linear infinite'
+      });
+
+      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, -180deg)',
+        /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, -180deg)',
+        '-ms-transform': 'rotate3d(0, 1, 0, -180deg)',
+        'transform': 'rotate3d(0, 1, 0, -180deg)',
+        /* Animation */   '-webkit-animation': 'none',
+        '-moz-animation': 'none',
+        '-o-animation': 'none',
+        'animation': 'none'
+      });
+
+    imageRotate = true;
+
+    } else {
+      $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 180deg)',
+        /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 180deg)',
+        '-ms-transform': 'rotate3d(0, 1, 0, 180deg)',
+        'transform': 'rotate3d(0, 1, 0, 180deg)',
+        /* Animation */   '-webkit-animation': 'none',
+        '-moz-animation': 'none',
+        '-o-animation': 'none',
+        'animation': 'none'
+      });
+
+      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
+        /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
+        '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+        'transform': 'rotate3d(0, 1, 0, 0deg)',
+        /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+        '-moz-animation': 'pulse 1s linear infinite',
+        '-o-animation': 'pulse 1s linear infinite',
+        'animation': 'pulse 1s linear infinite'
+      });
+
+      imageRotate = false;
+    }
   });
-
-  imageRotate = true;
-} else {
-  $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 180deg)',
-  /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 180deg)',
-  '-ms-transform': 'rotate3d(0, 1, 0, 180deg)',
-  'transform': 'rotate3d(0, 1, 0, 180deg)',
-  /* Animation */   '-webkit-animation': 'none',
-  '-moz-animation': 'none',
-  '-o-animation': 'none',
-  'animation': 'none'
-});
-$('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
-/* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
-'-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
-'transform': 'rotate3d(0, 1, 0, 0deg)',
-/* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
-'-moz-animation': 'pulse 1s linear infinite',
-'-o-animation': 'pulse 1s linear infinite',
-'animation': 'pulse 1s linear infinite'
-});
-
-imageRotate = false;
-}
-});
 });
