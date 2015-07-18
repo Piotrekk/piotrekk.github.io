@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fontello.css">
-    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,700' rel='stylesheet' type='text/css'>
+  <title></title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fontello.css">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <header>
-        <div id="header-content">
-            <h1><a class="body-scroll transition">Black Sea</a></h1>
-            <ul>
-                <li><a class="main-scroll">HOME</a></li><span>/</span>
-                <li><a class="about-scroll">ABOUT ME</a></li><span>/</span>
-                <li><a class="portfolio-scroll">PORTFOLIO</a></li><span>/</span>
-                <li><a class="contact-scroll">CONTACT ME</a></li>
-            </ul>
+
+  <header>
+    <div id="header-content">
+      <h1><a class="body-scroll transition">Black Sea</a></h1>
+      <ul>
+        <li><a class="main-scroll">HOME</a></li><span>/</span>
+        <li><a class="about-scroll">ABOUT ME</a></li><span>/</span>
+        <li><a class="portfolio-scroll">PORTFOLIO</a></li><span>/</span>
+        <li><a class="contact-scroll">CONTACT ME</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="main" class="transition">
+    <div id="main-content">
+      <h2>WE NEED THE TONIC OF WILDNESS</h2>
+      <button class="about-scroll transition">Read more</button>
+      <ul>
+        <li class="one current-slide"></li>
+        <li class="two"></li>
+        <li class="three"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about">
+    <div id="about-content">
+      <h2>At the same time that we are earnest to explore & learn all things</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's                   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a                  type ecimen book.
+      </p>
+      <ul>
+        <li class="icon-github"></li>
+        <li class="icon-globe center-item-about"></li>
+        <li class="icon-camera"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div id="portfolio-content">
+      <div id="profile-content">
+        <div id="profile-img"></div>
+        <div id="profile-name">
+          <h2>DHAVAN</h2>
+          <span>,,</span>
         </div>
-    </header>
-    <section id="main" class="transition">
-        <div id="main-content">
-            <h2>WE NEED THE TONIC OF WILDNESS</h2>
-            <button class="about-scroll transition">Read more</button>
-            <ul>
-                <li class="one current-slide"></li>
-                <li class="two"></li>
-                <li class="three"></li>
-            </ul>
-        </div>
-    </section>
-    <section id="about">
-        <div id="about-content">
-            <h2>At the same time that we are earnest to explore & learn all things</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's                   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a                  type ecimen book.
-            </p>
-            <ul>
-                <li class="icon-github"></li>
-                <li class="icon-globe center-item-about"></li>
-                <li class="icon-camera"></li>
-            </ul>
-        </div>
-    </section>
-    <section id="portfolio">
-        <div id="portfolio-content">
-            <div id="profile-content">
-                <div id="profile-img"></div>
-                <div id="profile-name">
-                    <h2>DHAVAN</h2>
-                    <span>,,</span>
-                </div>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's                   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a                  type ecimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
-            </p>
-        </div>
-    </section>
-    <section id="contact">
-        <div id="map_canvas"></div>
-        <div id="contact-content">
-            <div id="form-content">
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input class="center-item-input" type="text" placeholder="Email Adress">
-                    <textarea placeholder="Message"></textarea>
-                    <span class="icon-ok-circled transition"></span>
-                </form>
-            </div>
-        </div>
-    </section>
-    <footer>COPYRIGHT © 2012 CSS AUTHOR.COM</footer>
-    
-    <script src="vendor/jquery-1.9.0.js"></script>
-    <script src="vendor/jquery-scrollTo.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="js/script.js"></script>
-    <script>
-          function initialize() {
-            var map_canvas = document.getElementById('map_canvas');
-            var map_options = {
-              center: new google.maps.LatLng(49.95608, 20.471649),
-              zoom: 8,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(map_canvas, map_options)
-          }
-          google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's                   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a                  type ecimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div id="map_canvas"></div>
+    <div id="contact-content">
+      <div id="form-content">
+        <form>
+          <input type="text" placeholder="Name">
+          <input class="center-item-input" type="text" placeholder="Email Adress">
+          <textarea placeholder="Message"></textarea>
+          <span class="icon-ok-circled transition"></span>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <footer>COPYRIGHT © 2012 CSS AUTHOR.COM</footer>
+
+  <script src="vendor/jquery-1.9.0.js"></script>
+  <script src="vendor/jquery-scrollTo.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="js/script.js"></script>
+  <script>
+  function initialize() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+      center: new google.maps.LatLng(49.95608, 20.471649),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(map_canvas, map_options)
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
 </body>
 </html>

@@ -1,14 +1,14 @@
 html, body {
-	//font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: 'Jura', sans-serif;
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   height: 100%;
   background-image: -webkit-gradient(
-  	linear,
-  	right bottom,
-  	left top,
-  	color-stop(0.2, rgb(58, 164, 125)),
-  	color-stop(1, rgb(0, 123, 157))
+  linear,
+  right bottom,
+  left top,
+  color-stop(0.2, rgb(58, 164, 125)),
+  color-stop(1, rgb(0, 123, 157))
   );
   background-image: -o-linear-gradient(left top, rgb(58, 164, 125) 20%, rgb(0, 123, 157) 100%);
   background-image: -moz-linear-gradient(left top, rgb(58, 164, 125) 20%, rgb(0, 123, 157) 100%);
@@ -26,16 +26,13 @@ html, body {
       left: 50%;
       margin: -200px -200px;
       position: absolute;
-      //background-color: white;
-      //overflow: hidden;
       border-radius: 200px;
-      //box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
-      
-     -webkit-animation: head 2s linear infinite;
-     -moz-animation: head 2s linear infinite;
-     animation: head 2s linear infinite;
+
+      -webkit-animation: head 2s linear infinite;
+      -moz-animation: head 2s linear infinite;
+      animation: head 2s linear infinite;
       .container {
         width: 200px;
         height: 200px;
@@ -298,42 +295,42 @@ html, body {
 /************************************************************ MEDIA QUERIES ************************************************************/
 @media all and (min-width: 420px) {
   body {
-      #main {
-            
-      }
+    #main {
+
+    }
   }
 }
 @media all and (min-width: 1024px) {
   body {
-      #main {
-            
-      }
+    #main {
+
+    }
   }
 }
 /************************************************************ END MEDIA QUERIES ************************************************************/
 @keyframes head {
   0% {
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
 
   50% {
-      box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.7);
   }
 
   100% {
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   }
 }
 @-webkit-keyframes head {
   0% {
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
-      
+
   50% {
-      box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.7);
   }
-      
+
   100% {
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   }
 }

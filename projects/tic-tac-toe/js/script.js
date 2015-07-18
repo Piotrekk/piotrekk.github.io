@@ -5,7 +5,7 @@ $(document).ready(function(){
 	// Set these variales in order to count scores
 	var wins = 0;
 	var loses = 0;
-	var ties = 0;	
+	var ties = 0;
 
 	// Main newGame function
 	TicTacApp.newGame = function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
 		// Set empty arrays in order to store used box values
 		selected = [];
 		opponent = [];
-		
+
 		// Set a tie variable to check if a game ends with the tie
 		tie = 1;
 
@@ -67,7 +67,7 @@ $(document).ready(function(){
 				if (y != -1) {
 					boxes.splice(y, 1);
 				}
-				
+
 				// Set 'S' variables as indexes of selected[] array to check if it exist
 				var Sa = selected.indexOf('A')
 				var Sb = selected.indexOf('B')
@@ -81,19 +81,19 @@ $(document).ready(function(){
 
 				// Check if human is the winner
 				if ((Sa != -1 && Sb != -1 && Sc != -1) || (Sd != -1 && Se != -1 && Sf != -1) || (Sg != -1 && Sh != -1 && Si != -1) || (Sa != -1 && Sd != -1 && Sg != -1) || (Sb != -1 && Se != -1 && Sh != -1) || (Sc != -1 && Sf != -1 && Si != -1) || (Sa != -1 && Se != -1 && Si != -1) || (Sc != -1 && Se != -1 && Sg != -1)) {
-		 			// Reset opponent[] array
-		 			opponent = [];
-		 			
-		 			// Change a tie variable to check if It's a tie
-		 			tie = 2;
+					// Reset opponent[] array
+					opponent = [];
 
-		 			// Add 1 win
-		 			wins += 1;
+					// Change a tie variable to check if It's a tie
+					tie = 2;
 
-		 			// Display who wins
-		 			$('.winner').html("You win!");
+					// Add 1 win
+					wins += 1;
 
-		 			// Display 'end' section as the end of a game
+					// Display who wins
+					$('.winner').html("You win!");
+
+					// Display 'end' section as the end of a game
 					$('#end-mask').addClass('box-visible');
 
 					// New Game button (in end-game section)
@@ -144,25 +144,25 @@ $(document).ready(function(){
 
 				// Check if 'computer' is the winner
 				if ((Oa != -1 && Ob != -1 && Oc != -1) || (Od != -1 && Oe != -1 && Of != -1) || (Og != -1 && Oh != -1 && Oi != -1) || (Oa != -1 && Od != -1 && Og != -1) || (Ob != -1 && Oe != -1 && Oh != -1) || (Oc != -1 && Of != -1 && Oi != -1) || (Oa != -1 && Oe != -1 && Oi != -1) || (Oc != -1 && Oe != -1 && Og != -1)) {
-		 			// Reset selected[] array
-		 			selected = [];
+					// Reset selected[] array
+					selected = [];
 
-		 			// Change a tie variable to check if It's a tie
-		 			tie = 3;
+					// Change a tie variable to check if It's a tie
+					tie = 3;
 
-		 			// Add 1 lose
-		 			loses += 1;
+					// Add 1 lose
+					loses += 1;
 
-		 			// Display who wins
-		 			$('.winner').html("Mr. JS wins!");
+					// Display who wins
+					$('.winner').html("Mr. JS wins!");
 
-		 			// Display 'end' section as the end of a game
+					// Display 'end' section as the end of a game
 					$('#end-mask').addClass('box-visible');
 
 					// New Game button (in end-game section)
 					$('#end-start').click(function(){
 						$('#end-mask').removeClass('box-visible');
-		 				TicTacApp.newGame();
+						TicTacApp.newGame();
 					});
 				} else if (tie == 1 && boxes.length == 0){ // Check a tie
 					// Add 1 tie
@@ -183,17 +183,17 @@ $(document).ready(function(){
 			} else {
 				return false;
 			}
-			
+
 			// Sort both arrays
 			selected.sort();
 			opponent.sort();
 		});
 	}
-	
+
 	// New Game button
 	$('.start-game-button').click(function(){
 		$('#main-game').transition({display: 'block'});
-		 $('#init-mask').addClass('notvisible');
-		 TicTacApp.newGame();
+		$('#init-mask').addClass('notvisible');
+		TicTacApp.newGame();
 	});
 });

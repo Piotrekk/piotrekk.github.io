@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   // Declare input values variables
   var nameFormValue;
   var emailFormValue;
@@ -9,7 +10,7 @@ $(document).ready(function(){
   var emailFormError = $('#ct-email-error');
   var messageFormError = $('#ct-message-error');
 
-  // Set inputs 
+  // Set inputs
   var nameFormInput = $('#ct-name-input');
   var emailFormInput = $('#ct-email-input');
   var messageFormInput = $('#ct-message-input');
@@ -76,4 +77,5 @@ $(document).ready(function(){
       $('#ct-send-button').transition({'width': '262px', 'background-color': 'rgb(108, 195, 160)'}).val('Thank you for your email')
     }
   });
+
 });

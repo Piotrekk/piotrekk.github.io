@@ -1,84 +1,108 @@
 <html>
-	<head>
-		<title></title>
-    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/fontello.css">
-	</head>
-	<body>
-		<section id="main">
-			<div id="main-content">
-				<button id="new-start" class="start-game-button">New Game</button> 
-				<div id="ties">
-					<span id="counter-title">Ties:</span> <br>
-					<span id="ties-counter" class="counter"></span>
-				</div>
-				<div id="loses">
-					<span class="counter-title">Loses:</span> <br>
-					<span id="loses-counter" class="counter"></span>
-				</div>
-				<div id="wins">
-					<span class="counter-title">Wins:</span> </br>
-					<span id="wins-counter" class="counter"></span>
-				</div>
-				<h2>You are 'X'. Try to beat Mr. JS! </h2>
-				<div id="main-game">
-					<div id="one" value="A" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<div class="icon-cancel-1"></div>
-					</div>
-					<div id="two" value="B" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="three" value="C" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="four" value="D" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="five" value="E" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="six" value="F" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="seven" value="G" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="eight" value="H" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-					<div id="nine" value="I" class="box transition">
-						<span class="icon-circle-empty"></span>
-						<span class="icon-cancel-1"></span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="init-mask" class="transition">
-			<div id="init-mask-content">
-				<h1>Welcome to the Tic Tac Toe game!</h1>
-				<button class="start-game-button">Start Game</button>
-			</div>
-		</section>
-		<section id="end-mask" class="transition">
-			<div id="end-mask-content">
-				<h1 class="winner"></h1>
-				<button id="end-start" class="start-game-button">Start New Game</button>
-			</div>
-		</section>
-	</body>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fontello.css">
+</head>
+<body>
 
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="vendor/transit.js"></script>
-    <script src="js/script.js"></script>
+	<section id="main">
+
+		<div id="main-content">
+
+			<button id="new-start" class="start-game-button">New Game</button>
+
+			<div id="ties">
+				<span id="counter-title">Ties:</span> <br>
+				<span id="ties-counter" class="counter"></span>
+			</div>
+
+			<div id="loses">
+				<span class="counter-title">Loses:</span> <br>
+				<span id="loses-counter" class="counter"></span>
+			</div>
+
+			<div id="wins">
+				<span class="counter-title">Wins:</span> </br>
+				<span id="wins-counter" class="counter"></span>
+			</div>
+
+			<h2>You are 'X'. Try to beat Mr. JS! </h2>
+
+			<div id="main-game">
+
+				<div id="one" value="A" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<div class="icon-cancel-1"></div>
+				</div>
+
+				<div id="two" value="B" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="three" value="C" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="four" value="D" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="five" value="E" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="six" value="F" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="seven" value="G" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="eight" value="H" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+				<div id="nine" value="I" class="box transition">
+					<span class="icon-circle-empty"></span>
+					<span class="icon-cancel-1"></span>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section id="init-mask" class="transition">
+		<div id="init-mask-content">
+			<h1>Welcome to the Tic Tac Toe game!</h1>
+			<button class="start-game-button">Start Game</button>
+		</div>
+	</section>
+
+	<section id="end-mask" class="transition">
+		<div id="end-mask-content">
+			<h1 class="winner"></h1>
+			<button id="end-start" class="start-game-button">Start New Game</button>
+		</div>
+	</section>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="vendor/transit.js"></script>
+<script src="js/script.js"></script>
+
 </html>

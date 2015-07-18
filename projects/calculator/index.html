@@ -1,45 +1,55 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div id="mask">
-			<div id="back" class="transition">
-				<h1>This calculator works with Reverse Polish Notation (Postfix). It's a method of writing arithmetic expressions, 
-					where every operator follows all of its operands.</h1>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div id="mask">
+		<div id="back" class="transition">
+			<h1>This calculator works with Reverse Polish Notation (Postfix). It's a method of writing arithmetic expressions,
+				where every operator follows all of its operands.</h1>
 			</div>
 			<div id="front" class="transition">
 				<h1>Calculator</h1>
 			</div>
 		</div>
+
 		<div class="hinge"></div>
+
 		<div id="second-hinge" class="hinge"></div>
+
 		<div id="calculator">
+
 			<input type="text" id="display" value disabled="disabled">
 			<input type="text" id="display-two" value disabled="disabled">
-            <div id="operations">
+
+			<div id="operations">
 				<input type="button" class="clear red" value="AC">
-                <input type="button" class="sign" value="/">
-                <input type="button" class="sign left" value="*">
+				<input type="button" class="sign" value="/">
+				<input type="button" class="sign left" value="*">
 				<input type="button" class="sign" value="-">
 				<input type="button" class="sign" value="+">
-                <input type="button" class="left red" id="equals" value="=">
+				<input type="button" class="left red" id="equals" value="=">
 			</div>
+			
 			<div id="numbers">
-                <input type="button" class="number" value="7">
-                <input type="button" class="number" value="8">
-                <input type="button" class="number left" value="9">
-                <input type="button" class="number" value="4">
-                <input type="button" class="number" value="5">
-                <input type="button" class="number left" value="6">
-                <input type="button" class="number" value="1">
-                <input type="button" class="number" value="2">
-                <input type="button" class="number left" value="3">
-                <input type="button" class="number zero" value="0">
-            </div>
+				<input type="button" class="number" value="7">
+				<input type="button" class="number" value="8">
+				<input type="button" class="number left" value="9">
+				<input type="button" class="number" value="4">
+				<input type="button" class="number" value="5">
+				<input type="button" class="number left" value="6">
+				<input type="button" class="number" value="1">
+				<input type="button" class="number" value="2">
+				<input type="button" class="number left" value="3">
+				<input type="button" class="number zero" value="0">
+			</div>
+
 		</div>
+
 		<script src="vendor/jquery-2.1.1.js"></script>
 		<script src="js/scriptt.js"></script>
+
 	</body>
-</html>
+	</html>

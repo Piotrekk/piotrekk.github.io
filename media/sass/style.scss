@@ -8,88 +8,88 @@ $blue: rgb(94, 110, 141);
 $green: rgb(53, 167, 133);
 
 .transition {
-    -webkit-transition: All 0.5s ease;
-    -moz-transition: All 0.5s ease;
-    -o-transition: All 0.5s ease;
-    transition: All 0.5s ease;
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  transition: All 0.5s ease;
 }
 
 @keyframes pulse {
   0% {
-    	box-shadow: 0px 0px 10px $green; 
-	}
+    box-shadow: 0px 0px 10px $green;
+  }
   50% {
-    	box-shadow: 0px 0px 80px $green; 
-    }
+    box-shadow: 0px 0px 80px $green;
+  }
   100% {
-    	box-shadow: 0px 0px 10px $green; 
-	} 
+    box-shadow: 0px 0px 10px $green;
+  }
 }
 @-webkit-keyframes pulse {
   0% {
-    	box-shadow: 0px 0px 10px $green; 
-	}
+    box-shadow: 0px 0px 10px $green;
+  }
   50% {
-    	box-shadow: 0px 0px 80px $green; 
-    }
+    box-shadow: 0px 0px 80px $green;
+  }
   100% {
-    	box-shadow: 0px 0px 10px $green; 
-	} 
+    box-shadow: 0px 0px 10px $green;
+  }
 }
 
 @-webkit-keyframes dropDown {
-    0% {
-    	opacity: 0;
-        top: -75px;
-    }
-    100% {
-    	opacity: 1;
-       	top: 0px;
-    }
+  0% {
+    opacity: 0;
+    top: -75px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
 }
 @keyframes dropDown {
-    0% {
-    	opacity: 0;
-        top: -75px;
-    }
-    100% {
-    	opacity: 1;
-       	top: 0px;
-    }
+  0% {
+    opacity: 0;
+    top: -75px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
 }
 
 
 @-webkit-keyframes opacityAnim {
-    0% {
-    	opacity: 0;
-    }
-    100% {
-    	opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes opacityAnim {
-    0% {
-    	opacity: 0;
-    }
-    100% {
-    	opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 // Animation mixin
 @mixin animation($var) {
-	-webkit-animation: $var;
-	-moz-animation: $var;
-	-o-animation: $var;
-	animation: $var;
+  -webkit-animation: $var;
+  -moz-animation: $var;
+  -o-animation: $var;
+  animation: $var;
 }
 
 // Transform mixin
 @mixin transform($var) {
-	-webkit-transform: $var;
-	-moz-transform: $var;
-	-ms-transform: $var;
-	transform: $var;
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -ms-transform: $var;
+  transform: $var;
 }
 
 @import "reset";

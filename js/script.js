@@ -28,7 +28,7 @@ $(document).ready(function(){
     $('#about-content').css('padding-top', (windowHeight - divSize + 100) / 2);
   }
 
-  // Make header sticky after scroll 50px down 
+  // Make header sticky after scroll 50px down
   var header = document.querySelector('header');
   var origOffsetY = header.offsetTop;
 
@@ -37,9 +37,9 @@ $(document).ready(function(){
       $('header').addClass('sticky');
     } else {
       $('header').removeClass('sticky');
-    }  
+    }
   }
-  
+
   document.onscroll = scroll;
 
   // Scroll and nav click functions
@@ -79,7 +79,7 @@ $(document).ready(function(){
 
     $('body, html').animate({
       scrollTop: $('html').offset().top - 50
-      },  {
+    },  {
       duration: 500,
       easing: 'swing'
     });
@@ -96,7 +96,7 @@ $(document).ready(function(){
 
     $('body, html').animate({
       scrollTop: $('#profile').offset().top - 50
-      },  {
+    },  {
       duration: 500,
       easing: 'swing'
     });
@@ -113,7 +113,7 @@ $(document).ready(function(){
 
     $('body, html').animate({
       scrollTop: $('#projects').offset().top - 50
-      },  {
+    },  {
       duration: 500,
       easing: 'swing'
     });
@@ -130,7 +130,7 @@ $(document).ready(function(){
 
     $('body, html').animate({
       scrollTop: $('#contact').offset().top - 50
-      },  {
+    },  {
       duration: 500,
       easing: 'swing'
     });
@@ -142,46 +142,46 @@ $(document).ready(function(){
   $('#profile-image').click(function(){
     if (!imageRotate) {
       $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
-           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)', 
-                             '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
-                             'transform': 'rotate3d(0, 1, 0, 0deg)',   
-           /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
-                             '-moz-animation': 'pulse 1s linear infinite',
-                             '-o-animation': 'pulse 1s linear infinite',
-                             'animation': 'pulse 1s linear infinite'
-                           });
-      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, -180deg)',
-           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, -180deg)', 
-                             '-ms-transform': 'rotate3d(0, 1, 0, -180deg)',
-                             'transform': 'rotate3d(0, 1, 0, -180deg)',   
-           /* Animation */   '-webkit-animation': 'none',
-                             '-moz-animation': 'none',
-                             '-o-animation': 'none',
-                             'animation': 'none'
-                           });
-
-      imageRotate = true;
-    } else {
-      $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 180deg)',
-           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 180deg)', 
-                             '-ms-transform': 'rotate3d(0, 1, 0, 180deg)',
-                             'transform': 'rotate3d(0, 1, 0, 180deg)',   
-           /* Animation */   '-webkit-animation': 'none',
-                             '-moz-animation': 'none',
-                             '-o-animation': 'none',
-                             'animation': 'none'
-                           });
-      $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
-           /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)', 
-                             '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
-                             'transform': 'rotate3d(0, 1, 0, 0deg)',   
-           /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
-                             '-moz-animation': 'pulse 1s linear infinite',
-                             '-o-animation': 'pulse 1s linear infinite',
-                             'animation': 'pulse 1s linear infinite'
-                           });
-
-      imageRotate = false;
-    }
+      /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
+      '-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+      'transform': 'rotate3d(0, 1, 0, 0deg)',
+      /* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+      '-moz-animation': 'pulse 1s linear infinite',
+      '-o-animation': 'pulse 1s linear infinite',
+      'animation': 'pulse 1s linear infinite'
+    });
+    $('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, -180deg)',
+    /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, -180deg)',
+    '-ms-transform': 'rotate3d(0, 1, 0, -180deg)',
+    'transform': 'rotate3d(0, 1, 0, -180deg)',
+    /* Animation */   '-webkit-animation': 'none',
+    '-moz-animation': 'none',
+    '-o-animation': 'none',
+    'animation': 'none'
   });
+
+  imageRotate = true;
+} else {
+  $('#image-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 180deg)',
+  /* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 180deg)',
+  '-ms-transform': 'rotate3d(0, 1, 0, 180deg)',
+  'transform': 'rotate3d(0, 1, 0, 180deg)',
+  /* Animation */   '-webkit-animation': 'none',
+  '-moz-animation': 'none',
+  '-o-animation': 'none',
+  'animation': 'none'
+});
+$('#second-inner').css({'-webkit-transform': 'rotate3d(0, 1, 0, 0deg)',
+/* Transform */   '-moz-transform': 'rotate3d(0, 1, 0, 0deg)',
+'-ms-transform': 'rotate3d(0, 1, 0, 0deg)',
+'transform': 'rotate3d(0, 1, 0, 0deg)',
+/* Animation */   '-webkit-animation': 'pulse 1s linear infinite',
+'-moz-animation': 'pulse 1s linear infinite',
+'-o-animation': 'pulse 1s linear infinite',
+'animation': 'pulse 1s linear infinite'
+});
+
+imageRotate = false;
+}
+});
 });

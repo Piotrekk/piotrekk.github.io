@@ -6,9 +6,9 @@ $green: rgb(53, 167, 133);
 
 .transition {
 	-webkit-transition: All 0.5s ease;
-    -moz-transition: All 0.5s ease;
-    -o-transition: All 0.5s ease;
-    transition: All 0.5s ease;
+	-moz-transition: All 0.5s ease;
+	-o-transition: All 0.5s ease;
+	transition: All 0.5s ease;
 }
 
 @mixin bImage($w, $x, $y) {
