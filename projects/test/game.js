@@ -3,17 +3,30 @@
 var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+var canvasDefaults = {
+  width: 960,
+  height: 530
+};
+
+var setCanvasDimensions = function() {
+  var windowWidth = window.innerWidth,
+    windowHeight = window.innerHeight;
+
+  if (windowWidth >= 1000){
+    canvas.width = 960;
+    canvas.height = 530;
+  } else {
+    canvasDefaults.width = canvas.width = windowWidth * 0.9;
+    canvasDefaults.height = canvas.height = windowWidth * 0.9 * 0.55;
+  }
+};
+
+setCanvasDimensions();
 
 var GAME_SETTINGS = {
   FPS: 60,
-  second: 1000,
-  speed: 3,
-  layoutRange: {
-    left: 450,
-    right: 550
-  }
+  FPSymbol: 10,
+  second: 1000
 };
 
 var GAME_DATA = {
@@ -42,6 +55,37 @@ function gameLoader(afterLoadingCallback) {
   this.loading = true;
   this.afterLoadingCallback = afterLoadingCallback;
 
+  this.tableDefaults = {
+    xArr:  _generateAxisTable(canvasDefaults.width),
+    yArr: _generateAxisTable(canvasDefaults.height)
+  }
+
+  this.$table = {
+    tableArr: _createTable(self.tableDefaults.xArr, self.tableDefaults.yArr),
+    squaresToRender: [],
+    canAnimate: true,
+    update: function() {
+      if (this.tableArr.length)
+        for (var i = 0; i < 30; i++) {
+          var randomIndex = [ Math.floor(Math.random() * (this.tableArr.length)) ];
+          this.squaresToRender.push(this.tableArr[randomIndex]);
+
+          this.tableArr.splice(randomIndex, 1);
+        }
+      else
+        this.canAnimate = false;
+    },
+    draw: function() {
+      for (var i = 0; i < this.squaresToRender.length; i++) {
+        if (!this.squaresToRender[i]) return false;
+
+        ctx.fillStyle = '#d27eab';
+        ctx.fillRect(this.squaresToRender[i].x, this.squaresToRender[i].y, 10, 10);
+        ctx.save();
+      }
+    }
+  }
+
   this.init = function() {
     self.run();
     _fetchGameData();
@@ -58,21 +102,21 @@ function gameLoader(afterLoadingCallback) {
   };
 
   this.update = function() {
-    //console.log('update');
+    self.$table.update();
   };
 
   this.render = function() {
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = '#d78566';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
     ctx.save();
 
     ctx.fillStyle = '#000000';
-    ctx.font = '60px Helvetica';
-    ctx.textAling = 'center';
-    ctx.fillText('Loading', canvas.width / 2, canvas.height / 2);
-
+    ctx.font = '80px Helvetica';
+    //ctx.textAling = 'center';
+    ctx.fillText('Loading', calculateDimension(0.3520, canvasDefaults.width), calculateDimension(0.5350, canvasDefaults.height));
     ctx.save();
+
+    self.$table.draw();
   };
 
   var _finishLoading = function() {
@@ -92,9 +136,9 @@ function gameLoader(afterLoadingCallback) {
     http.open('GET', 'gameData.json', true);
 
     http.onreadystatechange = function() {
-      if (http.readyState == 4 && http.status == "200")
+      //if (http.readyState == 4 && http.status == "200")
         //setTimeout(function() {
-        _processGameData(http.responseText);
+        //_processGameData(http.responseText);
         //}, 50);
     };
 
@@ -128,6 +172,32 @@ function gameLoader(afterLoadingCallback) {
 
     __processImages(data.images, _finishLoading);
   };
+
+  function _generateAxisTable(num) {
+    var arr = [];
+
+    while (num) {
+      arr.push(num);
+      num -= 10;
+    }
+
+    return arr;
+  };
+
+  function _createTable(xArr, yArr) {
+    var table = [];
+
+    for (var x = 0; x < xArr.length; x++) {
+      for (var y = 0; y < yArr.length; y++) {
+        table.push({
+          x: x * 10,
+          y: y * 10
+        })
+      }
+    }
+
+    return table;
+  }
 }
 
 function gameFlow() {
@@ -174,14 +244,14 @@ function playButton(changer) {
   this.$changer = changer;
 
   this.$button = {
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100
+    x: calculateDimension(0.8479, canvasDefaults.width),
+    y: calculateDimension(0.3924, canvasDefaults.height),
+    width: calculateDimension(0.125, canvasDefaults.width),
+    height: calculateDimension(0.2264, canvasDefaults.height)
   };
 
   this.init = function() {
-    console.log('playbutton init');
+
   }
 
   this.update = function() {
@@ -190,7 +260,7 @@ function playButton(changer) {
 
   this.render = function() {
     ctx.drawImage((
-      self.$changer.randomizing
+      self.$changer.randomizing || !self.$changer.selectedData.isSymbolSelected
         ? getImageByName(GAME_DATA.images, 'playButtonDisabled').image
         : getImageByName(GAME_DATA.images, 'playButtonEnabled').image
     ), self.$button.x, self.$button.y, self.$button.width, self.$button.height);
@@ -198,7 +268,9 @@ function playButton(changer) {
   }
 
   canvas.addEventListener('click', function(e) {
-    if (isMouseCollision(self.$button, e.offsetX, e.offsetY) && !self.$changer.randomizing)
+    if (isMouseCollision(self.$button, e.offsetX, e.offsetY)
+      && !self.$changer.randomizing
+      && self.$changer.selectedData.isSymbolSelected)
       self.$changer.startRandomizing();
   });
 
@@ -209,48 +281,106 @@ function Changer() {
 
   this.randomizing = false;
   this.symbols = [];
-  this.maxSymbols = 50;
+  this.maxSymbols = 30;
   this.currentSymbol = null;
   this.currentSymbolIndex = 0;
-  self.frames = 0;
+  this.frames = 0;
 
-  this.$element = {
-    x: 300,
-    y: 100,
-    width: 300,
-    height: 500
+  this.timerData = {
+    second: 5,
+    defaults: '00:00',
+    draw: function(second) {
+      ctx.fillStyle = '#fef81e';
+      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px Helvetica';
+      ctx.textAling = 'center';
+      ctx.fillText('00:0' + self.timerData.second, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
+      ctx.save();
+    },
+    drawDefault: function() {
+      ctx.fillStyle = '#fef81e';
+      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px Helvetica';
+      ctx.textAling = 'center';
+      ctx.fillText(self.timerData.defaults, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
+      ctx.save();
+    }
+  };
+
+  this.$symbol = {
+    x: calculateDimension(0.325, canvasDefaults.width),
+    y: calculateDimension(0.3547, canvasDefaults.height),
+    width: calculateDimension(0.2447, canvasDefaults.width),
+    height: calculateDimension(0.2924, canvasDefaults.height)
+  };
+
+  this.$arrow = {
+    x: calculateDimension(0.8927, canvasDefaults.width),
+    y: calculateDimension(calculateRatio(140, canvasDefaults.height), canvasDefaults.height),
+    minX: 140,
+    maxX: 160,
+    width: calculateDimension(0.0343, canvasDefaults.width),
+    height: calculateDimension(0.0792, canvasDefaults.height),
+    speed: 1,
+    direction: 'down',
+    update: function() {
+      if (this.y == calculateDimension(calculateRatio(160, canvasDefaults.height), canvasDefaults.height)) this.direction = 'up';
+      else if (this.y == calculateDimension(calculateRatio(140, canvasDefaults.height), canvasDefaults.height)) this.direction = 'down';
+
+      if (this.direction == 'down') this.y += this.speed;
+      else if (this.direction == 'up') this.y -= this.speed;
+    },
+    draw: function() {
+      ctx.drawImage(
+        getImageByName(GAME_DATA.images, 'arrow').image
+      , this.x, this.y, this.width, this.height)
+    }
+  }
+
+  this.selectedData = {
+    symbol: null,
+    isSymbolSelected: false
   };
 
   this.init = function() {
-    console.log('changer init');
+
   }
 
   this.update = function() {
-    self.frames += 1;
-
     if (self.randomizing)
+      self.frames += 1,
       _changeCurrentSymbol(self.frames);
+
+    if (self.selectedData.isSymbolSelected && !self.randomizing)
+      self.$arrow.update();
   }
 
   this.render = function() {
-    ctx.strokeRect(self.$element.x, self.$element.y, self.$element.width, self.$element.height);
-
     if (self.randomizing)
-      ctx.drawImage(self.currentSymbol.image, self.$element.x, self.$element.y, self.$element.width, self.$element.height)
+      ctx.drawImage(self.currentSymbol.image, self.$symbol.x, self.$symbol.y, self.$symbol.width, self.$symbol.height),
+      self.timerData.draw();
+    else
+      self.timerData.drawDefault();
+
+    if (self.selectedData.isSymbolSelected && !self.randomizing)
+      self.$arrow.draw();
   }
 
   this.startRandomizing = function() {
     self.randomizing = true;
-
-    console.log('start');
 
     self.symbols = _createRandomSymbolsArray();
 
     self.currentSymbol = self.symbols[0];
   }
 
+  var $select = document.getElementById('select-symbol');
+  $select.addEventListener('change', function(e) {
+    self.selectedData.symbol = $select.value;
+    self.selectedData.isSymbolSelected = true;
+  });
+
   var _finishRandomizing = function(symbol) {
     self.randomizing = false;
+    _resetDefaults();
     console.log('koniec');
     console.log(symbol);
   };
@@ -274,7 +404,11 @@ function Changer() {
   };
 
   var _changeCurrentSymbol = function(frames) {
-    if (frames % 10 === 0) {
+    if (frames % 60 === 0) {
+      self.timerData.second -= 1;
+    }
+
+    if (frames % GAME_SETTINGS.FPSymbol === 0) {
       self.currentSymbolIndex += 1;
 
       if (self.symbols[self.currentSymbolIndex])
@@ -282,6 +416,19 @@ function Changer() {
       else
         _finishRandomizing(self.currentSymbol);
     }
+  };
+
+  var _resetDefaults = function() {
+    self.symbols = [];
+    self.currentSymbol = null;
+    self.currentSymbolIndex = 0;
+
+    self.timerData.second = 5;
+
+    self.selectedData = {
+      symbol: null,
+      isSymbolSelected: false
+    };
   };
 
 }
@@ -301,8 +448,13 @@ var isMouseCollision = function(element, mouseX, mouseY) {
     return true;
 };
 
+var calculateDimension = function(ratio, elem) {
+  return Math.floor(elem * ratio);
+};
 
-
+var calculateRatio = function(counter, denominator) {
+  return counter / denominator;
+};
 
 window.onload = function() {
   var game = new Game();

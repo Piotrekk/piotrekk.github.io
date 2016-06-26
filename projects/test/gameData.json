@@ -36,6 +36,10 @@
     {
       "name": "background",
       "path": "images/BG.png"
+    },
+    {
+      "name": "arrow",
+      "path": "images/arrow.png"
     }
   ]
 }

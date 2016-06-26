@@ -3,9 +3,25 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(#5f8bc2, #306d39);
 }
 
 canvas {
-  margin: 0;
+  margin: 0 auto;
   display: block;
+}
+
+select {
+  top: 100px;
+  left: 50%;
+  position: absolute;
+}
+
+h1 {
+  font-family: 'Helvetica';
+  font-size: 80px;
+  font-weight: 400;
 }
