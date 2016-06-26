@@ -3,6 +3,9 @@
 var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d');
 
+
+/******************************************************** game defaults ********************************************************/
+
 var canvasDefaults = {
   width: 960,
   height: 530
@@ -21,7 +24,13 @@ var setCanvasDimensions = function() {
   }
 };
 
+var selectButton = document.getElementById('select-symbol'),
+  placeSelectButton = function() {
+    selectButton.style.top = ((window.innerHeight / 2) - (canvas.height / 2) + (0.0943 * canvas.height)) + 'px';
+  };
+
 setCanvasDimensions();
+placeSelectButton();
 
 var GAME_SETTINGS = {
   FPS: 60,
@@ -31,21 +40,57 @@ var GAME_SETTINGS = {
 
 var GAME_DATA = {
   images: [],
-  symbols: []
+  symbols: [],
+  colors: {
+    yellow: '#fef81e',
+    red: '#ef758c',
+    green: '#b5e281',
+    orange: '#fba089',
+    bgBlue: '#5585a5',
+    bgGreen: '#3a7457'
+  },
+  font: 'Helvetica'
 };
+
+
+/******************************************************** helper functions ********************************************************/
+
+var getImageByName = function(array, name) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].name === name)
+      return array[i];
+  }
+};
+
+var isMouseCollision = function(element, mouseX, mouseY) {
+  if ((mouseX >= element.x && mouseX <= element.x + element.width)
+    && (mouseY >= element.y && mouseY <= element.y + element.height))
+    return true;
+};
+
+var calculateDimension = function(ratio, elem) {
+  return Math.floor(elem * ratio);
+};
+
+var calculateRatio = function(counter, denominator) {
+  return counter / denominator;
+};
+
+
+/******************************************************** main game classes ********************************************************/
 
 function Game() {
   var self = this;
 
   this.load = function() {
-    self.loader = new gameLoader(self.init);
+    self.loader = new gameLoader(self.flow);
     self.loader.init();
   };
 
-  this.init = function() {
+  this.flow = function() {
     self.gameFlow = new gameFlow();
     self.gameFlow.init();
-  }
+  };
 
 }
 
@@ -53,33 +98,37 @@ function gameLoader(afterLoadingCallback) {
   var self = this;
 
   this.loading = true;
+  this.animationDone = false;
+  this.isDataLoded = false;
   this.afterLoadingCallback = afterLoadingCallback;
+  this.isMobile = window.innerWidth <= 1000;
+
+  var loaderCanvasDefaults = !self.isMobile ? canvasDefaults : { width: 960, height: 530 };
 
   this.tableDefaults = {
-    xArr:  _generateAxisTable(canvasDefaults.width),
-    yArr: _generateAxisTable(canvasDefaults.height)
-  }
+    xArr:  _generateAxisTable(loaderCanvasDefaults.width),
+    yArr: _generateAxisTable(loaderCanvasDefaults.height)
+  };
 
   this.$table = {
     tableArr: _createTable(self.tableDefaults.xArr, self.tableDefaults.yArr),
     squaresToRender: [],
-    canAnimate: true,
     update: function() {
       if (this.tableArr.length)
-        for (var i = 0; i < 30; i++) {
+        for (var i = 0; i < 20; i++) {
           var randomIndex = [ Math.floor(Math.random() * (this.tableArr.length)) ];
           this.squaresToRender.push(this.tableArr[randomIndex]);
 
           this.tableArr.splice(randomIndex, 1);
         }
       else
-        this.canAnimate = false;
+        self.animationDone = true;
     },
     draw: function() {
       for (var i = 0; i < this.squaresToRender.length; i++) {
         if (!this.squaresToRender[i]) return false;
 
-        ctx.fillStyle = '#d27eab';
+        ctx.fillStyle = GAME_DATA.colors.bgGreen;
         ctx.fillRect(this.squaresToRender[i].x, this.squaresToRender[i].y, 10, 10);
         ctx.save();
       }
@@ -93,7 +142,7 @@ function gameLoader(afterLoadingCallback) {
 
   this.run = function() {
     setInterval(function() {
-      if (self.loading)
+      if (!self.animationDone)
         self.update(),
         self.render();
       else
@@ -103,17 +152,19 @@ function gameLoader(afterLoadingCallback) {
 
   this.update = function() {
     self.$table.update();
+
+    if (self.animationDone && self.isDataLoded)
+      _finishLoading();
   };
 
   this.render = function() {
-    ctx.fillStyle = '#d78566';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = GAME_DATA.colors.bgBlue;
+    ctx.fillRect(0, 0, loaderCanvasDefaults.width, loaderCanvasDefaults.height);
     ctx.save();
 
-    ctx.fillStyle = '#000000';
-    ctx.font = '80px Helvetica';
-    //ctx.textAling = 'center';
-    ctx.fillText('Loading', calculateDimension(0.3520, canvasDefaults.width), calculateDimension(0.5350, canvasDefaults.height));
+    ctx.fillStyle = GAME_DATA.colors.orange;
+    ctx.font = '80px ' + GAME_DATA.font;
+    ctx.fillText('Loading', calculateDimension(0.3520, loaderCanvasDefaults.width), calculateDimension(0.5450, loaderCanvasDefaults.height));
     ctx.save();
 
     self.$table.draw();
@@ -122,9 +173,9 @@ function gameLoader(afterLoadingCallback) {
   var _finishLoading = function() {
     self.loading = false;
 
-    console.log('koniec loading');
-
     GAME_DATA.symbols = GAME_DATA.images.slice(0, 6);
+
+    selectButton.className = '';
 
     if (self.afterLoadingCallback && typeof self.afterLoadingCallback === 'function')
       afterLoadingCallback();
@@ -136,10 +187,8 @@ function gameLoader(afterLoadingCallback) {
     http.open('GET', 'gameData.json', true);
 
     http.onreadystatechange = function() {
-      //if (http.readyState == 4 && http.status == "200")
-        //setTimeout(function() {
-        //_processGameData(http.responseText);
-        //}, 50);
+      if (http.readyState == 4 && http.status == "200")
+        _processGameData(http.responseText);
     };
 
     http.send(null);
@@ -170,7 +219,11 @@ function gameLoader(afterLoadingCallback) {
       }
     };
 
-    __processImages(data.images, _finishLoading);
+    __processImages(data.images, _setDataAsLoaded);
+  };
+
+  var _setDataAsLoaded = function() {
+    self.isDataLoded = true;
   };
 
   function _generateAxisTable(num) {
@@ -197,7 +250,7 @@ function gameLoader(afterLoadingCallback) {
     }
 
     return table;
-  }
+  };
 }
 
 function gameFlow() {
@@ -205,13 +258,11 @@ function gameFlow() {
 
   this.init = function() {
     self.changer = new Changer();
-    self.changer.init();
 
     self.playButton = new playButton(self.changer);
-    self.playButton.init();
 
     self.run();
-  }
+  };
 
   this.run = function() {
     setInterval(function() {
@@ -221,22 +272,21 @@ function gameFlow() {
   };
 
   this.update = function() {
-    self.playButton.update();
     self.changer.update();
-  }
+  };
 
   this.render = function() {
-    ctx.save();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
 
     ctx.drawImage(GAME_DATA.images[8].image, 0, 0, canvas.width, canvas.height);
+    ctx.save();
 
     self.playButton.render();
     self.changer.render();
-  }
+  };
 
 }
-
 
 function playButton(changer) {
   var self = this;
@@ -249,14 +299,6 @@ function playButton(changer) {
     width: calculateDimension(0.125, canvasDefaults.width),
     height: calculateDimension(0.2264, canvasDefaults.height)
   };
-
-  this.init = function() {
-
-  }
-
-  this.update = function() {
-    //console.log('x');
-  }
 
   this.render = function() {
     ctx.drawImage((
@@ -279,28 +321,32 @@ function playButton(changer) {
 function Changer() {
   var self = this;
 
+  this.frames = 0;
   this.randomizing = false;
+
   this.symbols = [];
   this.maxSymbols = 30;
   this.currentSymbol = null;
   this.currentSymbolIndex = 0;
-  this.frames = 0;
+
+  var defaultCanvasSizes = {
+    width: 960,
+    height: 530
+  };
 
   this.timerData = {
     second: 5,
     defaults: '00:00',
     draw: function(second) {
-      ctx.fillStyle = '#fef81e';
-      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px Helvetica';
-      ctx.textAling = 'center';
-      ctx.fillText('00:0' + self.timerData.second, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
+      ctx.fillStyle = GAME_DATA.colors.yellow;
+      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px ' + GAME_DATA.font;
+      ctx.fillText('00:0' + this.second, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
       ctx.save();
     },
     drawDefault: function() {
-      ctx.fillStyle = '#fef81e';
-      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px Helvetica';
-      ctx.textAling = 'center';
-      ctx.fillText(self.timerData.defaults, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
+      ctx.fillStyle = GAME_DATA.colors.yellow;
+      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px ' + GAME_DATA.font;
+      ctx.fillText(this.defaults, calculateDimension(0.3687, canvasDefaults.width), calculateDimension(0.1509, canvasDefaults.height));
       ctx.save();
     }
   };
@@ -314,7 +360,7 @@ function Changer() {
 
   this.$arrow = {
     x: calculateDimension(0.8927, canvasDefaults.width),
-    y: calculateDimension(calculateRatio(140, canvasDefaults.height), canvasDefaults.height),
+    y: calculateDimension(calculateRatio(140, defaultCanvasSizes.height), canvasDefaults.height),
     minX: 140,
     maxX: 160,
     width: calculateDimension(0.0343, canvasDefaults.width),
@@ -322,8 +368,8 @@ function Changer() {
     speed: 1,
     direction: 'down',
     update: function() {
-      if (this.y == calculateDimension(calculateRatio(160, canvasDefaults.height), canvasDefaults.height)) this.direction = 'up';
-      else if (this.y == calculateDimension(calculateRatio(140, canvasDefaults.height), canvasDefaults.height)) this.direction = 'down';
+      if (this.y == calculateDimension(calculateRatio(160, defaultCanvasSizes.height), canvasDefaults.height)) this.direction = 'up';
+      else if (this.y == calculateDimension(calculateRatio(140, defaultCanvasSizes.height), canvasDefaults.height)) this.direction = 'down';
 
       if (this.direction == 'down') this.y += this.speed;
       else if (this.direction == 'up') this.y -= this.speed;
@@ -331,18 +377,29 @@ function Changer() {
     draw: function() {
       ctx.drawImage(
         getImageByName(GAME_DATA.images, 'arrow').image
-      , this.x, this.y, this.width, this.height)
+      , this.x, this.y, this.width, this.height);
+      ctx.save();
     }
-  }
+  };
+
+  this.$winText = {
+    x: calculateDimension(0.3312, canvasDefaults.width),
+    y: calculateDimension(0.7890, canvasDefaults.height),
+    draw: function() {
+      var type = self.selectedData.winSymbol.name === self.selectedData.symbol;
+
+      ctx.fillStyle = type ? GAME_DATA.colors.green : GAME_DATA.colors.red;
+      ctx.font = calculateDimension(0.1132, canvasDefaults.height) + 'px ' + GAME_DATA.font;
+      ctx.fillText(type ? 'You win!' : 'You lose!', this.x, this.y);
+      ctx.save();
+    }
+  };
 
   this.selectedData = {
     symbol: null,
-    isSymbolSelected: false
+    isSymbolSelected: false,
+    winSymbol: null
   };
-
-  this.init = function() {
-
-  }
 
   this.update = function() {
     if (self.randomizing)
@@ -351,7 +408,7 @@ function Changer() {
 
     if (self.selectedData.isSymbolSelected && !self.randomizing)
       self.$arrow.update();
-  }
+  };
 
   this.render = function() {
     if (self.randomizing)
@@ -360,9 +417,13 @@ function Changer() {
     else
       self.timerData.drawDefault();
 
+    if (self.selectedData.winSymbol)
+      ctx.drawImage(self.selectedData.winSymbol.image, self.$symbol.x, self.$symbol.y, self.$symbol.width, self.$symbol.height),
+      self.$winText.draw();
+
     if (self.selectedData.isSymbolSelected && !self.randomizing)
       self.$arrow.draw();
-  }
+  };
 
   this.startRandomizing = function() {
     self.randomizing = true;
@@ -370,19 +431,20 @@ function Changer() {
     self.symbols = _createRandomSymbolsArray();
 
     self.currentSymbol = self.symbols[0];
-  }
+  };
 
   var $select = document.getElementById('select-symbol');
   $select.addEventListener('change', function(e) {
     self.selectedData.symbol = $select.value;
     self.selectedData.isSymbolSelected = true;
+    self.selectedData.winSymbol = null;
   });
 
   var _finishRandomizing = function(symbol) {
     self.randomizing = false;
+    self.selectedData.winSymbol = symbol;
+
     _resetDefaults();
-    console.log('koniec');
-    console.log(symbol);
   };
 
   var _createRandomSymbolsArray = function() {
@@ -425,36 +487,13 @@ function Changer() {
 
     self.timerData.second = 5;
 
-    self.selectedData = {
-      symbol: null,
-      isSymbolSelected: false
-    };
+    self.selectedData.isSymbolSelected = false;
   };
 
 }
 
 
-
-var getImageByName = function(array, name) {
-  for (var i = 0; i < array.length; i++) {
-    if (array[i].name === name)
-      return array[i];
-  }
-};
-
-var isMouseCollision = function(element, mouseX, mouseY) {
-  if ((mouseX >= element.x && mouseX <= element.x + element.width)
-    && (mouseY >= element.y && mouseY <= element.y + element.height))
-    return true;
-};
-
-var calculateDimension = function(ratio, elem) {
-  return Math.floor(elem * ratio);
-};
-
-var calculateRatio = function(counter, denominator) {
-  return counter / denominator;
-};
+/******************************************************** game initialization ********************************************************/
 
 window.onload = function() {
   var game = new Game();

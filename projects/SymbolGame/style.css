@@ -16,12 +16,22 @@ canvas {
 
 select {
   top: 100px;
-  left: 50%;
+  left: 56%;
   position: absolute;
+  font-size: 2vw;
+  color: #fef81e;
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
 }
 
-h1 {
-  font-family: 'Helvetica';
-  font-size: 80px;
-  font-weight: 400;
+@media screen and (min-width: 1000px) {
+  select {
+    font-size: 16px;
+  }
+}
+
+.visible {
+  display: none;
 }
